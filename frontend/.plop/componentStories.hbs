@@ -1,0 +1,66 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import {{pascalCase name}} from '@/components/{{pascalCase name}}/{{pascalCase name}}';
+
+// Mock data for {{pascalCase name}} component
+const mock{{pascalCase name}}Content = {
+  title: 'Sample {{titleCase name}}',
+  // Add more mock properties as needed
+};
+
+const meta: Meta<typeof {{pascalCase name}}> = {
+  title: 'Components/{{pascalCase name}}',
+  component: {{pascalCase name}},
+  parameters: {
+    layout: 'fullscreen',
+    docs: {
+      description: {
+        component: '{{titleCase name}} component description. Add your component description here.',
+      },
+    },
+  },
+  argTypes: {
+    content: {
+      control: 'object',
+      description: '{{pascalCase name}} content configuration',
+    },
+  },
+  tags: ['autodocs'],
+};
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    content: mock{{pascalCase name}}Content,
+  },
+};
+
+export const WithCustomContent: Story = {
+  args: {
+    content: {
+      title: 'Custom {{titleCase name}} Title',
+      // Add custom properties
+    },
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: '{{pascalCase name}} with custom content configuration.',
+      },
+    },
+  },
+};
+
+export const EmptyContent: Story = {
+  args: {
+    content: {},
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: '{{pascalCase name}} with empty content to test fallback states.',
+      },
+    },
+  },
+};

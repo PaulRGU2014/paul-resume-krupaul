@@ -1,0 +1,38 @@
+import {defineField, defineType} from 'sanity'
+import {ComponentName} from '../../sanity/schemaTypes/preview/ComponentName'
+
+export const {{camelCase name}} = defineType({
+  name: '{{camelCase name}}',
+  title: '{{titleCase name}}',
+  type: 'document',
+  components: {preview: ComponentName('{{titleCase name}}')},
+  preview: {
+    select: {
+      title: 'title',
+    },
+  },
+  fields: [
+    defineField({
+      name: 'info',
+      title: 'Component Information',
+      type: 'text',
+      rows: 3,
+      readOnly: true,
+      initialValue: 'Component Information Description',
+    }),
+    defineField({
+      name: 'title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'theme',
+      type: 'string',
+      description: 'Description here',
+      options: {
+        list: ['light', 'dark'],
+        layout: 'radio',
+      },
+      initialValue: 'light',
+    }),
+  ],
+})

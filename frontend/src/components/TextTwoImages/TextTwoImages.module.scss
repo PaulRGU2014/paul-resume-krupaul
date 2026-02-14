@@ -1,0 +1,79 @@
+@use "../../scss/helpers/import" as *;
+
+.component {
+  padding: {
+    top: $standard-vertical-spacing;
+    bottom: $standard-vertical-spacing;
+  }
+  margin: -1px 0;
+  &.dark {
+    background-color: $black;
+    color: $white;
+  }
+}
+.wrapper {
+  @include centered($max-width);
+  & {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: {
+      top: 0;
+      bottom: 0;
+    }
+    padding: 60px 0;
+    height: auto;
+  }
+  @include responsive(md) {
+    flex-direction: column;
+    padding: 0;
+    gap: 30px;
+  }
+}
+
+.images {
+  width: calc(50% + 60px);
+  height: calc(50vw + 60px);
+  max-height: 780px;
+  position: relative;
+  overflow: hidden;
+  @include responsive(md) {
+    width: 100%;
+    height: calc(100vw - 60px);
+  }
+}
+
+.image1 {
+  position: absolute;
+  border-radius: 16px;
+  overflow: hidden;
+  width: calc(54 / 66 * 100%);
+  padding-top: calc(54 / 66 * 100%);
+  @include scroll-animation($anim: fromTop, $sequence: 100ms, $speed: 1000ms);
+}
+
+.image2 {
+  position: absolute;
+  border-radius: 16px;
+  overflow: hidden;
+  width: calc(48 / 66 * 100%);
+  padding-top: calc(36 / 66 * 100%);
+  right: 0;
+  bottom: 0;
+  @include scroll-animation($anim: fromBottom, $sequence: 60ms, $speed: 1000ms);
+}
+
+.text {
+  width: calc(50% - 60px);
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  @include scroll-animation($anim: fromLeft, $sequence: 60ms, $speed: 1000ms);
+  @include responsive(md) {
+    width: 100%;
+    max-width: unset;
+    margin-left: 0;
+  }
+}

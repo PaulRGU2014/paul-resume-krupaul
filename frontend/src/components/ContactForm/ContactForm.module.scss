@@ -1,0 +1,187 @@
+@use "../../scss/helpers/import" as *;
+
+.component {
+  background-color: $black;
+}
+.wrapper {
+  @include centered($max-width);
+  & {
+    padding: 60px 0;
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+  // @include responsive(md) {
+  //     flex-direction: column;
+  //     justify-content: flex-start;
+  // }
+}
+
+.title {
+  color: $white;
+  width: 100%;
+  margin-bottom: 50px;
+  padding-right: 12%;
+  @include responsive(md) {
+    font-size: 24px;
+    max-width: unset;
+    margin-bottom: 25px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: $white;
+  &_wrapper {
+    @include scroll-animation($anim: fromTop, $speed: 1000ms);
+    & {
+      transition-delay: 100ms;
+      width: 75%;
+    }
+  }
+  button {
+    @extend %button;
+  }
+  @include responsive(md) {
+    &_wrapper {
+      width: 100%;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  &_wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    margin-bottom: 35px;
+    & > * {
+      background-color: transparent;
+    }
+    label {
+      min-width: 85px;
+      padding: 10px 0;
+    }
+    input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid $white;
+      background-color: $white;
+      // hide placeholder
+      &::placeholder {
+        color: transparent;
+      }
+    }
+    input:focus {
+      outline: none;
+    }
+    input:focus + label {
+      // font-size: 14px;
+      font-weight: 700;
+    }
+    input:not(:placeholder-shown) + label {
+      // font-size: 14px;
+      font-weight: 700;
+    }
+  }
+  @include responsive(md) {
+    max-width: unset;
+    &_wrapper {
+      &:last-of-type {
+        max-width: unset;
+      }
+    }
+  }
+}
+
+.project {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  // border-bottom: 1px solid $white;
+  margin-bottom: 70px;
+  width: 100%;
+  position: relative;
+  &_button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    transition: all 0.5s $ease-out-quint;
+    transform-origin: center;
+  }
+  label {
+    width: 100%;
+    padding: 10px 0;
+  }
+  textarea {
+    width: calc(100% - 20px);
+    resize: none;
+    //auto resize textarea with content
+    height: auto;
+    min-height: 42px;
+    border: none;
+    padding: 10px;
+    transition: all 0.5s $ease-out-quint;
+    background-color: $white;
+    border-bottom: 1px solid $white;
+    &::placeholder {
+      color: transparent;
+    }
+  }
+  textarea:focus {
+    outline: none;
+  }
+  textarea:focus + label {
+    // font-size: 14px;
+    font-weight: 700;
+  }
+  textarea:not(:placeholder-shown) + label {
+    // font-size: 14px;
+    font-weight: 700;
+  }
+}
+
+.recapcha {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  & > div {
+    width: fit-content;
+  }
+  .recaptcha_error {
+    color: #f4b7b7;
+    font-size: 14px;
+  }
+  .status {
+    margin: 0;
+    font-size: 14px;
+    width: 100%;
+  }
+  .status_success {
+    color: #b9f6ca;
+  }
+  .status_error {
+    color: #f4b7b7;
+  }
+  @include responsive(md) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

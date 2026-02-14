@@ -1,0 +1,18 @@
+"use client"
+
+import styles from './{{pascalCase name}}.module.scss';
+import InViewAnim from './../../utils/InViewAnim/InViewAnim'
+
+interface {{pascalCase name}}Props {
+  content?: any; // Replace 'any' with the appropriate type
+}
+
+export default function {{pascalCase name}}({content}: {{pascalCase name}}Props) {
+  return(
+    <InViewAnim><div className={styles.component}>
+      <div className={styles.wrapper}>
+        <h5>{{name}}</h5>
+      </div>
+    </div></InViewAnim>
+  );
+}

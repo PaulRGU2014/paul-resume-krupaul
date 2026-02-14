@@ -1,0 +1,276 @@
+@use "../../scss/helpers/import" as *;
+
+.component {
+  background-color: $black;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.wrapper {
+  margin: {
+    top: -1px;
+    bottom: -1px;
+  }
+  @include centered($max-width);
+}
+
+.inner {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  position: relative;
+  width: 100%;
+  @include responsive(md) {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+.slide {
+  display: flex !important;
+  gap: 200px;
+  width: 100%;
+  position: relative;
+  padding: 60px 0 0 0px;
+  section {
+    width: 100%;
+  }
+  &_wrapper {
+    width: calc(50% - 30px);
+    @include scroll-animation(
+      $anim: fromLeft,
+      $delay: 500ms,
+      $sequence: 60ms,
+      $speed: 1000ms
+    );
+  }
+  h5 {
+    color: $white;
+    font-weight: bold;
+    margin: 35px 0 10px 0;
+  }
+  h6 {
+    color: $white;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+  }
+  @include responsive(md) {
+    padding: 0;
+    gap: 0;
+    &_wrapper {
+      width: 100%;
+    }
+  }
+}
+
+.subtitle {
+  color: $red-100;
+  font-weight: bold;
+}
+
+.primary {
+  transform: translateX(0px);
+  opacity: 0;
+  transition: all 0.5s $ease-out-quint;
+  width: 100%;
+  border-radius: 16px;
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: calc(50% - 30px);
+    @include scroll-animation(
+      $anim: fromRight,
+      $delay: 300ms,
+      $sequence: 60ms,
+      $speed: 1000ms
+    );
+  }
+  &.isAnim {
+    transform: translateX(500px);
+    opacity: 0;
+    transition: all 0.5s $ease-out-quint;
+  }
+  &.isActive {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 0.5s $ease-out-quint;
+  }
+  h5 {
+    width: 100%;
+    color: $white;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+  }
+  @include responsive(md) {
+    padding: 0;
+    max-width: 100%;
+    &_wrapper {
+      width: 100%;
+      padding-right: 0;
+    }
+  }
+}
+
+.desc > p {
+  color: $white;
+}
+
+.secondary {
+  @extend .primary;
+  transform: translateX(-500px);
+  max-width: unset;
+  &_wrapper {
+    @extend .primary_wrapper;
+    width: calc(100% - 30px);
+  }
+  &.isActive {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 1s $ease-out-quint;
+  }
+  @include responsive(md) {
+    opacity: 1;
+    transform: translateX(0);
+    padding: 0;
+    &_wrapper {
+      width: 100%;
+    }
+  }
+}
+
+.colorsLine {
+  position: absolute;
+  left: calc(50% - 5px);
+  width: 10px;
+  height: 100%;
+  @include scroll-animation(
+    $anim: fromTop,
+    $delay: 100ms,
+    $sequence: 60ms,
+    $speed: 1000ms
+  );
+  &_mobile {
+    display: none;
+  }
+  @include responsive(md) {
+    display: none;
+    &_mobile {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: calc(100% + 60px);
+      margin: 0 -30px;
+      height: 20px;
+      top: calc(50% + 20px);
+      overflow: hidden;
+      @include scroll-animation(
+        $anim: fromLeft,
+        $delay: 100ms,
+        $sequence: 60ms,
+        $speed: 1000ms
+      );
+    }
+  }
+}
+
+.color {
+  width: 100%;
+  min-height: 80px;
+  @include responsive(md) {
+    min-height: 20px;
+    width: unset;
+  }
+}
+
+.image {
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 3/2;
+  overflow: hidden;
+  border-radius: 16px;
+  @include responsive(md) {
+    margin: 0 auto;
+  }
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  pointer-events: all;
+  cursor: pointer;
+  margin: 0;
+  &:hover {
+    g {
+      opacity: 1;
+    }
+  }
+  &_next {
+    @extend .arrow;
+    right: 0px;
+  }
+  &_prev {
+    @extend .arrow;
+    left: 0px;
+  }
+}
+
+.dots {
+  margin: 30px 0 60px 0;
+  background-color: transparent;
+  ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    padding: 0 0 0 80px;
+  }
+  li {
+    list-style: none;
+    display: block;
+    width: 9px;
+    height: 9px;
+    background-color: $white;
+    border-radius: 50%;
+    &:global(.slick-active) {
+      background-color: $yellow-100;
+    }
+  }
+  li > button {
+    appearance: none;
+    display: block;
+    background: transparent;
+    overflow: hidden;
+    text-indent: -100px;
+    font-size: 1px;
+    width: 150%;
+    height: 150%;
+    position: relative;
+    left: -25%;
+    top: -25%;
+    cursor: pointer;
+    border: 0;
+    margin: 0;
+  }
+  @include responsive(md) {
+    margin: 0px 0 30px 0;
+    ul {
+      padding: 0;
+      justify-content: center;
+    }
+  }
+}
+
+.hiddenImg_wrapper{
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
