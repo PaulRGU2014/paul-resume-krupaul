@@ -1,4 +1,3 @@
-// [`frontend/src/app/api/revalidate/route.ts:1`]
 import { NextResponse } from "next/server";
 import { revalidatePath, revalidateTag } from "next/cache";
 
