@@ -1,18 +1,15 @@
-import React from "react";
-import ScrollSync from "@/utils/ScrollSync/ScrollSync";
+import styles from "./HomeScroll.module.scss";
 
-export default function HomeScroll() {
+type HomeScrollProps = {
+  content?: unknown;
+  [key: string]: unknown;
+};
+
+export default function HomeScroll({ content }: HomeScrollProps) {
   return (
-    <ScrollSync>
-      <section style={{ backgroundColor: 'red' }}>
-        Section 1
-      </section>
-      <section style={{ backgroundColor: 'blue' }}>
-        Section 2
-      </section>
-      <section style={{ backgroundColor: 'green' }}>
-        Section 3
-      </section>
-    </ScrollSync>
+    <section className={styles.wrapper}>
+      <h2>HomeScroll</h2>
+      <p>Replace this snippet with real content.</p>
+    </section>
   );
 }

@@ -4,7 +4,7 @@ import { Lato } from "next/font/google";
 import { VisualEditing } from "next-sanity";
 import { draftMode } from "next/headers";
 import CookieBanner from "@/utils/CookieBanner/CookieBanner";
-import { DisableDraftMode } from "@/components/DisableDraftMode/DisableDraftMode";
+import DisableDraftMode from "@/components/DisableDraftMode/DisableDraftMode";
 
 const lato = Lato({
   weight: ["100", "300", "400", "700", "900"],

@@ -1,61 +1,15 @@
-"use client";
+import styles from "./FullPageZoom.module.scss";
 
-import { useEffect, useState } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ReactPlayer from 'react-player';
-import InViewAnim from './../../utils/InViewAnim/InViewAnim';
-import styles from './FullPageZoom.module.scss';
+type FullPageZoomProps = {
+  content?: unknown;
+  [key: string]: unknown;
+};
 
-gsap.registerPlugin(ScrollTrigger);
-
-export default function FullPageZoom({ content }: { content: any }) {
-  const [isClient, setIsClient] = useState(false);
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  useEffect(() => {
-    if (isClient && videoLoaded) {
-      gsap.fromTo(
-        `.${styles.media}`,
-        { scale: 0.4 },
-        {
-          scale: 1,
-          scrollTrigger: {
-            trigger: `.${styles.media}`,
-            start: 'top top+=50%',
-            end: 'top top',
-            scrub: true,
-          },
-        }
-      );
-    }
-  }, [isClient, videoLoaded]);
-
-  if (!isClient) {
-    return null;
-  }
-
+export default function FullPageZoom({ content }: FullPageZoomProps) {
   return (
-    <InViewAnim>
-      <div className={`${styles.component} ${content.theme==='light' ? styles.light : ''}`}>
-        <div className={styles.media}>
-          <ReactPlayer
-            className={styles.reactPlayer}
-            url={content.media_url}
-            loop={true}
-            muted={content.is_video_muted}
-            playing={true}
-            playsinline={true}
-            width='177vh'
-            height='100%'
-            onReady={() => setVideoLoaded(true)}
-          />
-        </div>
-      </div>
-    </InViewAnim>
+    <section className={styles.wrapper}>
+      <h2>FullPageZoom</h2>
+      <p>Replace this snippet with real content.</p>
+    </section>
   );
 }

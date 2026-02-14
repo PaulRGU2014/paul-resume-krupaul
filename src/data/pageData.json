@@ -1,0 +1,47 @@
+{
+  "hero": {
+    "title": "Paul Resume",
+    "subtitle": "Hardcoded Next.js page using internal JSON and static components",
+    "ctaText": "Contact Me",
+    "ctaHref": "#contact"
+  },
+  "components": [
+    {
+      "_type": "hero",
+      "_id": "hero-1"
+    },
+    {
+      "_type": "resume",
+      "_id": "resume-1"
+    },
+    {
+      "_type": "galleryCollage",
+      "_id": "gallery-1"
+    },
+    {
+      "_type": "contactForm",
+      "_id": "contact-1"
+    },
+    {
+      "_type": "footer",
+      "_id": "footer-1"
+    }
+  ],
+  "sections": [
+    {
+      "id": "about",
+      "heading": "About",
+      "body": "This is placeholder content from internal JSON."
+    },
+    {
+      "id": "experience",
+      "heading": "Experience",
+      "body": "Add your work history here."
+    },
+    {
+      "id": "projects",
+      "heading": "Projects",
+      "body": "Add your featured projects here."
+    }
+  ]
+}

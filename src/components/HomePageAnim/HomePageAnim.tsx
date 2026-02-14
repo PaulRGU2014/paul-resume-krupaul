@@ -1,9 +1,15 @@
-"use client"
+import styles from "./HomePageAnim.module.scss";
 
-export default function HomePageAnim() {
+type HomePageAnimProps = {
+  content?: unknown;
+  [key: string]: unknown;
+};
+
+export default function HomePageAnim({ content }: HomePageAnimProps) {
   return (
-    <div>
-      <h1>HomePageAnim</h1>
-    </div>
+    <section className={styles.wrapper}>
+      <h2>HomePageAnim</h2>
+      <p>Replace this snippet with real content.</p>
+    </section>
   );
 }
