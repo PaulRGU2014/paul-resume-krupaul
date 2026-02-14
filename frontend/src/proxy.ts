@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 
 const [AUTH_USER, AUTH_PASS] = (process.env.HTTP_BASIC_AUTH || ':').split(':');
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   const response = NextResponse.next();
