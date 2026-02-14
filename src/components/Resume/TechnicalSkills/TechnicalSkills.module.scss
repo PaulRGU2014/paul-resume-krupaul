@@ -1,0 +1,40 @@
+@use "../../../scss/values.scss" as *;
+@use "../../../scss/helpers/mixins.scss" as *;
+
+.section {
+  h2 {
+    margin: 0 0 16px;
+    font-size: 45px;
+  }
+}
+
+.skillGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+
+  span {
+    border-radius: 8px;
+    background: var(--tag);
+    border: 1px solid #d4dece;
+    padding: 8px 14px;
+    font-size: 23px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 1360px) {
+  .section h2 {
+    font-size: 35px;
+  }
+
+  .skillGrid span {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 960px) {
+  .section h2 {
+    font-size: 32px;
+  }
+}

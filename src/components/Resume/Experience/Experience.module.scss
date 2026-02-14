@@ -1,0 +1,106 @@
+@use "../../../scss/values.scss" as *;
+@use "../../../scss/helpers/mixins.scss" as *;
+
+.section {
+  h2 {
+    margin: 0 0 16px;
+    font-size: 45px;
+  }
+}
+
+.experienceItem {
+  padding: 8px 0 24px;
+}
+
+.headingRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+
+  h3 {
+    margin: 0;
+    font-size: 43px;
+  }
+
+  span {
+    font-size: 32px;
+    color: #243c34;
+    white-space: nowrap;
+  }
+}
+
+.subHeading {
+  margin: 4px 0 8px;
+  font-size: 31px;
+  color: #2d5547;
+}
+
+.bullets {
+  margin: 8px 0 0;
+  padding-left: 28px;
+  font-size: 34px;
+  line-height: 1.4;
+}
+
+.moreBtn {
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #2f674f;
+  font-size: 34px;
+  cursor: pointer;
+}
+
+@media (max-width: 1360px) {
+  .section h2 {
+    font-size: 35px;
+  }
+
+  .headingRow h3 {
+    font-size: 32px;
+  }
+
+  .headingRow span {
+    font-size: 24px;
+  }
+
+  .subHeading {
+    font-size: 24px;
+  }
+
+  .bullets {
+    font-size: 24px;
+  }
+
+  .moreBtn {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 960px) {
+  .section h2 {
+    font-size: 32px;
+  }
+
+  .headingRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+
+    h3 {
+      font-size: 28px;
+    }
+
+    span {
+      font-size: 20px;
+    }
+  }
+
+  .subHeading,
+  .bullets,
+  .moreBtn {
+    font-size: 20px;
+  }
+}

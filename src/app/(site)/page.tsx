@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import styles from "./page.module.scss";
 import data from "@/data/pageData.json";
 import Navigation from "@/components/Navigation/Navigation";
-import Hero from "@/components/Resume/Hero";
-import Profile from "@/components/Resume/Profile";
-import Experience from "@/components/Resume/Experience";
-import TechnicalSkills from "@/components/Resume/TechnicalSkills";
-import CoursesTraining from "@/components/Resume/CoursesTraining";
-import Education from "@/components/Resume/Education";
-import References from "@/components/Resume/References";
+import Hero from "@/components/Resume/Hero/Hero";
+import Profile from "@/components/Resume/Profile/Profile";
+import Experience from "@/components/Resume/Experience/Experience";
+import TechnicalSkills from "@/components/Resume/TechnicalSkills/TechnicalSkills";
+import CoursesTraining from "@/components/Resume/CoursesTraining/CoursesTraining";
+import Education from "@/components/Resume/Education/Education";
+import References from "@/components/Resume/References/References";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
