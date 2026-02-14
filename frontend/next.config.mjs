@@ -15,11 +15,6 @@ const nextConfig = {
   sassOptions: {
     silenceDeprecations: ["legacy-js-api"], // Disable deprecation warnings, come back when we update the system
   },
-  eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
-  },
 
   // Add security headers (Content-Security-Policy)
   async headers() {
