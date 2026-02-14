@@ -1,4 +1,3 @@
-import ComponentLoader from "@/components/ComponentLoader";
 import Example from "@/components/Example/Example";
 import pageData from "@/data/pageData.json";
 import type { Metadata } from "next";
@@ -21,8 +20,6 @@ export default function Page() {
       {pageData.sections.map((section) => (
         <Example key={section.id} heading={section.heading} body={section.body} />
       ))}
-
-      <ComponentLoader components={pageData.components} />
     </main>
   );
 }

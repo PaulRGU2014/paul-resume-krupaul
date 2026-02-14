@@ -1,8 +1,5 @@
-import { client } from "@/sanity/client";
-import { defineEnableDraftMode } from "next-sanity/draft-mode";
+import { NextResponse } from "next/server";
 
-export const { GET } = defineEnableDraftMode({
-  client: client.withConfig({
-    token: process.env.SANITY_API_READ_TOKEN,
-  }),
-});
+export async function GET() {
+  return NextResponse.json({ message: "Draft mode is disabled in static mode" }, { status: 200 });
+}

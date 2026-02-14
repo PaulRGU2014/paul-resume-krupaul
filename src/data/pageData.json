@@ -5,28 +5,6 @@
     "ctaText": "Contact Me",
     "ctaHref": "#contact"
   },
-  "components": [
-    {
-      "_type": "hero",
-      "_id": "hero-1"
-    },
-    {
-      "_type": "resume",
-      "_id": "resume-1"
-    },
-    {
-      "_type": "galleryCollage",
-      "_id": "gallery-1"
-    },
-    {
-      "_type": "contactForm",
-      "_id": "contact-1"
-    },
-    {
-      "_type": "footer",
-      "_id": "footer-1"
-    }
-  ],
   "sections": [
     {
       "id": "about",
