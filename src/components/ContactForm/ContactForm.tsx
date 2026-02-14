@@ -189,7 +189,7 @@ function ContactFormInner({ siteKey }: { siteKey: string }) {
                   />
                   <label htmlFor="message">A little information about your project</label>
                 </div>
-                <div className={styles.recapcha}>
+                <div className={styles.recaptcha}>
                   {captchaError && (
                     <p className={styles.recaptcha_error} aria-live="polite">
                       {captchaError}
