@@ -39,16 +39,16 @@ export async function POST(request: Request) {
       const path = slugFromBody.startsWith("/") ? slugFromBody : `/${slugFromBody}`;
       await revalidatePath(path);
       revalidated.push(path);
-      revalidateTag(`pages:${path}`);
+      revalidateTag(`pages:${path}`, 'max');
       revalidated.push(`tag:pages:${path}`);
     }
 
     // Always revalidate shared tags used by page data and global chrome.
-    revalidateTag("pages");
+    revalidateTag("pages", 'max');
     revalidated.push("tag:pages");
-    revalidateTag("header");
+    revalidateTag("header", 'max');
     revalidated.push("tag:header");
-    revalidateTag("footer");
+    revalidateTag("footer", 'max');
     revalidated.push("tag:footer");
 
     return NextResponse.json({ ok: true, revalidated }, { status: 200 });

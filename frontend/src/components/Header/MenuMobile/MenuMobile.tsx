@@ -3,7 +3,7 @@ import Link from '@/utils/LinkWrapper/LinkWrapper';
 import Image from 'next/image';
 import { BsChevronCompactDown } from 'react-icons/bs';
 
-function Hamburger({ isMenuOpen, hamburgerRef, onClick, initialLoad }: { isMenuOpen: boolean, hamburgerRef: React.RefObject<HTMLDivElement>, onClick?: () => void, initialLoad: boolean }) {
+function Hamburger({ isMenuOpen, hamburgerRef, onClick, initialLoad }: { isMenuOpen: boolean, hamburgerRef: React.RefObject<HTMLDivElement | null>, onClick?: () => void, initialLoad: boolean }) {
   return (
     <div
       ref={hamburgerRef}
@@ -26,7 +26,7 @@ interface MenuMobileProps {
   isMenuOpen: boolean;
   setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isMenuOpening: boolean;
-  menuRef: React.RefObject<HTMLUListElement>;
+  menuRef: React.RefObject<HTMLUListElement | null>;
   mainMenuIndex: number;
   setMainMenuIndex: (index: number) => void;
   subMenuIndex: number;
@@ -34,7 +34,7 @@ interface MenuMobileProps {
   handleMenuClick: (event: React.MouseEvent, mainIndex: number, subIndex: number, url: string, hasSubMenus: boolean) => void;
   initialLoad: boolean;
   setInitialLoad: React.Dispatch<React.SetStateAction<boolean>>;
-  hamburgerRef: React.RefObject<HTMLDivElement>;
+  hamburgerRef: React.RefObject<HTMLDivElement | null>;
   handleMenuToggle: () => void;
 }
 

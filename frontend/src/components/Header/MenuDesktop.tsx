@@ -29,7 +29,7 @@ const MenuDesktop: React.FC<MenuDesktopProps> = ({
   subMenuIndex,
   setSubMenuIndex,
   handleMenuClick,
-}): JSX.Element => {
+}) => {
   const handleKeyDown = (
     event: React.KeyboardEvent,
     index: number,
