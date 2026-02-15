@@ -2,17 +2,17 @@
 @use "../../scss/helpers/mixins.scss" as *;
 
 .page {
-  --ink: #13231f;
-  --muted: #2f4b42;
-  --bg: #d8e5d7;
-  --hero-start: #4d8d6f;
-  --hero-end: #79b295;
-  --card: #f5f4ea;
-  --tag: #e4ebde;
-  --line: #c9d8ca;
+  --ink: #{$green-1000};
+  --muted: #{$green-950};
+  --bg: #{$green-300};
+  --hero-start: #{$green-800};
+  --hero-end: #{$green-700};
+  --card: #{$green-white-500};
+  --tag: #{$green-200};
+  --line: #{$green-600};
 
   min-height: 100vh;
-  background: radial-gradient(circle at 8% 8%, #e4efe3 0%, var(--bg) 60%, #d1ddcf 100%);
+  background: radial-gradient(circle at 8% 8%, $green-100 0%, var(--bg) 60%, $green-500 100%);
   color: var(--ink);
   padding: 36px 20px 48px;
 }
@@ -27,7 +27,7 @@
 
 .bodyCard {
   margin-top: 0;
-  background: #f2f2e6;
+  background: $green-white-600;
   border-radius: 0 0 10px 10px;
   padding: 132px 40px 30px;
 }
@@ -48,10 +48,10 @@
   margin-top: 18px;
   text-align: center;
   font-size: 29px;
-  color: #1c322b;
+  color: $green-990;
 }
 
-@media (max-width: 960px) {
+@include responsive(lg) {
   .bodyCard {
     padding: 24px 20px;
     border-radius: 0 0 10px 10px;

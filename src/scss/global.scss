@@ -209,7 +209,7 @@ button {
   content: "";
   width: 50px;
   height: 50px;
-  border: 5px solid #ccc;
+  border: 5px solid $gray-light;
   border-top: 5px solid $yellow-500; /* Change this color to your preference */
   border-radius: 50%;
   animation: spin 1s linear infinite;

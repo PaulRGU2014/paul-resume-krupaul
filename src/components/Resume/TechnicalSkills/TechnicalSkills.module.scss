@@ -3,8 +3,7 @@
 
 .section {
   h2 {
-    margin: 0 0 16px;
-    font-size: 45px;
+    @include section-heading(45px);
   }
 }
 
@@ -16,14 +15,14 @@
   span {
     border-radius: 8px;
     background: var(--tag);
-    border: 1px solid #d4dece;
+    border: 1px solid $green-400;
     padding: 8px 14px;
     font-size: 23px;
     line-height: 1;
   }
 }
 
-@media (max-width: 1360px) {
+@include responsive(1360px) {
   .section h2 {
     font-size: 35px;
   }
@@ -33,7 +32,7 @@
   }
 }
 
-@media (max-width: 960px) {
+@include responsive(lg) {
   .section h2 {
     font-size: 32px;
   }

@@ -10,71 +10,56 @@ $breakpoints: (
   sm: ( min: 361px, max:480px ),
   xs: ( max:360px )
 ); // min widths are only used when 'true' is passed as second param to the responsive() mixin
-          
-//colors
-$lt-black: #737373;
+
+// Colors - Base
 $black: #000000;
 $white: #ffffff;
 
-$lt-yellow: #F6F4EF;
-$yellow: #fbf8cc;
-$yellow-logo: #FFD557;
-$porcelain: #fde4cf;
-$rose: #ffcfd2;
+// Colors - Gray Scale
+$gray-light: #ccc;      // Light gray
+$gray-medium: #666;     // Medium gray
 
-$purple: #f1c0e8;
-$dk-purple: #cfbaf0;
-$blue-purple: #a3c4f3;
+// Colors - Blue
+$blue-primary: #0070f3; // Primary blue
 
-$dk-blue: #90dbf4;
-$blue: #8eecf5;
+// Colors - Yellow Scale (Primary Accent)
+$yellow-100: #FFBA08; // Brightest yellow
+$yellow-200: #FAA307; // Medium-bright yellow
+$yellow-300: #F48C06; // Medium yellow
+$yellow-500: #DC2F02; // Dark orange-yellow
 
-$green-blue: #98f5e1;
-$green: #b9fbc0;
+// Colors - Red Scale (Alert/CTA)
+$red-100: #D00000; // Primary red
 
-$cv-lt-green: #CAE4DA;
-$cv-green: #B0CDC2;
-$cv-dk-green: #8EB8A8;
+// Colors - Green Scale (Nature Theme)
+// Very Light Greens (White Tints)
+$green-white-100: #edf8f2; // Mint white - lightest
+$green-white-200: #eaf6ee; // Light mint
+$green-white-300: #e6f4eb; // Pale mint
+$green-white-400: #faf9f2; // Cream white
+$green-white-500: #f5f4ea; // Warm cream
+$green-white-600: #f2f2e6; // Warm beige
 
-$lt-brown: #EBDAC4;
-$brown: #E6D0B2;
-$dk-brown: #E4C8A2;
+// Light Greens
+$green-100: #e4efe3; // Very light sage
+$green-200: #e4ebde; // Light sage
+$green-300: #d8e5d7; // Light sage green
+$green-400: #d4dece; // Light moss
+$green-500: #d1ddcf; // Soft sage
+$green-600: #c9d8ca; // Medium sage
 
-$lt-pink: #EDD6D6;
-$pink: #E8C4C4;
-$dk-pink: #DBA6A6;
+// Medium Greens
+$green-700: #79b295; // Seafoam green
+$green-800: #4d8d6f; // Forest green
 
-// text colour
-$neutral-black: #0d1b2a;
-$dk-navy: #1b263b;
-$navy: #415a77;
-$lt-navy: #778da9;
-$dk-white: #e0e1dd;
-
-
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #6c757d;
-$gray-700: #495057;
-$gray-800: #343a40;
-$gray-900: #212529;
-
-$yellow-100: #FFBA08;
-$yellow-200: #FAA307;
-$yellow-300: #F48C06;
-$yellow-400: #E85D04;
-$yellow-500: #DC2F02;
-
-$red-100: #D00000;
-$red-200: #9D0208;
-$red-300: #6A040F;
-$red-400: #370617;
-
-$blue: #03071E;
-$green: #b0cdc2
+// Dark Greens
+$green-900: #2f674f; // Deep forest
+$green-950: #2f4b42; // Dark teal
+$green-960: #2d5547; // Dark green
+$green-970: #243c34; // Very dark green
+$green-980: #233a33; // Very dark green (alt)
+$green-990: #1c322b; // Nearly black green
+$green-1000: #13231f; // Ink green - darkest
 
 
 

@@ -3,8 +3,7 @@
 
 .section {
   h2 {
-    margin: 0 0 16px;
-    font-size: 45px;
+    @include section-heading(45px);
   }
 }
 
@@ -25,7 +24,7 @@
 
   span {
     font-size: 32px;
-    color: #243c34;
+    color: $green-970;
     white-space: nowrap;
   }
 }
@@ -33,7 +32,7 @@
 .subHeading {
   margin: 4px 0 8px;
   font-size: 31px;
-  color: #2d5547;
+  color: $green-960;
 }
 
 .bullets {
@@ -48,12 +47,12 @@
   padding: 0;
   border: 0;
   background: none;
-  color: #2f674f;
+  color: $green-900;
   font-size: 34px;
   cursor: pointer;
 }
 
-@media (max-width: 1360px) {
+@include responsive(1360px) {
   .section h2 {
     font-size: 35px;
   }
@@ -79,7 +78,7 @@
   }
 }
 
-@media (max-width: 960px) {
+@include responsive(lg) {
   .section h2 {
     font-size: 32px;
   }
