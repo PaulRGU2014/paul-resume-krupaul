@@ -1,17 +1,14 @@
-@use "../../scss/helpers/import" as *;
+@use '../../scss/helpers/import' as *;
 
 .header {
-  position: fixed;
-  top: 16px;
-  left: 0;
-  width: 100%;
+  background-color: rgba($color: $white, $alpha: 1);
   z-index: 1000;
-  transition:
-    transform 1s $ease-out-quint,
-    opacity 1s $ease-out-quint;
-  pointer-events: none;
+  position: sticky;
+  top: 0;
+  margin-bottom: -100px;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   &.hidden {
-    transform: translateY(-120%);
+    transform: translateY(-100%);
     opacity: 0;
   }
   &.visible {
@@ -23,258 +20,226 @@
   }
 }
 
+.cart {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  animation: menuIn 500ms $ease-out-quint both;
+  text-decoration: none;
+  color: $black;
+  margin: 0;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    svg {
+      fill: $yellow-300;
+    }
+  }
+}
+
+.cartCount{
+  @extend %badge;
+}
+
 .wrapper {
   @include centered($max-width);
-  & {
+  & { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    gap: 20px;
+    position: relative;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  &_main {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding: 0 24px;
-    pointer-events: auto;
+    justify-content: center;
+    img {
+      animation: logoIn 800ms 200ms $ease-out-back both;
+    }
+  }
+  a {
+    display: flex;
+    margin: 0;
   }
 }
 
-.island {
-  position: relative;
-  isolation: isolate;
+.dropdown{
   display: flex;
-  align-items: center;
-  gap: 12px;
-  min-height: 48px;
-  height: 48px;
-  padding: 10px 20px;
-  margin-top: 20px;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(217, 217, 217, 0.3) 100%
-  );
-  box-shadow:
-    -61.8608px 151.215px 66.443px rgba(145, 145, 145, 0.01),
-    -34.3671px 84.7722px 54.9873px rgba(145, 145, 145, 0.03),
-    -16.038px 38.9494px 41.2405px rgba(145, 145, 145, 0.04),
-    -4.58228px 9.16456px 22.9114px rgba(145, 145, 145, 0.05),
-    inset 0px -11.4557px 9.16456px rgba(255, 255, 255, 0.25),
-    inset 0px 9.16456px 9.16456px rgba(255, 255, 255, 0.25);
-  -webkit-backdrop-filter: blur(22.9114px);
-  backdrop-filter: blur(22.9114px);
-  transform: translateZ(0) scale(1);
-  will-change: max-width, padding, transform;
-  transition:
-    max-width 900ms cubic-bezier(0.22, 1, 0.36, 1),
-    padding 900ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 700ms $ease-out-quint,
-    box-shadow 750ms $ease-out-quint,
-    background 750ms $ease-out-quint;
-  overflow: hidden;
-}
-
-.islandToggle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0;
-  padding: 10px 20px;
-  border-radius: 16px;
-  color: $dk-white;
-  text-transform: uppercase;
-  border: none;
-  background: none;
-  // box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.76), 0 8px 18px rgba(14, 18, 32, 0.14);
-  transform: translate(-50%, -50%);
-  transition:
-    opacity 0.3s ease-out,
-    transform 1s $ease-out-quint,
-    background 1s $ease-out-quint;
-  @extend %nav;
-  line-height: 1;
-
-  &:hover {
-    transform: translate(-50%, calc(-50% - 1px));
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.54),
-      rgba(255, 255, 255, 0.22)
-    );
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s $ease-out-quint;
+  &.active{
+    transform: rotateX(180deg);
+    transition: transform 0.3s $ease-out-quint;
   }
 }
 
-.islandDots {
-  display: inline-flex;
-  gap: 5px;
-  span {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 0 14px rgba(162, 224, 255, 0.58);
-  }
-}
-
-.islandLabel {
-  line-height: 1;
-  padding-top: 3px;
-  word-break: keep-all;
-}
-
-.islandNav {
-  overflow: hidden;
-  transition:
-    opacity 320ms ease-out,
-    max-width 900ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.islandList {
+.menuLink {
+  display: flex;
+  flex-direction: column;
   list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  margin: 0;
-  padding: 0 2px;
-}
-
-.islandItem {
-  margin: 0;
-
-  .islandToggle {
-    opacity: 1;
-    transition-delay: 0.35s;
+  margin: 0 ;
+  padding: 0;
+  position: relative;
+  animation: menuIn 500ms $ease-out-quint both;
+  // z-index: 100;
+  &_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: 40px;
+    row-gap: 20px;
+    padding: 0 20px;
+    margin: 0;
+    max-width: 768px;
+  }
+  &_link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    @extend %nav;
+    position: relative;
+    // z-index: 100;
+    &:hover {
+      cursor: pointer;
+      color: $yellow-500;
+    }
   }
 }
 
-.islandLink {
-  @extend %nav;
-  margin: 0;
-  color: $dk-white;
-  display: inline-flex;
-  align-items: center;
-  background: transparent;
-  border-color: transparent;
-  box-shadow: none;
-  opacity: 1;
-  transform: translateY(0);
-  transition:
-    color 1s $ease-out-quint,
-    box-shadow 0.25s ease-out,
-    background 0.25s ease-out,
-    opacity 380ms ease-out,
-    transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
-  @extend %nav;
-  text-decoration: none;
-
-
-  &:focus-visible {
-    transition-delay: 0.2s;
-    color: $dk-white;
-    background: transparent;
-    border-color: transparent;
-    box-shadow: none;
-  }
-}
-
-.collapsed {
-  max-width: 136px;
-  min-width: 100px;
-  padding-right: 12px;
-  border-color: rgba(255, 255, 255, 0.38);
-  transform: translateZ(0) scale(0.992);
-  box-shadow:
-    0 14px 30px rgba(9, 12, 20, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
-
-  .islandNav {
+.subMenu {
+  @extend .menuLink;
+  padding: 0;
+  &_wrapper{
+    position: absolute;
+    width: 100%;
+    background-color: rgba($color: $white, $alpha: 1);
+    width: max-content;
+    top: calc(100%);
+    left: -20px;
     opacity: 0;
-    max-width: 0;
+    visibility: hidden;
     pointer-events: none;
+    padding: 20px 60px 10px 20px;
+    z-index: 1000;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 8000;
+      pointer-events: auto;
+    }
   }
-
-  .islandLink {
-    opacity: 0;
-    transform: translateY(6px);
-    transition-delay: 0ms;
+  &_link{
+    @extend %nav;
+    text-transform: unset;
+    padding: 10px 0px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    &:hover {
+      color: $yellow-500;
+    }
   }
 }
 
-.expanded {
-  max-width: 780px;
-  padding-left: 18px;
-  padding-right: 20px;
-  border-color: rgba(255, 255, 255, 0.46);
-  transform: translateZ(0) scale(1);
-  box-shadow:
-    0 20px 42px rgba(9, 12, 20, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.78),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.14);
-
-  .islandToggle {
+.subMenu2 {
+  &_wrapper{
+    position: absolute;
+    width: 100%;
+    min-width: 100px;
+    background-color: rgba($color: $white, $alpha: 1);
+    width: max-content;
+    top: 0;
+    left: calc(100%);
     opacity: 0;
-    pointer-events: none;
+    visibility: hidden;
+    padding: 10px 20px 10px 30px;
+    z-index: 1000;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 8000;
+    }
   }
-  .islandNav {
+  &_link{
+    @extend .subMenu_link;
+  }
+}
+
+.menuButton{
+  @extend %button;
+  min-width: 120px;
+  width: fit-content;
+  animation: buttonIn 500ms $ease-out-quint both;
+  margin: 0;
+}
+
+@keyframes iconGrow {
+  0% {
+    filter: drop-shadow(0px 20px 100px #B0CDC2);
+    opacity: 0;
+  }
+  100% {
+    filter: drop-shadow(0px 4px 15px #B0CDC2);
     opacity: 1;
-    max-width: 760px;
-  }
-
-  .islandItem:nth-child(1) .islandLink {
-    transition-delay: 80ms;
-  }
-
-  .islandItem:nth-child(2) .islandLink {
-    transition-delay: 120ms;
-  }
-
-  .islandItem:nth-child(3) .islandLink {
-    transition-delay: 160ms;
-  }
-
-  .islandItem:nth-child(4) .islandLink {
-    transition-delay: 200ms;
-  }
-
-  .islandItem:nth-child(5) .islandLink {
-    transition-delay: 240ms;
-  }
-
-  .islandItem:nth-child(6) .islandLink {
-    transition-delay: 280ms;
-  }
-
-  .islandItem:nth-child(7) .islandLink {
-    transition-delay: 320ms;
-  }
-
-  .islandItem:nth-child(8) .islandLink {
-    transition-delay: 360ms;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .header,
-  .island,
-  .islandNav,
-  .islandLink,
-  .islandToggle {
-    transition: none;
+@keyframes logoIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
   }
-
-  .collapsed,
-  .expanded {
-    transform: none;
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
-@media (max-width: 1100px) {
-  .islandList {
-    gap: 4px;
+@keyframes menuIn {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
   }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
 
-  .islandLink {
-    padding: 7px 10px;
+@keyframes panelDrop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes buttonIn {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
