@@ -3,8 +3,8 @@
     "title": "KruPaul",
     "subtitle": "Chemistry educator, storyteller, and science communicator.",
     "media_source": "url",
-    "media_type": "image",
-    "media_url": "/story/Hiking.webp",
+    "media_type": "video",
+    "media_url": "https://vimeo.com/1165081692",
     "gradient": "both",
     "text_align": "left",
     "is_full_height": true
@@ -14,14 +14,28 @@
       {
         "title": "Home",
         "link": {
-          "url": "/",
+          "url": "#top",
           "is_external": false
         }
       },
       {
-        "title": "Resume",
+        "title": "Experience",
         "link": {
-          "url": "/#resume",
+          "url": "#experience",
+          "is_external": false
+        }
+      },
+      {
+        "title": "Skills",
+        "link": {
+          "url": "#skills",
+          "is_external": false
+        }
+      },
+      {
+        "title": "Bio",
+        "link": {
+          "url": "#bio",
           "is_external": false
         }
       }
@@ -31,6 +45,106 @@
       "btn_url": "/#contact",
       "is_external": false
     }
+  },
+  "experience_slider": {
+    "colors": ["#D00000", "#F48C06", "#FFBA08"],
+    "title": "Experience",
+    "body": "Selected roles and impact across chemistry education and science communication.",
+    "slides": [
+      {
+        "title": "Lead Chemistry Educator",
+        "subtitle": "Curriculum Design + Classroom Innovation",
+        "desc": "<p>Designed inquiry-driven chemistry units that boost engagement and lab confidence. Built assessment systems that track student growth across skills and concepts.</p>",
+        "image": {
+          "asset": {
+            "_ref": "/story/ChinaWall.webp"
+          },
+          "alt": "Laboratory learning"
+        }
+      },
+      {
+        "title": "Science Storyteller",
+        "subtitle": "Public Communication + Workshops",
+        "desc": "<p>Translated complex topics into hands-on demos, short talks, and digital content. Focused on clarity, curiosity, and audience participation.</p>",
+        "image": {
+          "asset": {
+            "_ref": "/story/ColoradoSpring.webp"
+          },
+          "alt": "Science outreach"
+        }
+      },
+      {
+        "title": "Mentor + Program Builder",
+        "subtitle": "Teacher Support + STEM Programs",
+        "desc": "<p>Coached educators on lab safety, lesson pacing, and standards alignment. Built STEM programs that connect students with real-world science pathways.</p>",
+        "image": {
+          "asset": {
+            "_ref": "/story/Hiking.webp"
+          },
+          "alt": "Mentoring and growth"
+        }
+      }
+    ]
+  },
+  "skills_carousel": {
+    "title": "Skills and Focus Areas",
+    "links": [
+      {
+        "title": "Curriculum Design",
+        "description": "Standards-aligned units, labs, and assessments.",
+        "link": "#experience",
+        "image": {
+          "asset": {
+            "_ref": "/story/Museum.webp"
+          },
+          "alt": "Curriculum planning"
+        }
+      },
+      {
+        "title": "Chemistry Labs",
+        "description": "Safe, student-led experiments and data analysis.",
+        "link": "#experience",
+        "image": {
+          "asset": {
+            "_ref": "/story/Sukhothai.webp"
+          },
+          "alt": "Lab experimentation"
+        }
+      },
+      {
+        "title": "Science Communication",
+        "description": "Short-form storytelling and public engagement.",
+        "link": "#bio",
+        "image": {
+          "asset": {
+            "_ref": "/story/ColoradoSpring.webp"
+          },
+          "alt": "Communication and outreach"
+        }
+      },
+      {
+        "title": "Program Leadership",
+        "description": "Mentoring teams and launching STEM initiatives.",
+        "link": "#experience",
+        "image": {
+          "asset": {
+            "_ref": "/story/Hiking.webp"
+          },
+          "alt": "Leadership and mentoring"
+        }
+      }
+    ]
+  },
+  "bio_section": {
+    "theme": "light",
+    "imgPosition": "right",
+    "image": {
+      "asset": {
+        "_ref": "/story/Museum.webp"
+      },
+      "title": "KruPaul portrait"
+    },
+    "body": "<h3>Bio</h3><p>I am a chemistry educator and science communicator focused on building curiosity-first learning experiences. My work blends classroom practice, lab safety, and public storytelling to help students and audiences connect with science in meaningful ways.</p><p>Across schools and community programs, I create clear, engaging materials that move from fundamentals to real-world application. I am especially interested in inquiry-based labs, student-centered assessment, and accessible science communication.</p>"
   },
   "footer": {
     "footer_links": [

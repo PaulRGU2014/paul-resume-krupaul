@@ -24,4 +24,3 @@ export default function SiteLayout({ children }: SiteLayoutProps) {
     </div>
   );
 }
-import "../../scss/global.scss";
