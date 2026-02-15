@@ -40,66 +40,35 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  min-height: 54px;
-  padding: 8px 14px;
+  min-height: 48px;
+  padding: 10px 20px;
   margin-top: 20px;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(0, 0, 0, 0.01);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(217, 217, 217, 0.3) 100%
+  );
   box-shadow:
-    0 12px 36px rgba(145, 145, 145, 0.05),
-    0 24px 80px rgba(145, 145, 145, 0.04),
-    inset 0 14px 22px rgba(255, 255, 255, 0.22),
-    inset 0 -14px 22px rgba(255, 255, 255, 0.22),
-    inset 6px 6px 12px rgba(255, 255, 255, 0.25),
-    inset -6px -6px 12px rgba(255, 255, 255, 0.25);
-  -webkit-backdrop-filter: blur(6.49344px);
-  backdrop-filter: blur(6.49344px);
+    -61.8608px 151.215px 66.443px rgba(145, 145, 145, 0.01),
+    -34.3671px 84.7722px 54.9873px rgba(145, 145, 145, 0.03),
+    -16.038px 38.9494px 41.2405px rgba(145, 145, 145, 0.04),
+    -4.58228px 9.16456px 22.9114px rgba(145, 145, 145, 0.05),
+    inset 0px -11.4557px 9.16456px rgba(255, 255, 255, 0.25),
+    inset 0px 9.16456px 9.16456px rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(22.9114px);
+  backdrop-filter: blur(22.9114px);
+  transform: translateZ(0) scale(1);
+  will-change: max-width, padding, transform;
   transition:
-    max-width 1s ease-in-out,
-    padding 1s ease-in-out,
-    border-color 1s $ease-out-quint,
-    box-shadow 1s $ease-out-quint,
-    background 1s $ease-out-quint;
+    max-width 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    padding 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 700ms $ease-out-quint,
+    box-shadow 750ms $ease-out-quint,
+    background 750ms $ease-out-quint;
   overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 1px;
-    left: 8px;
-    right: 8px;
-    height: 42%;
-    border-radius: 999px;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.24),
-      rgba(255, 255, 255, 0)
-    );
-    opacity: 0.35;
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: -42% 8% auto;
-    height: 82%;
-    border-radius: 999px;
-    background: conic-gradient(
-      from 90deg,
-      rgba(178, 178, 178, 0.5),
-      rgba(156, 156, 156, 0.35),
-      rgba(255, 255, 255, 0.5),
-      rgba(249, 249, 249, 0.5),
-      rgba(178, 178, 178, 0.5)
-    );
-    filter: blur(10px);
-    opacity: 0.2;
-    pointer-events: none;
-    z-index: -1;
-  }
 }
 
 .islandToggle {
@@ -110,13 +79,10 @@
   align-items: center;
   gap: 8px;
   margin: 0;
-  padding: 8px 14px;
+  padding: 10px 20px;
   border-radius: 16px;
   color: $dk-white;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 11px;
-  font-weight: 700;
   border: none;
   background: none;
   // box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.76), 0 8px 18px rgba(14, 18, 32, 0.14);
@@ -125,6 +91,8 @@
     opacity 0.3s ease-out,
     transform 1s $ease-out-quint,
     background 1s $ease-out-quint;
+  @extend %nav;
+  line-height: 1;
 
   &:hover {
     transform: translate(-50%, calc(-50% - 1px));
@@ -150,20 +118,21 @@
 
 .islandLabel {
   line-height: 1;
+  padding-top: 3px;
 }
 
 .islandNav {
   overflow: hidden;
   transition:
-    opacity 0.3s ease-out,
-    max-width 1s ease-in-out;
+    opacity 320ms ease-out,
+    max-width 900ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .islandList {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 25px;
   margin: 0;
   padding: 0 2px;
 }
@@ -171,39 +140,35 @@
 .islandItem {
   margin: 0;
 
-    .islandToggle {
-      opacity: 1;
-      transition-delay: 0.35s;
-    }
+  .islandToggle {
+    opacity: 1;
+    transition-delay: 0.35s;
+  }
 }
 
 .islandLink {
   @extend %nav;
   margin: 0;
-      transition-delay: 0s;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 0.11em;
-  font-weight: 600;
   color: $dk-white;
   display: inline-flex;
   align-items: center;
-  padding: 7px 12px;
-  border-radius: 16px;
   background: transparent;
   border-color: transparent;
   box-shadow: none;
-  transition: color 1s $ease-out-quint;
-  &:hover {
-    color: $dk-white;
-    background: transparent;
-    border-color: transparent;
-      transition-delay: 0s;
-    box-shadow: none;
-  }
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    color 1s $ease-out-quint,
+    box-shadow 0.25s ease-out,
+    background 0.25s ease-out,
+    opacity 380ms ease-out,
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+  @extend %nav;
+  text-decoration: none;
+
 
   &:focus-visible {
-      transition-delay: 0.2s;
+    transition-delay: 0.2s;
     color: $dk-white;
     background: transparent;
     border-color: transparent;
@@ -216,6 +181,7 @@
   min-width: 70px;
   padding-right: 12px;
   border-color: rgba(255, 255, 255, 0.38);
+  transform: translateZ(0) scale(0.992);
   box-shadow:
     0 14px 30px rgba(9, 12, 20, 0.24),
     inset 0 1px 0 rgba(255, 255, 255, 0.7);
@@ -225,13 +191,20 @@
     max-width: 0;
     pointer-events: none;
   }
+
+  .islandLink {
+    opacity: 0;
+    transform: translateY(6px);
+    transition-delay: 0ms;
+  }
 }
 
 .expanded {
   max-width: 780px;
-  padding-left: 8px;
-  padding-right: 10px;
+  padding-left: 18px;
+  padding-right: 20px;
   border-color: rgba(255, 255, 255, 0.46);
+  transform: translateZ(0) scale(1);
   box-shadow:
     0 20px 42px rgba(9, 12, 20, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.78),
@@ -244,6 +217,53 @@
   .islandNav {
     opacity: 1;
     max-width: 760px;
+  }
+
+  .islandItem:nth-child(1) .islandLink {
+    transition-delay: 80ms;
+  }
+
+  .islandItem:nth-child(2) .islandLink {
+    transition-delay: 120ms;
+  }
+
+  .islandItem:nth-child(3) .islandLink {
+    transition-delay: 160ms;
+  }
+
+  .islandItem:nth-child(4) .islandLink {
+    transition-delay: 200ms;
+  }
+
+  .islandItem:nth-child(5) .islandLink {
+    transition-delay: 240ms;
+  }
+
+  .islandItem:nth-child(6) .islandLink {
+    transition-delay: 280ms;
+  }
+
+  .islandItem:nth-child(7) .islandLink {
+    transition-delay: 320ms;
+  }
+
+  .islandItem:nth-child(8) .islandLink {
+    transition-delay: 360ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .island,
+  .islandNav,
+  .islandLink,
+  .islandToggle {
+    transition: none;
+  }
+
+  .collapsed,
+  .expanded {
+    transform: none;
   }
 }
 

@@ -31,18 +31,18 @@
   gap: 10px;
   min-height: 50px;
   padding: 8px 12px;
-  border-radius: 999px;
+  border-radius: 45.8228px;
   border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(0, 0, 0, 0.01);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(217, 217, 217, 0.3) 100%);
   box-shadow:
-    0 10px 32px rgba(145, 145, 145, 0.05),
-    0 20px 60px rgba(145, 145, 145, 0.04),
-    inset 0 12px 18px rgba(255, 255, 255, 0.22),
-    inset 0 -12px 18px rgba(255, 255, 255, 0.22),
-    inset 5px 5px 10px rgba(255, 255, 255, 0.25),
-    inset -5px -5px 10px rgba(255, 255, 255, 0.25);
-  -webkit-backdrop-filter: blur(6.49344px);
-  backdrop-filter: blur(6.49344px);
+    -61.8608px 151.215px 66.443px rgba(145, 145, 145, 0.01),
+    -34.3671px 84.7722px 54.9873px rgba(145, 145, 145, 0.03),
+    -16.038px 38.9494px 41.2405px rgba(145, 145, 145, 0.04),
+    -4.58228px 9.16456px 22.9114px rgba(145, 145, 145, 0.05),
+    inset 0px -11.4557px 9.16456px rgba(255, 255, 255, 0.25),
+    inset 0px 9.16456px 9.16456px rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(22.9114px);
+  backdrop-filter: blur(22.9114px);
   transition: max-width 0.42s ease-in-out, padding 0.42s ease-in-out,
     border-color 0.3s ease-out, box-shadow 0.3s ease-out, border-radius 0.3s ease-out;
   overflow: hidden;
