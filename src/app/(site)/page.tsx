@@ -19,7 +19,7 @@ export default function Page() {
         <FullPageHero content={homeContent.hero} />
       </section>
       <section id="experience" className="pageSection">
-        <TwoColumnSlider content={homeContent.experience_slider} />
+        <TwoColumnSlider content={homeContent.project_slider} />
       </section>
       <section id="skills" className="pageSection">
         <GridLinksCarousel content={homeContent.skills_carousel} />

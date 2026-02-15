@@ -157,45 +157,11 @@ export default function SliderColors({ content }: TwoColumnSliderProps) {
     <InViewAnim>
       <div className={styles.component}>
         <div className={styles.wrapper}>
+          <div className={styles.content}>
+            <h3 className={styles.title}>{content.title}</h3>
+            <h6 className={styles.body}>{content.body}</h6>
+          </div>
           <div className={styles.inner}>
-            <div className={styles.primary_wrapper}>
-              <div className={styles.hiddenImg_wrapper}>
-                {content?.slides?.map((slide, index) => (
-                  <Image
-                    key={index}
-                    className={styles.hiddenImg}
-                    src={slide.image?.asset._ref || ""}
-                    alt={slide.image?.alt || "default alt text"}
-                    objectFit="cover"
-                    objectPosition="center"
-                    priority={true}
-                    tabIndex={0}
-                  />
-                ))}
-              </div>
-              <section
-                className={`${styles.primary}
-                  ${fadeSlideIndex === activeSlideIndex ? styles.isFade : ""}
-                  ${animSlideIndex !== fadeSlideIndex && animSlideIndex !== activeSlideIndex ? styles.isAnim : ""}
-                  ${animSlideIndex === activeSlideIndex && animSlideIndex !== fadeSlideIndex ? styles.isActive : ""}`}
-              >
-                {!!content.slides[activeSlideIndex]?.image?.asset?._ref && (
-                  <Image
-                    className={styles.image}
-                    src={content.slides[activeSlideIndex].image?.asset._ref}
-                    alt={
-                      content.slides[activeSlideIndex].image?.alt ||
-                      "default alt text"
-                    }
-                    objectFit="cover"
-                    objectPosition="center"
-                    priority={true}
-                    tabIndex={0}
-                    area-label="Image"
-                  />
-                )}
-              </section>
-            </div>
             <Slider ref={sliderRef} {...sliderSetting}>
               {content.slides.map(
                 (

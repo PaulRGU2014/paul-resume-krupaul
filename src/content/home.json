@@ -46,10 +46,10 @@
       "is_external": false
     }
   },
-  "experience_slider": {
+  "project_slider": {
     "colors": ["#D00000", "#F48C06", "#FFBA08"],
-    "title": "Experience",
-    "body": "Selected roles and impact across chemistry education and science communication.",
+    "title": "Projects",
+    "body": "From backend architecture to polished UI — here’s what I’ve shipped.",
     "slides": [
       {
         "title": "Lead Chemistry Educator",

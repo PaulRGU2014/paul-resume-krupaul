@@ -5,6 +5,7 @@
   height: 70vh;
   position: relative;
   overflow: hidden;
+  background-color: $black;
   @include scroll-animation($anim: fadeIn, $speed: 1000ms);
   &.halfHeight {
     height: 70vh;
@@ -61,8 +62,8 @@
     height: 100%;
     background: linear-gradient(
       0deg,
-      rgba(0, 0 , 0, 1) 0%,
-      rgba(0, 0 , 0, 0) 50%
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0) 50%
     );
     z-index: 1;
   }
@@ -70,8 +71,8 @@
     &::before {
       background: linear-gradient(
         0deg,
-        rgba(0, 0 , 0, 0) 0%,
-        rgba(0, 0 , 0, 1) 50%
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 50%
       );
     }
   }
@@ -79,10 +80,10 @@
     &::before {
       background: linear-gradient(
         0deg,
-        rgba(0, 0 , 0, 1) 0%,
-        rgba(0, 0 , 0, 0) 50%,
-        rgba(0, 0 , 0, 0) 50%,
-        rgba(0, 0 , 0, 1) 100%
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 50%,
+        rgba(0, 0, 0, 0) 50%,
+        rgba(0, 0, 0, 1) 100%
       );
     }
   }
@@ -109,7 +110,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-end;
   height: calc(100%);
   position: relative;
@@ -118,7 +119,7 @@
     bottom: $standard-vertical-spacing;
   }
   @include centered($max-width);
-  @include responsive (md) {
+  @include responsive(md) {
     align-items: center;
   }
   .left & {
@@ -142,9 +143,19 @@
   max-width: 750px;
   * {
     color: $white;
-    margin: 0;
+    margin: 0 0 20px 0;
   }
-  h3,
+  h1, h2, h3, h4, h5, h6 {
+    text-shadow:
+      0px 2px 4px rgba(0, 0, 0, 0.8),
+      0px 4px 8px rgba(0, 0, 0, 0.6),
+      0px 8px 16px rgba(0, 0, 0, 0.4),
+      0px 0px 20px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+    @include responsive(md) {
+      text-align: center;
+    }
+  }
   h5 {
     text-shadow:
       0px 2px 4px rgba(0, 0, 0, 0.8),
