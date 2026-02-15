@@ -1,7 +1,6 @@
 import styles from "./MenuMobile.module.scss";
 import Link from "@/utils/LinkWrapper/LinkWrapper";
 import Image from "next/image";
-import { BsChevronCompactDown } from "react-icons/bs";
 
 function Hamburger({
   isMenuOpen,
@@ -10,7 +9,7 @@ function Hamburger({
   initialLoad,
 }: {
   isMenuOpen: boolean;
-  hamburgerRef: React.RefObject<HTMLDivElement>;
+  hamburgerRef: React.RefObject<HTMLDivElement | null>;
   onClick?: () => void;
   initialLoad: boolean;
 }) {
@@ -36,21 +35,15 @@ interface MenuMobileProps {
   isMenuOpen: boolean;
   setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isMenuOpening: boolean;
-  menuRef: React.RefObject<HTMLUListElement>;
-  mainMenuIndex: number;
-  setMainMenuIndex: (index: number) => void;
-  subMenuIndex: number;
-  setSubMenuIndex: React.Dispatch<React.SetStateAction<number>>;
+  menuRef: React.RefObject<HTMLUListElement | null>;
   handleMenuClick: (
     event: React.MouseEvent,
-    mainIndex: number,
-    subIndex: number,
-    url: string,
-    hasSubMenus: boolean
+    url?: string,
+    closeMenu?: boolean
   ) => void;
   initialLoad: boolean;
   setInitialLoad: React.Dispatch<React.SetStateAction<boolean>>;
-  hamburgerRef: React.RefObject<HTMLDivElement>;
+  hamburgerRef: React.RefObject<HTMLDivElement | null>;
   handleMenuToggle: () => void;
 }
 
@@ -60,10 +53,6 @@ function MenuContent({
   setIsMenuOpen,
   isMenuOpening,
   menuRef,
-  mainMenuIndex,
-  setMainMenuIndex,
-  subMenuIndex,
-  setSubMenuIndex,
   handleMenuClick,
 }: MenuMobileProps) {
   return (
@@ -86,81 +75,19 @@ function MenuContent({
             style={{
               transitionDelay: isMenuOpening ? `${(index + 1) * 100}ms` : "0ms",
             }}
-            onMouseEnter={() => setMainMenuIndex(index)}
-            onMouseLeave={() => setMainMenuIndex(-1)}
           >
             <Link
               href={item.link.url}
               onClick={(event) =>
-                handleMenuClick(event, index, -1, item.url, !!item.sub_menus_1)
+                handleMenuClick(
+                  event,
+                  item?.link?.url,
+                  true
+                )
               }
             >
               {item.title}
-              {item.sub_menus_1 && item.sub_menus_1.length > 0 && (
-                <div
-                  className={`${styles.dropdown} ${mainMenuIndex === index ? styles.active : ""}`}
-                >
-                  <BsChevronCompactDown />
-                </div>
-              )}
             </Link>
-            {item?.sub_menus_1 && (
-              <ul
-                className={`${styles.subMenu_wrapper} ${mainMenuIndex === index ? styles.active : ""}`}
-              >
-                {item?.sub_menus_1?.map((subMenus1: any, subIndex: number) => (
-                  <li
-                    key={subIndex}
-                    className={`${styles.subMenu}`}
-                    onMouseEnter={() => setSubMenuIndex(subIndex)}
-                    onMouseLeave={() => setSubMenuIndex(-1)}
-                    onClick={() => setSubMenuIndex(subIndex)}
-                  >
-                    <Link
-                      href={subMenus1?.link?.url}
-                      className={styles.subMenu_link}
-                      onClick={(event) =>
-                        handleMenuClick(
-                          event,
-                          index,
-                          subIndex,
-                          subMenus1.url,
-                          !!subMenus1.sub_menus_2
-                        )
-                      }
-                    >
-                      {subMenus1.title}
-                      {subMenus1.sub_menus_2 &&
-                        subMenus1.sub_menus_2.length > 0 && (
-                          <div
-                            className={`${styles.dropdown} ${subMenuIndex === subIndex ? styles.active : ""}`}
-                          >
-                            <BsChevronCompactDown />
-                          </div>
-                        )}
-                    </Link>
-                    {subMenus1?.sub_menus_2 && (
-                      <ul
-                        className={`${styles.subMenu_wrapper} ${subMenuIndex === subIndex ? styles.active : ""}`}
-                      >
-                        {subMenus1?.sub_menus_2?.map(
-                          (subMenus2: any, subIndex2: number) => (
-                            <li key={subIndex2} className={styles.subMenu}>
-                              <Link
-                                href={subMenus2.link.url}
-                                className={styles.subMenu_link}
-                              >
-                                {subMenus2.title}
-                              </Link>
-                            </li>
-                          )
-                        )}
-                      </ul>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            )}
           </li>
         ))}
         <li
@@ -191,10 +118,6 @@ function MenuContent({
 
 export default function MenuMobile({
   content,
-  mainMenuIndex,
-  setMainMenuIndex,
-  subMenuIndex,
-  setSubMenuIndex,
   handleMenuClick,
   isMenuOpen,
   setIsMenuOpen,
@@ -221,10 +144,6 @@ export default function MenuMobile({
             setIsMenuOpen,
             isMenuOpening,
             menuRef,
-            mainMenuIndex,
-            setMainMenuIndex,
-            subMenuIndex,
-            setSubMenuIndex,
             handleMenuClick,
             initialLoad,
             setInitialLoad,

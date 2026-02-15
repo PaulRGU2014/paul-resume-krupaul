@@ -5,6 +5,7 @@
   position: relative;
   background-color: $white;
   padding: 60px 0;
+  background: linear-gradient(0deg, rgba($color: $black, $alpha: 1) 0%, rgba($color: $white, $alpha: 1) 25%, rgba($color: $white, $alpha: 1) 75%, rgba($color: $black, $alpha: 1) 100%);
 
   :global(.slick-track) {
     display: flex;
@@ -34,13 +35,14 @@
       transform: translateY(-30px);
     }
   }
-  @include responsive (sm) {
+  @include responsive(sm) {
     padding: 45px 0;
     :global(.slick-track) {
       padding: 0;
     }
     :global(.slick-slide) {
-      &:nth-of-type(odd), &:nth-of-type(even) {
+      &:nth-of-type(odd),
+      &:nth-of-type(even) {
         transform: translateY(0);
       }
     }
@@ -63,11 +65,11 @@
     text-align: center;
     margin: 0;
   }
-  @include responsive (md) {
+  @include responsive(md) {
     margin: {
       top: 0;
       bottom: 0;
-    };
+    }
     & {
       gap: 45px;
     }
@@ -121,12 +123,12 @@
   position: relative;
   width: 100%;
   height: calc(100%);
-  &:not(:hover){
+  &:not(:hover) {
     .text {
       transform: translateY(100%);
     }
   }
-  &:hover{
+  &:hover {
     .text {
       transform: translateY(0);
     }

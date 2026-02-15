@@ -1,60 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import Link from "@/utils/LinkWrapper/LinkWrapper";
 import Image from "next/image";
-import { BsChevronCompactDown, BsCart3 } from "react-icons/bs";
 import styles from "./MenuDesktop.module.scss";
 
 interface MenuDesktopProps {
   content: any;
   isVisible: boolean;
-  mainMenuIndex: number;
-  setMainMenuIndex: (index: number) => void;
-  subMenuIndex: number;
-  setSubMenuIndex: React.Dispatch<React.SetStateAction<number>>;
   handleMenuClick: (
     event: React.MouseEvent | React.KeyboardEvent,
-    mainIndex: number,
-    subIndex: number,
-    url: string,
-    hasSubMenus: boolean
+    url?: string
   ) => void;
 }
 
 const MenuDesktop: React.FC<MenuDesktopProps> = ({
   content,
   isVisible,
-  mainMenuIndex,
-  setMainMenuIndex,
-  subMenuIndex,
-  setSubMenuIndex,
   handleMenuClick,
-}): JSX.Element => {
-  const handleKeyDown = (
-    event: React.KeyboardEvent,
-    index: number,
-    subIndex: number,
-    hasSubMenus: boolean
-  ) => {
-    if (event.key === "ArrowDown") {
+}) => {
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter") {
       event.preventDefault();
-      if (hasSubMenus) {
-        setMainMenuIndex(index);
-        setSubMenuIndex(subIndex);
-      }
-    } else if (event.key === "ArrowUp") {
-      event.preventDefault();
-      setMainMenuIndex(-1);
-      setSubMenuIndex(-1);
-    } else if (event.key === "Enter") {
-      event.preventDefault();
-      if (hasSubMenus) {
-        setMainMenuIndex(index);
-        setSubMenuIndex(subIndex);
-      } else {
-        const linkElement = event.currentTarget.querySelector("a");
-        if (linkElement) {
-          linkElement.click();
-        }
+      const linkElement = event.currentTarget.querySelector("a");
+      if (linkElement) {
+        linkElement.click();
       }
     }
   };
@@ -81,147 +49,23 @@ const MenuDesktop: React.FC<MenuDesktopProps> = ({
             <li
               className={styles.menuLink}
               key={index}
-              onMouseEnter={() => setMainMenuIndex(index)}
-              onMouseLeave={() => setMainMenuIndex(-1)}
               style={{
                 animationDelay: `${index * 150 + 500}ms`,
                 zIndex: 1000 - index,
               }}
-              onKeyDown={(event) =>
-                handleKeyDown(event, index, -1, !!menu.sub_menus_1)
-              }
-              aria-hidden={
-                menu.sub_menus_1 && menu.sub_menus_1.length > 0 ? "false" : "true"
-              }
-              aria-expanded={mainMenuIndex === index ? "true" : "false"}
-              aria-controls={`submenu-${index}`}
+              onKeyDown={handleKeyDown}
               role="menuitem"
             >
               <Link
                 href={menu?.link?.url}
                 target={menu?.link?.is_external === true ? "_blank" : "_self"}
                 className={styles.menuLink_link}
-                onClick={(event) =>
-                  handleMenuClick(
-                    event,
-                    index,
-                    -1,
-                    menu.url,
-                    !!menu.sub_menus_1
-                  )
-                }
+                onClick={(event) => handleMenuClick(event, menu?.link?.url)}
                 tabIndex={0}
                 aria-label={menu.title}
               >
                 {menu.title}
-                {menu.sub_menus_1 && menu.sub_menus_1.length > 0 && (
-                  <div
-                    className={`${styles.dropdown} ${mainMenuIndex === index ? styles.active : ""}`}
-                  >
-                    <BsChevronCompactDown />
-                  </div>
-                )}
               </Link>
-              {menu?.sub_menus_1 && (
-                <ul
-                  id={`submenu-${index}`}
-                  className={`${styles.subMenu_wrapper}  ${mainMenuIndex === index ? styles.active : ""}`}
-                  style={{
-                    height: menu.sub_menus_1.length * 40 + "px",
-                  }}
-                  role="menu"
-                >
-                  {menu?.sub_menus_1?.map(
-                    (subMenus1: any, subIndex: number) => (
-                      <li
-                        key={subIndex}
-                        className={`${styles.subMenu}`}
-                        onMouseEnter={() => setSubMenuIndex(subIndex)}
-                        onMouseLeave={() => setSubMenuIndex(-1)}
-                        onClick={() => setSubMenuIndex(subIndex)}
-                        style={{
-                          zIndex: 5000 - subIndex,
-                        }}
-                        aria-hidden={
-                          subMenus1.sub_menus_2 &&
-                          subMenus1.sub_menus_2.length > 0
-                            ? "false"
-                            : "true"
-                        }
-                        aria-expanded={subMenuIndex === subIndex ? "true" : "false"}
-                        aria-controls={`submenu2-${index}-${subIndex}`}
-                        role="menuitem"
-                        onKeyDown={(event) =>
-                          handleKeyDown(
-                            event,
-                            index,
-                            subIndex,
-                            !!subMenus1.sub_menus_2
-                          )
-                        }
-                      >
-                        <Link
-                          href={subMenus1?.link?.url}
-                          target={
-                            subMenus1?.link?.is_external === true
-                              ? "_blank"
-                              : "_self"
-                          }
-                          className={styles.subMenu_link}
-                          tabIndex={0}
-                          aria-label={subMenus1.title}
-                        >
-                          {subMenus1.title}
-                          {subMenus1.sub_menus_2 &&
-                            subMenus1.sub_menus_2.length > 0 && (
-                              <div
-                                className={`${styles.dropdown} ${subMenuIndex === subIndex ? styles.active : ""}`}
-                              >
-                                <BsChevronCompactDown />
-                              </div>
-                            )}
-                        </Link>
-                        {subMenus1?.sub_menus_2 && (
-                          <ul
-                            id={`submenu2-${index}-${subIndex}`}
-                            className={`${styles.subMenu2_wrapper} ${subMenuIndex === subIndex ? styles.active : ""}`}
-                            style={{
-                              height: subMenus1.sub_menus_2.length * 40 + "px",
-                            }}
-                            role="menu"
-                          >
-                            {subMenus1?.sub_menus_2?.map(
-                              (subMenus2: any, subIndex2: number) => (
-                                <li
-                                  key={subIndex2}
-                                  className={styles.subMenu}
-                                  onKeyDown={(event) =>
-                                    handleKeyDown(event, index, subIndex2, false)
-                                  }
-                                  role="menuitem"
-                                >
-                                  <Link
-                                    href={subMenus2?.link?.url}
-                                    target={
-                                      subMenus2?.link?.is_external === true
-                                        ? "_blank"
-                                        : "_self"
-                                    }
-                                    className={styles.subMenu_link}
-                                    tabIndex={0}
-                                  >
-                                    {subMenus2.title}
-                                  </Link>
-                                </li>
-                              )
-                            )}
-                          </ul>
-                        )}
-                      </li>
-                    )
-                  )}
-                </ul>
-              )}
             </li>
           ))}
         </ul>

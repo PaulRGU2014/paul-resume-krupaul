@@ -19,9 +19,9 @@
         }
       },
       {
-        "title": "Experience",
+        "title": "Projects",
         "link": {
-          "url": "#experience",
+          "url": "#projects",
           "is_external": false
         }
       },
@@ -41,8 +41,8 @@
       }
     ],
     "menu_btn": {
-      "btn_text": "Contact",
-      "btn_url": "/#contact",
+      "btn_text": "Contact Me",
+      "btn_url": "mailto:paul@krupaul.com",
       "is_external": false
     }
   },

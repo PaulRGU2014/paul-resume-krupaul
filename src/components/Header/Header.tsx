@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useCallback, useRef } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import React, { useEffect, useState, useCallback, useRef, useMemo } from "react";
 import MenuDesktop from "./MenuDesktop";
 import MenuMobile from "./MenuMobile/MenuMobile";
 
@@ -15,15 +14,27 @@ const Header: React.FC<HeaderProps> = ({ content }) => {
   const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(
     null
   );
-  const [mainMenuIndex, setMainMenuIndex] = useState(-1);
-  const [subMenuIndex, setSubMenuIndex] = useState(-1);
   const [screenWidth, setScreenWidth] = useState<number | undefined>(undefined);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuOpening, setIsMenuOpening] = useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
 
-  const router = useRouter();
-  const pathname = usePathname();
+  const activeSectionRef = useRef<string | null>(null);
+
+  const sectionIds = useMemo(() => {
+    const ids = new Set<string>();
+    const addFromUrl = (url?: string) => {
+      if (url && url.startsWith("#")) {
+        ids.add(url.slice(1));
+      }
+    };
+
+    content?.menu_list?.forEach((item: any) => {
+      addFromUrl(item?.link?.url);
+    });
+
+    return Array.from(ids);
+  }, [content]);
 
   const controlHeader = useCallback(() => {
     if (typeof window !== "undefined") {
@@ -97,10 +108,11 @@ const Header: React.FC<HeaderProps> = ({ content }) => {
   }, [menuRef, hamburgerRef]);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setInitialLoad(false);
     }, 300);
-  }, [, isMenuOpen]);
+    return () => clearTimeout(timer);
+  }, [isMenuOpen]);
 
   const menuListNumber = content?.footer_links?.length || 0;
 
@@ -120,36 +132,76 @@ const Header: React.FC<HeaderProps> = ({ content }) => {
   }
 
   const handleMenuClick = (
-    event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element>,
-    mainIndex: number,
-    subIndex: number,
-    url: string,
-    hasSubMenus: boolean
+    _event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element>,
+    _url?: string,
+    closeMenu = true
   ) => {
-    if (hasSubMenus && mainMenuIndex !== mainIndex) {
-      event.preventDefault();
-      setMainMenuIndex(mainIndex);
-    } else if (
-      hasSubMenus &&
-      mainMenuIndex === mainIndex &&
-      subMenuIndex !== subIndex
-    ) {
-      event.preventDefault();
-      setSubMenuIndex(-1);
-    } else if (!hasSubMenus) {
-      if (pathname === url) {
-        window.location.href = url;
-      }
+    if (closeMenu) {
+      setIsMenuOpen(false);
     }
   };
+
+  useEffect(() => {
+    if (typeof window === "undefined" || sectionIds.length === 0) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visible.length === 0) {
+          return;
+        }
+
+        const section = visible[0].target as HTMLElement;
+        const id = section.id;
+        if (!id || activeSectionRef.current === id) {
+          return;
+        }
+
+        activeSectionRef.current = id;
+        const nextHash = `#${id}`;
+        if (window.location.hash !== nextHash) {
+          window.history.replaceState(null, "", nextHash);
+        }
+      },
+      {
+        root: null,
+        threshold: 0.5,
+      }
+    );
+
+    sectionIds.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, [sectionIds]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !isMenuOpen) {
+      return;
+    }
+
+    const handleHashChange = () => {
+      setIsMenuOpen(false);
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, [isMenuOpen]);
 
   useEffect(() => {
     const handleResize = () => {
       setIsVisible(true);
       setLastScrollY(0);
       setScrollTimeout(null);
-      setMainMenuIndex(-1);
-      setSubMenuIndex(-1);
       setScreenWidth(window.outerWidth);
       setIsMenuOpen(false);
       setIsMenuOpening(false);
@@ -171,10 +223,6 @@ const Header: React.FC<HeaderProps> = ({ content }) => {
           {...{
             content,
             isVisible,
-            mainMenuIndex,
-            setMainMenuIndex,
-            subMenuIndex,
-            setSubMenuIndex,
             handleMenuClick,
           }}
         />
@@ -182,10 +230,6 @@ const Header: React.FC<HeaderProps> = ({ content }) => {
         <MenuMobile
           {...{
             content,
-            mainMenuIndex,
-            setMainMenuIndex,
-            subMenuIndex,
-            setSubMenuIndex,
             handleMenuClick,
             isMenuOpen,
             setIsMenuOpen,

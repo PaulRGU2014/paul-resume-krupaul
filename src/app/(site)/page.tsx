@@ -18,7 +18,7 @@ export default function Page() {
       <section id="top" className="pageSection">
         <FullPageHero content={homeContent.hero} />
       </section>
-      <section id="experience" className="pageSection">
+      <section id="projects" className="pageSection">
         <TwoColumnSlider content={homeContent.project_slider} />
       </section>
       <section id="skills" className="pageSection">

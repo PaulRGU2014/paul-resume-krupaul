@@ -4,27 +4,38 @@
   background-color: $black;
   position: relative;
   width: 100%;
+  min-height: 80vh;
   overflow: hidden;
   z-index: 20;
   padding: 60px 0;
+  display: flex;
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   margin: {
     top: -1px;
     bottom: -1px;
   }
   @include centered($max-width);
-
 }
 
-.content{
+.content {
   margin: 0 0 20px 0;
-  h3, h6 {
+  h3,
+  h6 {
     color: $white;
     margin: 0;
     text-align: center;
   }
+  @include scroll-animation(
+    $anim: fromBottom,
+    $sequence: 60ms,
+    $speed: 1000ms,
+    $delay: 1000ms
+  );
 }
 
 .inner {
@@ -279,7 +290,7 @@
   }
 }
 
-.hiddenImg_wrapper{
+.hiddenImg_wrapper {
   position: absolute;
   width: 0;
   height: 0;
