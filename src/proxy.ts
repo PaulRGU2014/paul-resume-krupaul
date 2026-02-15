@@ -9,16 +9,6 @@ export function proxy(request: NextRequest) {
   const response = NextResponse.next();
   response.headers.set("x-pathname", pathname);
 
-  // Allow unauthenticated access for webhook and draft-mode endpoints
-  const allowedPaths = [
-    "/api/revalidate",
-    "/api/draft-mode/enable",
-    "/api/draft-mode/disable",
-  ];
-  if (allowedPaths.some((p) => pathname.startsWith(p))) {
-    return response;
-  }
-
   // Skip authentication if HTTP_BASIC_AUTH is not set
   if (!process.env.HTTP_BASIC_AUTH) {
     return response;

@@ -10,9 +10,11 @@ interface HeroProps {
   name: string;
   role: string;
   links: HeroLink[];
+  profileTitle: string;
+  profileDescription: string;
 }
 
-export default function Hero({ name, role, links }: HeroProps) {
+export default function Hero({ name, role, links, profileTitle, profileDescription }: HeroProps) {
   return (
     <section className={styles.hero}>
       <div className={styles.iconRow}>
@@ -25,6 +27,11 @@ export default function Hero({ name, role, links }: HeroProps) {
 
       <h1 className={styles.name}>{name}</h1>
       <p className={styles.role}>{role}</p>
+      
+      <div className={styles.profileCard}>
+        <h2>{profileTitle}</h2>
+        <p dangerouslySetInnerHTML={{ __html: profileDescription }} />
+      </div>
     </section>
   );
 }

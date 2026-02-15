@@ -3,7 +3,6 @@ import styles from "./page.module.scss";
 import data from "@/data/pageData.json";
 import Navigation from "@/components/Navigation/Navigation";
 import Hero from "@/components/Resume/Hero/Hero";
-import Profile from "@/components/Resume/Profile/Profile";
 import Experience from "@/components/Resume/Experience/Experience";
 import TechnicalSkills from "@/components/Resume/TechnicalSkills/TechnicalSkills";
 import CoursesTraining from "@/components/Resume/CoursesTraining/CoursesTraining";
@@ -36,10 +35,14 @@ export default function Page() {
 
       <div className={styles.shell}>
         <div id="hero" style={scrollMarginStyle}>
-          <Hero name={data.hero.name} role={data.hero.role} links={data.hero.links} />
+          <Hero 
+            name={data.hero.name} 
+            role={data.hero.role} 
+            links={data.hero.links}
+            profileTitle={data.profile.title}
+            profileDescription={data.profile.description}
+          />
         </div>
-
-        <Profile title={data.profile.title} description={data.profile.description} />
 
         <div className={styles.bodyCard}>
           <div className={styles.layoutGrid}>

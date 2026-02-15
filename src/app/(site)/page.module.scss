@@ -18,11 +18,11 @@
 }
 
 .shell {
-  max-width: 1040px;
-  margin: 0 auto;
+  @include centered ($max-width);
   display: flex;
   flex-direction: column;
   gap: 0;
+  position: relative;
 }
 
 .bodyCard {
