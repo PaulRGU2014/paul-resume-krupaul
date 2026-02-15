@@ -1,0 +1,47 @@
+{
+  "hero": {
+    "title": "KruPaul",
+    "subtitle": "Chemistry educator, storyteller, and science communicator.",
+    "media_source": "url",
+    "media_type": "image",
+    "media_url": "/story/Hiking.webp",
+    "gradient": "both",
+    "text_align": "left",
+    "is_full_height": true
+  },
+  "header": {
+    "menu_list": [
+      {
+        "title": "Home",
+        "link": {
+          "url": "/",
+          "is_external": false
+        }
+      },
+      {
+        "title": "Resume",
+        "link": {
+          "url": "/#resume",
+          "is_external": false
+        }
+      }
+    ],
+    "menu_btn": {
+      "btn_text": "Contact",
+      "btn_url": "/#contact",
+      "is_external": false
+    }
+  },
+  "footer": {
+    "footer_links": [
+      {
+        "link_title": "Email",
+        "link_url": "mailto:hello@krupaul.com"
+      },
+      {
+        "link_title": "LinkedIn",
+        "link_url": "https://www.linkedin.com/company/krupaul/"
+      }
+    ]
+  }
+}

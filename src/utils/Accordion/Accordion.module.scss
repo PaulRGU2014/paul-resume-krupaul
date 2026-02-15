@@ -1,0 +1,44 @@
+@use '../../scss/helpers/import' as *;
+
+.accordionList {
+  padding: 0 0 0 35px;
+  position: relative;
+  &::before {
+      content: "+"; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 32px;
+      color: $yellow-500;   
+      position: absolute;
+      top: 3px;
+      left: 0;
+      transform: rotateZ(0deg);   
+      transform-origin: center;
+      transition: all 0.5s $ease-out-quint;   
+  }
+  &.toggleOpen{
+      &::before{
+          transform: rotateZ(90deg);
+          content: "|";
+          font-size: 24px;
+          font-weight: 700;
+      }
+  }
+  &.noToggle{
+      &::before{
+          display: none;
+      }
+  }
+}
+
+
+.content{
+  padding: 0 0 0 35px;
+  overflow: hidden;
+  transition: all 0.5s $ease-out-quint 0s;
+}

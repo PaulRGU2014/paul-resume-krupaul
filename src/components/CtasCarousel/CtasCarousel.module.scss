@@ -1,0 +1,126 @@
+@use "../../scss/helpers/import" as *;
+
+$slide-gap-start: 50px;
+$slide-gap-mobile-1: calc(#{$slide-gap-start} * 0.5);
+$slide-gap-mobile-2: calc(#{$slide-gap-start} * 0.5);
+
+.component {
+  padding: 60px 0;
+
+  :global(.slick-track) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: stretch;
+    height: max-content;
+  }
+
+  :global(.slick-slide) {
+    display: flex !important;
+    height: auto;
+    padding: 0 calc(#{$slide-gap-start} / 2);
+    @include scroll-animation(
+      $anim: fromLeft,
+      $sequence: 60ms,
+      $speed: 1000ms,
+      $delay: 250ms
+    );
+  }
+
+  :global(.slick-list) {
+    left: calc($slide-gap-start / -2);  
+  }
+
+  @include responsive(lg) {
+    :global(.slick-slide) {
+      padding: 0 calc(#{$slide-gap-mobile-1} / 2);
+    }
+    :global(.slick-list) {
+      left: calc($slide-gap-mobile-1 / -2);
+    }
+  }
+
+  @include responsive(md) {
+    padding: 40px 0;
+  }
+
+  @include responsive(sm) {
+    padding: 30px 0;
+    :global(.slick-slide) {
+      padding: 0 calc(#{$slide-gap-mobile-2} / 2);
+    }
+    :global(.slick-list) {
+      left: calc($slide-gap-mobile-2 / -2);
+    }
+  }
+}
+
+.wrapper {
+  @include centered($max-width);
+  & {
+    margin: {
+      top: $standard-vertical-spacing;
+      bottom: $standard-vertical-spacing;
+    }
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  h3 {
+    text-align: center;
+    color: $white;
+  }
+}
+
+.cta {
+  display: flex !important;
+  flex-direction: column;
+  position: relative;
+  padding: 20px 30px;
+  // width: calc(100% - 60px) !important;
+  height: 100%;
+  border: 1px solid rgba($color: $black, $alpha: 0.3);
+  // max-width: 315px;
+  background-color: $white;
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: calc(100% + #{$slide-gap-start});
+    padding: 0;
+  }
+  &_eyebrow{
+    @extend %eyebrow;
+    margin: 0 0 5px 0;
+  }
+  &_link {
+    @extend %button;
+    margin: auto 0 0 0;
+    text-align: center;
+  }
+  &_content{
+    margin-top: 20px;
+  }
+  h5{
+    margin-bottom: 10px;
+  }
+  p{
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  @include responsive(lg) {
+    &_wrapper {
+      width: calc(100% + #{$slide-gap-mobile-1});
+    }
+  }
+  @include responsive(sm) {
+    &_wrapper {
+      width: calc(100% + #{$slide-gap-mobile-2});
+    }
+  }
+}
+
+.carousel {
+  width: 100%;
+  position: relative;
+}

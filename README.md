@@ -22,21 +22,9 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Environment variables
 
-- Use env files instead of inline script variables:
-	- Development: `.env.development.local` (gitignored)
-	- Local production-like: `.env.local` (gitignored)
-	- Example: `.env.example` (non-secret placeholders)
-
-- Public keys (`NEXT_PUBLIC_*`) are exposed to the browser. Keep secrets (tokens, passwords) only in `.env.*.local` and your hosting provider.
-- For Vercel, set the same keys in Project Settings → Environment Variables or sync locally with `vercel env pull .env.local`.
-
-Scripts now use standard Next.js commands and read from env files:
-
-```bash
-npm run dev      # uses .env.development.local
-npm run build    # uses .env.local
-npm run start    # uses .env.local
-```
+- Copy `.env.example` to `.env.local` and fill in your own values. Do not commit `.env.local` (already gitignored).
+- For Vercel, set the same keys in the project Settings → Environment Variables or sync locally with `vercel env pull .env.local`.
+- Public keys (`NEXT_PUBLIC_*`) can stay public, but secrets (tokens, passwords) must only live in `.env.local`/Vercel.
 
 ## Learn More
 

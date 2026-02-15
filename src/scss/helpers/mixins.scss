@@ -123,75 +123,13 @@
   white-space: nowrap;
 }
 
-@mixin setup-perspective($depth: 1000px, $origin: center center) {
+@mixin setup-perspective($depth: $perspective-depth, $origin: center center) {
   perspective: $depth;
   perspective-origin: $origin;
   transform-style: preserve-3d;
 }
 
-@mixin anchor-fill($z-index: 1) {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+@mixin anchor-fill($z-index: z-layer(base, +1)) {
+  @include fill-parent();
   z-index: $z-index;
-}
-
-// Resume component mixins
-@mixin hero-gradient($start-color, $end-color) {
-  background: linear-gradient(145deg, $start-color, $end-color);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
-}
-
-@mixin glass-card($bg-color: $green-white-400, $shadow-opacity: 0.12) {
-  background: $bg-color;
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  border-radius: 18px;
-  box-shadow: 0 12px 28px rgba(55, 79, 67, $shadow-opacity);
-}
-
-@mixin icon-link($size: 20px, $color: $green-white-100) {
-  width: $size;
-  height: $size;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-size: calc($size * 0.6);
-  color: $color;
-  opacity: 0.95;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
-@mixin responsive-heading($base-size, $min-size, $max-size, $vw-unit: 5vw) {
-  font-size: clamp($min-size, $vw-unit, $max-size);
-}
-
-@mixin section-heading($font-size: 45px) {
-  margin: 0 0 16px;
-  font-size: $font-size;
-}
-
-@mixin stack-list-item {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-
-  strong {
-    display: block;
-    font-size: 40px;
-    line-height: 1.2;
-  }
-
-  span {
-    display: block;
-    color: $green-980;
-    font-size: 31px;
-    line-height: 1.3;
-  }
 }

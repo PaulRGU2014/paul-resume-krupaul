@@ -1,90 +1,89 @@
-@use "../../../scss/values.scss" as *;
-@use "../../../scss/helpers/mixins.scss" as *;
+@use "../../scss/helpers/import" as *;
 
-.hero {
-  @include hero-gradient(var(--hero-start), var(--hero-end));
-  border-radius: 12px 12px 0 0;
-  padding: 34px 44px 96px;
-  position: relative;
-  min-height: 40vh;
+.component {
+    background-color: $lt-yellow;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    min-height: 80vh;
+    @include scroll-animation($anim: fromTop, $speed: 1000ms );
 }
 
-.iconRow {
-  display: flex;
-  justify-content: flex-end;
-  gap: 14px;
-
-  a {
-    @include icon-link(20px, $green-white-100);
-  }
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    padding: 80px 0 60px 0;
+    // overflow: hidden;
 }
 
-.name {
-  margin-top: 44px;
-  text-align: center;
-  @include responsive-heading(64px, 38px, 64px, 5vw);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: $green-white-200;
-  line-height: 1.1;
+.bricks{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    position: absolute;
+    right: 80%;
+    top: -70px;
+    width: 545px;
+    min-height: 350px;
+    height: 100%;
+    row-gap: 40px;
+    &_each{
+        width: 200px;
+        height: 100px;
+        transform: rotate(-45deg);
+        margin: 0 -30px;;
+        opacity: 0;
+        [data-in-view=true] &{
+            opacity: 1;
+            transition: all 1s $ease-out-quint;
+        }
+    }
 }
 
-.role {
-  margin: 14px 0 0;
-  text-align: center;
-  color: $green-white-300;
-  @include responsive-heading(42px, 17px, 42px, 2.2vw);
-  line-height: 1.15;
-}
-
-.profileCard {
-  @include glass-card($green-white-400, 0.12);
-  position: absolute;
-  left: 46px;
-  right: 46px;
-  top: calc(40vh);
-  padding: 34px 42px;
-
-  h2 {
-    margin: 0 0 10px;
-    font-size: 38px;
-  }
-
-  p {
-    margin: 0;
-    font-size: 17px;
-    line-height: 1.7;
-    color: var(--muted);
-  }
-}
-
-@include responsive(1360px) {
-  .profileCard h2 {
-    font-size: 32px;
-  }
-
-  .profileCard p {
-    font-size: 16px;
-  }
-}
-
-@include responsive(lg) {
-  .hero {
-    padding: 24px 24px 34px;
-    border-radius: 10px;
-  }
-
-  .iconRow {
+.inner{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     justify-content: center;
-  }
-
-  .name {
-    margin-top: 22px;
-  }
-
-  .profileCard {
-    position: static;
-    margin-top: 20px;
-    padding: 20px;
-  }
+    padding: 50px 0;
+    position: relative;
+    @include centered ($max-width);
 }
+
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    max-width: 860px;
+    @include scroll-animation($anim: fromLeft, $speed: 1000ms, $delay: 500ms );
+    h2, h6{
+        color: $lt-black;
+        text-align: center;
+        letter-spacing: 5px;
+    }
+    h2{
+        display: inline-flex;
+        justify-content: center;
+        column-gap: 20px;
+        row-gap: 10px;
+        flex-wrap: wrap;
+    }
+    @include responsive(md){
+        width: 60%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
