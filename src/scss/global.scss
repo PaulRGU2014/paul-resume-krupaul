@@ -7,13 +7,7 @@ html {
 
 body {
   background-color: $black;
-  .content-area {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    background-color: $black;
-  }
+  box-sizing: border-box;
 }
 
 .pageSection {

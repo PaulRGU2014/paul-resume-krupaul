@@ -28,7 +28,7 @@
   & {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     padding: 0 24px;
     pointer-events: auto;
   }
@@ -41,6 +41,7 @@
   align-items: center;
   gap: 12px;
   min-height: 48px;
+  height: 48px;
   padding: 10px 20px;
   margin-top: 20px;
   border-radius: 16px;
@@ -119,6 +120,7 @@
 .islandLabel {
   line-height: 1;
   padding-top: 3px;
+  word-break: keep-all;
 }
 
 .islandNav {
@@ -178,7 +180,7 @@
 
 .collapsed {
   max-width: 136px;
-  min-width: 70px;
+  min-width: 100px;
   padding-right: 12px;
   border-color: rgba(255, 255, 255, 0.38);
   transform: translateZ(0) scale(0.992);
