@@ -3,7 +3,13 @@ import InViewAnim from './../../utils/InViewAnim/InViewAnim'
 import RichTextUtil from './../../utils/RichText/RichText'
 
 interface RichTextCompProps {
-  content: any; // Replace 'any' with the appropriate type
+  content: {
+    theme: string,
+    text_align: string,
+    isFullHeight: boolean,
+    maxWidth?: number,
+    content: string
+  }
 }
 
 export default function RichTextComp({content}: RichTextCompProps) {

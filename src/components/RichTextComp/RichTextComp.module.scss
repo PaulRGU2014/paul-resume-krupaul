@@ -3,11 +3,12 @@
 .component {
   width: 100%;
   background-color: $white;
+  height: 50vh;
   &.dark {
     background-color: $black;
   }
   &.fullHeight {
-    height: 100vh;
+    height: 80vh;
   }
   margin: {
     top: -1px;

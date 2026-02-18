@@ -20,7 +20,7 @@ export default function Page() {
         <FullPageHero content={homeContent.hero} />
       </section>
       <section id="bio" className="pageSection">
-        <RichTextComp content={homeContent.bio_section.body} />
+        <RichTextComp content={homeContent.bio_section} />
       </section>
       <section id="projects" className="pageSection">
         <TwoColumnSlider content={homeContent.project_slider} />
