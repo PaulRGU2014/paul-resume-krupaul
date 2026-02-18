@@ -6,6 +6,7 @@ import TwoColumnSlider from "@/components/TwoColumnSlider/TwoColumnSlider";
 import GridLinksCarousel from "@/components/GridLinksCarousel/GridLinksCarousel";
 import TextAndImage from "@/components/TextAndImage/TextAndImage";
 import homeContent from "@/content/home.json";
+import RichTextComp from "@/components/RichTextComp/RichTextComp";
 
 export const metadata: Metadata = {
   title: "KruPaul | Home",
@@ -18,14 +19,14 @@ export default function Page() {
       <section id="top" className="pageSection">
         <FullPageHero content={homeContent.hero} />
       </section>
+      <section id="bio" className="pageSection">
+        <RichTextComp content={homeContent.bio_section.body} />
+      </section>
       <section id="projects" className="pageSection">
         <TwoColumnSlider content={homeContent.project_slider} />
       </section>
       <section id="skills" className="pageSection">
         <GridLinksCarousel content={homeContent.skills_carousel} />
-      </section>
-      <section id="bio" className="pageSection">
-        <TextAndImage content={homeContent.bio_section} />
       </section>
       <Footer content={homeContent.footer} />
     </>

@@ -136,15 +136,9 @@
     ]
   },
   "bio_section": {
-    "theme": "light",
-    "imgPosition": "right",
-    "image": {
-      "asset": {
-        "_ref": "/story/Museum.webp"
-      },
-      "title": "KruPaul portrait"
-    },
-    "body": "<h3>Bio</h3><p>I am a chemistry educator and science communicator focused on building curiosity-first learning experiences. My work blends classroom practice, lab safety, and public storytelling to help students and audiences connect with science in meaningful ways.</p><p>Across schools and community programs, I create clear, engaging materials that move from fundamentals to real-world application. I am especially interested in inquiry-based labs, student-centered assessment, and accessible science communication.</p>"
+    "theme": "dark",
+    "maxWidth": "800px",
+    "body": "<h6>I’m a Senior Full Stack Engineer with six years of experience building dynamic, user‑focused web applications. At KruPaul, I work with React, Next.js, Strapi, and Sanity to turn design concepts into fast, reliable, and accessible digital experiences. I enjoy bridging front‑end and back‑end systems to create responsive interfaces that feel intuitive and support real business goals.</h6>"
   },
   "footer": {
     "footer_links": [
