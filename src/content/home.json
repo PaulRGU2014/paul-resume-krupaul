@@ -1,20 +1,17 @@
 {
-  "hero": {
-    "title": "Paul Thanataweenont",
-    "subtitle": "Senior Full-Stack Engineer",
-    "media_source": "url",
-    "media_type": "video",
-    "media_url": "https://vimeo.com/1165081692",
-    "gradient": "both",
-    "text_align": "right",
-    "is_full_height": true
-  },
   "header": {
     "menu_list": [
       {
         "title": "Home",
         "link": {
           "url": "#top",
+          "is_external": false
+        }
+      },
+      {
+        "title": "Bio",
+        "link": {
+          "url": "#bio",
           "is_external": false
         }
       },
@@ -31,13 +28,6 @@
           "url": "#skills",
           "is_external": false
         }
-      },
-      {
-        "title": "Bio",
-        "link": {
-          "url": "#bio",
-          "is_external": false
-        }
       }
     ],
     "menu_btn": {
@@ -45,7 +35,24 @@
       "btn_url": "mailto:paul@krupaul.com",
       "is_external": false
     }
+  },  
+  "hero": {
+    "title": "Paul Thanataweenont",
+    "subtitle": "Senior Full-Stack Engineer",
+    "media_source": "url",
+    "media_type": "video",
+    "media_url": "https://vimeo.com/1165081692",
+    "gradient": "both",
+    "text_align": "right",
+    "is_full_height": true
   },
+  "bio_section": {
+    "theme": "dark",
+    "maxWidth": "800",
+    "text_align": "center",
+    "isFullHeight": true,
+    "content": "<h6>I’m a Senior Full Stack Engineer with six years of experience building dynamic, user‑focused web applications. At KruPaul, I work with React, Next.js, Strapi, and Sanity to turn design concepts into fast, reliable, and accessible digital experiences. I enjoy bridging front‑end and back‑end systems to create responsive interfaces that feel intuitive and support real business goals.</h6>"
+  },  
   "project_slider": {
     "colors": ["#D00000", "#F48C06", "#FFBA08"],
     "title": "Projects",
@@ -57,9 +64,9 @@
         "desc": "<p>Designed inquiry-driven chemistry units that boost engagement and lab confidence. Built assessment systems that track student growth across skills and concepts.</p>",
         "image": {
           "asset": {
-            "_ref": "/story/ChinaWall.webp"
+            "_ref": "/clients/Inventory_logo.svg"
           },
-          "alt": "Laboratory learning"
+          "alt": "Bizybees logo"
         }
       },
       {
@@ -68,22 +75,33 @@
         "desc": "<p>Translated complex topics into hands-on demos, short talks, and digital content. Focused on clarity, curiosity, and audience participation.</p>",
         "image": {
           "asset": {
-            "_ref": "/story/ColoradoSpring.webp"
+            "_ref": "/clients/bizybees-logo.svg"
           },
           "alt": "Science outreach"
         }
       },
       {
-        "title": "Mentor + Program Builder",
-        "subtitle": "Teacher Support + STEM Programs",
-        "desc": "<p>Coached educators on lab safety, lesson pacing, and standards alignment. Built STEM programs that connect students with real-world science pathways.</p>",
+        "title": "Denver Thai Temple",
+        "subtitle": "Website Design & Development",
+        "desc": "<p>Denver Thai Temple is a cultural and spiritual center for the Thai community in Colorado, offering meditation, community events, and traditional Buddhist ceremonies. They needed a modern, welcoming website to help visitors easily find schedules, events, and temple information.<br/>I designed and developed a <strong>clean, multilingual, community‑focused website</strong> that highlights the temple’s mission, activities, and cultural presence. The site features simple navigation, event visibility, and a calm visual identity inspired by Thai aesthetics. The project continues to evolve with upcoming additions such as photo galleries, donation tools, and expanded community resources.</p>",
         "image": {
           "asset": {
-            "_ref": "/story/Hiking.webp"
+            "_ref": "/clients/Temple_Logo_FIX2.png"
           },
-          "alt": "Mentoring and growth"
+          "alt": "Denver Thai Temple"
         }
-      }
+      },
+        {
+          "title": "Erawan Security",
+          "subtitle": "Overseas project — Thailand",
+          "desc": "<p>Erawan Security delivers reliable, professional protection for residential communities, commercial buildings, factories, and events across Thailand. Their team is rigorously trained, disciplined, and equipped to provide 24/7 safety with modern reporting and quality control. By using Krupaul to streamline operations and coordination, Erawan Security can focus on what matters most — keeping people and property safe.​​​​‌</p>",
+          "image": {
+            "asset": {
+              "_ref": "/clients/Logo_Erawan_eng.svg"
+            },
+            "alt": "Erawan Security"
+          }
+        }
     ]
   },
   "skills_carousel": {
@@ -134,13 +152,6 @@
         }
       }
     ]
-  },
-  "bio_section": {
-    "theme": "dark",
-    "maxWidth": "800",
-    "text_align": "center",
-    "isFullHeight": true,
-    "content": "<h6>I’m a Senior Full Stack Engineer with six years of experience building dynamic, user‑focused web applications. At KruPaul, I work with React, Next.js, Strapi, and Sanity to turn design concepts into fast, reliable, and accessible digital experiences. I enjoy bridging front‑end and back‑end systems to create responsive interfaces that feel intuitive and support real business goals.</h6>"
   },
   "footer": {
     "footer_links": [

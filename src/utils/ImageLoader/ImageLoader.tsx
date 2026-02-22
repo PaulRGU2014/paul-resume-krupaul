@@ -9,12 +9,13 @@ interface ImageLoaderProps extends React.HTMLProps<HTMLDivElement> {
   priority?: boolean;
   src: string;
   alt: string;
+  unoptimized?: boolean;
   // onLoad for consumers who want the native image load event
   onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
 }
 
 const ImageLoader = React.forwardRef<HTMLImageElement, ImageLoaderProps>(
-  ({ className, style, src, alt, objectFit = "cover", objectPosition, priority, onClick, onLoad, ...rest }, ref) => {
+  ({ className, style, src, alt, objectFit = "cover", objectPosition, priority, unoptimized = false, onClick, onLoad, ...rest }, ref) => {
     if (!src) {
       return null;
     }
@@ -36,6 +37,7 @@ const ImageLoader = React.forwardRef<HTMLImageElement, ImageLoaderProps>(
             objectPosition: objectPosition as React.CSSProperties['objectPosition']
           }}
           priority={priority ? priority : false}
+          unoptimized={unoptimized}
           // forward ref to the underlying <img> element so parents can measure it
           ref={ref as any}
           // forward onLoad to the underlying image element
