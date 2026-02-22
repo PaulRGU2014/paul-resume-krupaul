@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const [AUTH_USER, AUTH_PASS] = (process.env.HTTP_BASIC_AUTH || ':').split(':');
+const [AUTH_USER, AUTH_PASS] = (process.env.HTTP_BASIC_AUTH || ":").split(":");
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const response = NextResponse.next();
 
   // Skip authentication if HTTP_BASIC_AUTH is not set
@@ -11,7 +11,7 @@ export function middleware(request: NextRequest) {
     return response;
   }
 
-  // Step 1. HTTP Basic Auth Middleware for Challenge
+  // Step 1. HTTP Basic Auth Proxy for Challenge
   if (!isAuthenticated(request)) {
     return new NextResponse("Authentication required", {
       status: 401,
@@ -37,11 +37,7 @@ function isAuthenticated(req: NextRequest) {
   const user = auth[0];
   const pass = auth[1];
 
-  if (user === AUTH_USER && pass === AUTH_PASS) {
-    return true;
-  } else {
-    return false;
-  }
+  return user === AUTH_USER && pass === AUTH_PASS;
 }
 
 // Step 3. Configure "Matching Paths" below to protect routes with HTTP Basic Auth

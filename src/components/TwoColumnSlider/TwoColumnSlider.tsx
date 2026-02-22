@@ -186,7 +186,7 @@ export default function SliderColors({ content }: TwoColumnSliderProps) {
                   <button
                     key={index}
                     className={`${styles.dot} ${selectedIndex === index ? styles.dot_active : ""}`}
-                    onClick={() => emblaApi?.scrollSnapList().length && emblaApi.scrollToSnapListIndex(index)}
+                    onClick={() => emblaApi?.scrollTo(index)}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                 ))}
