@@ -24,8 +24,8 @@ export default function Page() {
       <section id="projects" className="pageSection">
         <TwoColumnSlider content={homeContent.project_slider} />
       </section>
-      <section id="testimonials" className="pageSection">
-        <TestimonialsCarousel content={homeContent.testimonials} />
+      <section id="references" className="pageSection">
+        <TestimonialsCarousel content={homeContent.references} />
       </section>
       <Footer content={homeContent.footer} />
     </>

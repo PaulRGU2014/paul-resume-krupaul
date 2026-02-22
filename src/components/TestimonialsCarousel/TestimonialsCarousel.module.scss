@@ -3,13 +3,6 @@
 .component {
   position: relative;
   padding: 70px 0;
-  // background: linear-gradient(
-  //   180deg,
-  //   rgba($color: $black, $alpha: 1) 0%,
-  //   rgba($color: $black, $alpha: 1) 35%,
-  //   rgba($color: $black, $alpha: 1) 65%,
-  //   rgba($color: $black, $alpha: 1) 100%
-  // );
   background-color: $black;
   overflow: hidden;
 }
@@ -23,24 +16,37 @@
 
   h3 {
     margin: 0;
+    color: $white;
     text-align: center;
+    @include scroll-animation(
+      $anim: fromTop,
+      $sequence: 60ms,
+      $speed: 1000ms,
+      $delay: 0ms
+    );
   }
 }
 
 .embla {
   overflow: hidden;
   width: 100%;
+  @include scroll-animation(
+    $anim: fromBottom,
+    $sequence: 120ms,
+    $speed: 1000ms,
+    $delay: 250ms
+  );    
 }
 
 .embla__container {
   display: flex;
   gap: 20px;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 20px;  
 }
 
 .embla__slide {
-  flex: 0 0 25%;
+  flex: 0 0 calc((100% - 20px) / 4);
   min-width: 0;
   padding: 10px 0 20px;
 }
@@ -161,6 +167,6 @@
   }
 
   .card {
-    padding: 24px 22px 22px;
+    // padding: 24px 22px 22px;
   }
 }

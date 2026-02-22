@@ -19,7 +19,7 @@ export default function Footer({
       <footer className={styles.component} aria-label="Footer">
         <div className={styles.wrapper}>
           <div className={styles.inner}>
-            <nav aria-label="Footer Links">
+            {/* <nav aria-label="Footer Links">
               <ul className={styles.link_wrapper}>
                 {!!content &&
                   content.footer_links?.map((item: any, index: number) => (
@@ -30,7 +30,7 @@ export default function Footer({
                     </li>
                   ))}
               </ul>
-            </nav>
+            </nav> */}
             <div className={styles.social_wrapper} aria-label="Social Media Links">
               <Link
                 href="https://github.com/PaulRGU2014"

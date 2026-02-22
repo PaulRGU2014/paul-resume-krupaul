@@ -23,9 +23,9 @@
         }
       },
       {
-        "title": "Testimonials",
+        "title": "References",
         "link": {
-          "url": "#testimonials",
+          "url": "#references",
           "is_external": false
         }
       }
@@ -104,7 +104,7 @@
         }
     ]
   },
-  "testimonials": {
+  "references": {
     "title": "My LinkedIn References",
     "testimonials": [
       {
@@ -126,16 +126,22 @@
         "company": "TTM Technologies"
       },
       {
-        "quote": "Beyond the code, Paul is a thoughtful collaborator. He listened, asked the right questions, and turned feedback into tangible product improvements.",
-        "name": "Joel T.",
-        "role": "Design Director",
-        "company": "Mosaic Lab"
+        "quote": "I was Paul's classmate at Robert Gordon University. He is a great student and a great friend. He always tries to do his best in whatever he sets his mind to. He is always willing to help others at work and in their personal life. He thinks critically about solving problems and is able to overcome any challenges that come his way.",
+        "name": "Jakarin A.",
+        "role": "Senior Drilling Engineer",
+        "company": "PTT Exploration and Production"
       },
       {
-        "quote": "We worked with Paul on a multi-locale launch. He built a solid foundation that still supports new content and features without fragile workarounds.",
-        "name": "Nina P.",
-        "role": "Marketing Ops",
-        "company": "Atlas Ventures"
+        "quote": "Paul is a good friend and a hard worker. He enjoys challenging work and always strives to produce only the best results. If he does not know something, he will learn everything there is to learn about the topic until he becomes an expert. He is happy to share his knowledge and skills with others and is always eager to learn from them as well.",
+        "name": "Suwat P.",
+        "role": "Senior Drilling Supervisor",
+        "company": "PTT Exploration and Production"
+      },
+      {
+        "quote": "Paul always brings a great attitude and enthusiasm to work every day. He is always eager to learn more about a process or discuss a new way of looking at it.",
+        "name": "Joe A.",
+        "role": "Process Engineer",
+        "company": "TTM Technologies"
       }
     ]
   },
