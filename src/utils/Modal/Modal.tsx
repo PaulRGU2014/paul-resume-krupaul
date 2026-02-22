@@ -50,7 +50,7 @@ export default function Modal({ children, isOpen, onClose}: ModalProps) {
       <div className={styles.modal__content} 
         ref={modalRef}
       >
-        <button className={styles.modal__close} onClick={onClose}>
+        <button className={styles.modal__close} onClick={onClose} title="Close modal" aria-label="Close modal">
           <BsXLg />
         </button>
         {children}

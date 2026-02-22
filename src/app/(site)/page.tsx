@@ -3,8 +3,7 @@ import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import FullPageHero from "@/components/FullPageHero/FullPageHero";
 import TwoColumnSlider from "@/components/TwoColumnSlider/TwoColumnSlider";
-import GridLinksCarousel from "@/components/GridLinksCarousel/GridLinksCarousel";
-import TextAndImage from "@/components/TextAndImage/TextAndImage";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel/TestimonialsCarousel";
 import homeContent from "@/content/home.json";
 import RichTextComp from "@/components/RichTextComp/RichTextComp";
 
@@ -25,8 +24,8 @@ export default function Page() {
       <section id="projects" className="pageSection">
         <TwoColumnSlider content={homeContent.project_slider} />
       </section>
-      <section id="skills" className="pageSection">
-        <GridLinksCarousel content={homeContent.skills_carousel} />
+      <section id="testimonials" className="pageSection">
+        <TestimonialsCarousel content={homeContent.testimonials} />
       </section>
       <Footer content={homeContent.footer} />
     </>

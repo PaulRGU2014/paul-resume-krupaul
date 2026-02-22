@@ -1,0 +1,165 @@
+@use "../../scss/helpers/import" as *;
+
+.component {
+  position: relative;
+  padding: 70px 0;
+  background: linear-gradient(
+    180deg,
+    rgba($color: $white, $alpha: 1) 0%,
+    rgba($color: $yellow-100, $alpha: 0.08) 100%
+  );
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+  @include centered($max-width);
+
+  h3 {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.embla {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.embla__slide {
+  flex: 0 0 25%;
+  min-width: 0;
+  padding: 10px 0 20px;
+}
+
+.card {
+  position: relative;
+  height: 100%;
+  border-radius: 18px;
+  background: linear-gradient(
+    160deg,
+    rgba($color: $white, $alpha: 1) 0%,
+    rgba($color: $white, $alpha: 0.7) 100%
+  );
+  border: 1px solid rgba($color: $black, $alpha: 0.08);
+  box-shadow: 0 12px 24px rgba($color: $black, $alpha: 0.08);
+  padding: 75px 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quoteMark {
+  position: absolute;
+  top: -3px;
+  left: 12px;
+  height: auto;
+  font-size: 80px;
+  line-height: 1;
+  color: rgba($color: $red-100, $alpha: 0.16);
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.quote {
+  margin: 0;
+  color: $black;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.readMore {
+  align-self: flex-start;
+  border: 0;
+  background: none;
+  padding: 0;
+  color: $red-100;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s $ease-out-quint;
+
+  &:hover {
+    color: $black;
+  }
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.name {
+  font-weight: 700;
+  color: $black;
+}
+
+.role {
+  color: rgba($color: $black, $alpha: 0.7);
+}
+
+.modalContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 60px 10px 10px;
+}
+
+.modalQuoteMark {
+  position: absolute;
+  top: -14px;
+  left: -13px;
+  height: auto;
+  font-size: 80px;
+  line-height: 1;
+  color: rgba($color: $red-100, $alpha: 0.12);
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.modalQuote {
+  margin: 0;
+  color: $black;
+}
+
+@media (max-width: 920px) {
+  .embla__slide {
+    flex: 0 0 33.3333%;
+  }
+}
+
+@media (max-width: 768px) {
+  .embla__slide {
+    flex: 0 0 50%;
+  }
+
+  .quote {
+    -webkit-line-clamp: 6;
+  }
+}
+
+@media (max-width: 520px) {
+  .embla__slide {
+    flex: 0 0 100%;
+  }
+
+  .card {
+    padding: 24px 22px 22px;
+  }
+}

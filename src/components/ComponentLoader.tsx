@@ -7,6 +7,7 @@
 	import RichTextComp from './RichTextComp/RichTextComp';
 	import HeroBannerImg from './HeroBannerImg/HeroBannerImg';
 	import GridLinksCarousel from './GridLinksCarousel/GridLinksCarousel';
+  import TestimonialsCarousel from './TestimonialsCarousel/TestimonialsCarousel';
 	import FullPageZoom from './FullPageZoom/FullPageZoom';
 	import FullPageHero from './FullPageHero/FullPageHero';
 	import CtasCarousel from './CtasCarousel/CtasCarousel';
@@ -43,6 +44,7 @@ const componentMap: { [key: string]: React.ComponentType<any> } = {
 	richTextComp: RichTextComp,
 	heroBannerImg: HeroBannerImg,
 	gridLinksCarousel: GridLinksCarousel,
+  testimonialsCarousel: TestimonialsCarousel,
 	fullPageZoom: FullPageZoom,
 	fullPageHero: FullPageHero,
 	ctasCarousel: CtasCarousel,

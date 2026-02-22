@@ -39,7 +39,7 @@
 
 }
 
-.richtext > * {
+.richtext * {
   color: $black;
   
   @include scroll-animation(

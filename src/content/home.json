@@ -23,9 +23,9 @@
         }
       },
       {
-        "title": "Skills",
+        "title": "Testimonials",
         "link": {
-          "url": "#skills",
+          "url": "#testimonials",
           "is_external": false
         }
       }
@@ -59,9 +59,9 @@
     "body": "From backend architecture to polished UI — here’s what I’ve shipped.",
     "slides": [
       {
-        "title": "Lead Chemistry Educator",
-        "subtitle": "Curriculum Design + Classroom Innovation",
-        "desc": "<p>Designed inquiry-driven chemistry units that boost engagement and lab confidence. Built assessment systems that track student growth across skills and concepts.</p>",
+        "title": "Inventory Manager",
+        "subtitle": "Inventory – Smarter Business Made Simple",
+        "desc": "<p>Invento helps small businesses track inventory, monitor sales, and grow with insights—all in one app. Access it anywhere, on desktop or mobile, and keep your business organized without the hassle.</p><p><strong>Why Inventory?</strong></p><ul><li>Real-time inventory & sales tracking</li><li>Actionable analytics for growth</li><li>Simple, powerful, and built for small businesses</li><li>Try the beta now: inventory.krupaul.com</li></ul>",
         "image": {
           "asset": {
             "_ref": "/clients/Inventory_logo.svg"
@@ -70,9 +70,9 @@
         }
       },
       {
-        "title": "Science Storyteller",
-        "subtitle": "Public Communication + Workshops",
-        "desc": "<p>Translated complex topics into hands-on demos, short talks, and digital content. Focused on clarity, curiosity, and audience participation.</p>",
+        "title": "Bizybees Daycare",
+        "subtitle": "A Modern, Family‑Centered Childcare Platform",
+        "desc": "<p>Bizybees is a local daycare project I’m building from the ground up, designed to give families a simple, reliable way to stay connected with their child’s daily experience. The platform includes parent dashboards, real‑time activity updates, enrollment management, and a clean, friendly interface that reflects the daycare’s warm community values. My focus is on creating a system that feels personal and trustworthy while maintaining the technical quality of a modern web application. Bizybees blends thoughtful design with practical tools, helping parents feel informed and supported as their children learn and grow.</p>",
         "image": {
           "asset": {
             "_ref": "/clients/bizybees-logo.svg"
@@ -104,52 +104,38 @@
         }
     ]
   },
-  "skills_carousel": {
-    "title": "Skills and Focus Areas",
-    "links": [
+  "testimonials": {
+    "title": "My LinkedIn References",
+    "testimonials": [
       {
-        "title": "Curriculum Design",
-        "description": "Standards-aligned units, labs, and assessments.",
-        "link": "#experience",
-        "image": {
-          "asset": {
-            "_ref": "/story/Museum.webp"
-          },
-          "alt": "Curriculum planning"
-        }
+        "quote": "Paul is a highly driven and detail-oriented engineer who consistently delivers thoughtful, high-quality work. His CSS expertise stands out, and he brings strong React and TypeScript skills to every project.\nWhat differentiates Paul is how effectively he leverages AI to accelerate development in a safe and practical way. He approaches problems iteratively, stays current with emerging tools, and applies them with real impact.\nHe’s collaborative, reliable, and a strong asset to any team looking for both solid fundamentals and modern thinking.",
+        "name": "Mohammad  A.",
+        "role": "Senior Drupaul Developer",
+        "company": "Chronos Interactive"
       },
       {
-        "title": "Chemistry Labs",
-        "description": "Safe, student-led experiments and data analysis.",
-        "link": "#experience",
-        "image": {
-          "asset": {
-            "_ref": "/story/Sukhothai.webp"
-          },
-          "alt": "Lab experimentation"
-        }
+        "quote": "I've had the pleasure of working with Paul for nearly six years. He is extremely enthusiastic and always does his best to deliver high-quality work without compromise. He is a CSS master, and his React and TypeScript skills are strong.\n\nOne area where Paul truly excels is keeping up with AI and applying it safely and effectively to accelerate development. This is not a skill all developers have, and his use of iterative, effective prompting has been a significant value-add during my time working with him.",
+        "name": "Jordan  S.",
+        "role": "Software Lead",
+        "company": "Chronos Interactive"
       },
       {
-        "title": "Science Communication",
-        "description": "Short-form storytelling and public engagement.",
-        "link": "#bio",
-        "image": {
-          "asset": {
-            "_ref": "/story/ColoradoSpring.webp"
-          },
-          "alt": "Communication and outreach"
-        }
+        "quote": "It is my sincere pleasure to write this recommendation for Paul. In the approximately 10 months we worked together at Advanced Circuits, I observed Paul take on a variety of crucial roles in the delicate business of circuit board production. Paul completed upwards of 40 chemical analyses each day in order to supervise the performance of many chemical plating baths. He was also trained how to balance and perform maintenance on a complex system of ion exchange machines which process waste water produced in the plating factory. While listing all of Paul professional responsibilities would be impractical in this short recommendation; I’ll lastly add his role in completing circuit board quality control tasks to ensure the viability of products at Advanced Circuits.\n\nPaul has a strong focus on the work in front of him. He showed interest and motivation in expanding his knowledge and expertise in circuit board production.\n\nI wish Paul good luck in his future endeavors wherever they lead.",
+        "name": "Kevin Y.",
+        "role": "Chemical Lab Supervisor",
+        "company": "TTM Technologies"
       },
       {
-        "title": "Program Leadership",
-        "description": "Mentoring teams and launching STEM initiatives.",
-        "link": "#experience",
-        "image": {
-          "asset": {
-            "_ref": "/story/Hiking.webp"
-          },
-          "alt": "Leadership and mentoring"
-        }
+        "quote": "Beyond the code, Paul is a thoughtful collaborator. He listened, asked the right questions, and turned feedback into tangible product improvements.",
+        "name": "Joel T.",
+        "role": "Design Director",
+        "company": "Mosaic Lab"
+      },
+      {
+        "quote": "We worked with Paul on a multi-locale launch. He built a solid foundation that still supports new content and features without fragile workarounds.",
+        "name": "Nina P.",
+        "role": "Marketing Ops",
+        "company": "Atlas Ventures"
       }
     ]
   },
