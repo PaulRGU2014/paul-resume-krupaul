@@ -3,11 +3,14 @@
 .component {
   position: relative;
   padding: 70px 0;
-  background: linear-gradient(
-    180deg,
-    rgba($color: $white, $alpha: 1) 0%,
-    rgba($color: $yellow-100, $alpha: 0.08) 100%
-  );
+  // background: linear-gradient(
+  //   180deg,
+  //   rgba($color: $black, $alpha: 1) 0%,
+  //   rgba($color: $black, $alpha: 1) 35%,
+  //   rgba($color: $black, $alpha: 1) 65%,
+  //   rgba($color: $black, $alpha: 1) 100%
+  // );
+  background-color: $black;
   overflow: hidden;
 }
 
@@ -51,8 +54,6 @@
     rgba($color: $white, $alpha: 1) 0%,
     rgba($color: $white, $alpha: 0.7) 100%
   );
-  border: 1px solid rgba($color: $black, $alpha: 0.08);
-  box-shadow: 0 12px 24px rgba($color: $black, $alpha: 0.08);
   padding: 75px 26px 24px;
   display: flex;
   flex-direction: column;
