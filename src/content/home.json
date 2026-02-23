@@ -462,6 +462,51 @@
                 "id": 55,
                 "name": "Ai",
                 "weight": 3
+              },
+              {
+                "id": 56,
+                "name": "Machine Learning",
+                "weight": 4
+              },
+              {
+                "id": 57,
+                "name": "Prompt Engineering",
+                "weight": 4
+              },
+              {
+                "id": 58,
+                "name": "LLMs",
+                "weight": 4
+              },
+              {
+                "id": 59,
+                "name": "Generative AI",
+                "weight": 4
+              },
+              {
+                "id": 60,
+                "name": "Natural Language Processing",
+                "weight": 3
+              },
+              {
+                "id": 61,
+                "name": "Deep Learning",
+                "weight": 3
+              },
+              {
+                "id": 62,
+                "name": "Computer Vision",
+                "weight": 3
+              },
+              {
+                "id": 63,
+                "name": "AI Integration",
+                "weight": 4
+              },
+              {
+                "id": 64,
+                "name": "Model Training",
+                "weight": 3
               }
             ]
           }

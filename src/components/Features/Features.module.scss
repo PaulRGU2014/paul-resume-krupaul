@@ -101,7 +101,7 @@
     color: $white;
     padding: 8px 16px;
     border-radius: 4px;
-    transition: all 600ms $ease-out-quint;
+    transition: all 500ms $ease-out-quint;
     cursor: default;
     white-space: nowrap;
     opacity: 0;
@@ -119,7 +119,11 @@
     }
 
     &:hover {
-      transform: scale(1) translateY(-2px);
+      &.show {
+        transform: scale(0.8);
+        transition-delay: 0ms;
+        transition-duration: 250ms;
+      }
     }
 
     @include responsive(md) {

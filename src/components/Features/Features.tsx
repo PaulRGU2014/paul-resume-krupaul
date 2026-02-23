@@ -4,13 +4,26 @@ import React, { useState, useEffect, FC } from 'react';
 import InViewAnim from '@/utils/InViewAnim/InViewAnim'
 import styles from './Features.module.scss';
 
+// Career start date - updates dynamically each year
+const CAREER_START_YEAR = 2020;
+
+const getYearsOfExperience = () => {
+  return new Date().getFullYear() - CAREER_START_YEAR;
+};
+
 const colorSet: string[] = [
-  '#5BBDEB',
-  '#f05133',
-  '#3F687B',
-  '#86A96B',
-  '#D18810',
-  '#2D3C58'
+  '#1a1a2e', // deep navy-black
+  '#6a0572', // deep purple
+  '#16213e', // dark teal-blue
+  '#2d5016', // dark sage green
+  '#5a3a3a', // dark charcoal-brown
+  '#2c3e50', // dark slate
+  '#9D0208', // dark red
+  '#6A040F', // deep crimson
+  '#8B0000', // dark red
+  '#4a0e0e', // burgundy-red
+  '#1a3a3a', // dark cyan-black
+  '#3d2817'  // dark espresso-brown
 ];
 const colorSetLength = colorSet.length;
 
@@ -102,7 +115,7 @@ const Features: FC<FeaturesProps> = ({ content }) => {
                   alignSelf: 'center',
                 }}
               >
-                {content.desc}
+                A toolkit built through {getYearsOfExperience()} years of hands-on experience delivering production applications.
               </h6>
             )}
           </section>
