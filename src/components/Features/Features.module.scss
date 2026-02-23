@@ -121,7 +121,7 @@
     &:hover {
       &.show {
         transform: scale(0.8);
-        transition-delay: 0ms;
+        transition-delay: 0ms !important;
         transition-duration: 250ms;
       }
     }
