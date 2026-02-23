@@ -32,7 +32,9 @@ export default function SquareLogos(props: any) {
 
   useEffect(() => {
     setIsClient(typeof window !== "undefined");
-    setCurrentScreenWidth(typeof window !== "undefined" ? window.innerWidth : 0);
+    setCurrentScreenWidth(
+      typeof window !== "undefined" ? window.innerWidth : 0,
+    );
     // do not set height here — wait for images to load or layout paint
     return () => {
       setIsClient(false);
@@ -103,10 +105,14 @@ export default function SquareLogos(props: any) {
             <ImageLoader
               className={styles.modalImage}
               src={
-                logos[currentImageIndex] ? logos[currentImageIndex].asset._ref : ""
+                logos[currentImageIndex]
+                  ? logos[currentImageIndex].asset._ref
+                  : ""
               }
               alt={
-                logos[currentImageIndex] ? logos[currentImageIndex].image_title : ""
+                logos[currentImageIndex]
+                  ? logos[currentImageIndex].image_title
+                  : ""
               }
               objectFit="contain"
               objectPosition="center"
@@ -115,9 +121,7 @@ export default function SquareLogos(props: any) {
           )}
           <div className={styles.modal_content}>
             {!!logos[currentImageIndex]?.image_description && (
-              <RichText
-                html={logos[currentImageIndex].image_description}
-              />
+              <RichText html={logos[currentImageIndex].image_description} />
             )}
           </div>
         </div>
@@ -138,6 +142,12 @@ export default function SquareLogos(props: any) {
                   : `${currentImageHeight / 4}px`,
           }}
         >
+         <div className={styles.content}> 
+          {content.title && <h3>{content.title}</h3>}
+          {content.body && (
+            <h6>{content.body}</h6>
+          )}
+          </div>
           <div className={styles.inner}>
             {logos.map((item: any, index: number) => (
               <ImageLoader

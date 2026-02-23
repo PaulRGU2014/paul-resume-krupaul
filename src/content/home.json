@@ -23,6 +23,13 @@
         }
       },
       {
+        "title": "Platforms",
+        "link": {
+          "url": "#platforms",
+          "is_external": false
+        }
+      },
+      {
         "title": "References",
         "link": {
           "url": "#references",
@@ -35,7 +42,7 @@
       "btn_url": "mailto:paul@krupaul.com",
       "is_external": false
     }
-  },  
+  },
   "hero": {
     "title": "Paul Thanataweenont",
     "subtitle": "Senior Full-Stack Engineer",
@@ -52,11 +59,12 @@
     "text_align": "center",
     "isFullHeight": true,
     "content": "<h6>I’m a Senior Full Stack Engineer with six years of experience building dynamic, user‑focused web applications. At KruPaul, I work with React, Next.js, Strapi, and Sanity to turn design concepts into fast, reliable, and accessible digital experiences. I enjoy bridging front‑end and back‑end systems to create responsive interfaces that feel intuitive and support real business goals.</h6>"
-  },  
+  },
   "project_slider": {
     "colors": ["#D00000", "#F48C06", "#FFBA08"],
-    "title": "Projects",
+    "title": "Solo-Developed Projects",
     "body": "From backend architecture to polished UI — here’s what I’ve shipped.",
+    "image_position": "left",
     "slides": [
       {
         "title": "Inventory Manager",
@@ -66,7 +74,7 @@
           "asset": {
             "_ref": "/clients/Inventory_logo.svg"
           },
-          "alt": "Bizybees logo"
+          "alt": "Inventory logo"
         }
       },
       {
@@ -77,7 +85,7 @@
           "asset": {
             "_ref": "/clients/bizybees-logo.svg"
           },
-          "alt": "Science outreach"
+          "alt": "Bizybees logo"
         }
       },
       {
@@ -91,17 +99,74 @@
           "alt": "Denver Thai Temple"
         }
       },
-        {
-          "title": "Erawan Security",
-          "subtitle": "Overseas project — Thailand",
-          "desc": "<p>Erawan Security delivers reliable, professional protection for residential communities, commercial buildings, factories, and events across Thailand. Their team is rigorously trained, disciplined, and equipped to provide 24/7 safety with modern reporting and quality control. By using Krupaul to streamline operations and coordination, Erawan Security can focus on what matters most — keeping people and property safe.​​​​‌</p>",
-          "image": {
-            "asset": {
-              "_ref": "/clients/Logo_Erawan_eng.svg"
-            },
-            "alt": "Erawan Security"
-          }
+      {
+        "title": "Erawan Security",
+        "subtitle": "Overseas project — Thailand",
+        "desc": "<p>Erawan Security delivers reliable, professional protection for residential communities, commercial buildings, factories, and events across Thailand. Their team is rigorously trained, disciplined, and equipped to provide 24/7 safety with modern reporting and quality control. By using Krupaul to streamline operations and coordination, Erawan Security can focus on what matters most — keeping people and property safe.​​​​‌</p>",
+        "image": {
+          "asset": {
+            "_ref": "/clients/Logo_Erawan_eng.svg"
+          },
+          "alt": "Erawan Security"
         }
+      }
+    ]
+  },
+  "platforms": {
+    "for_component": "squareLogos",
+    "title": "Platforms & Tools",
+    "body": "I’ve built projects with a wide range of platforms and tools, but here are a few of my favorites.",
+    "images": [
+      {
+        "_key": "a9af4b775ee5",
+        "_type": "image",
+        "asset": {
+          "_ref": "/platforms/nextjs-logo.svg",
+          "_type": "reference"
+        },
+        "image_description": "<h6>Next.js</h6><p>From the very beginning of my web development career, I immersed myself in both React and Next.js, recognizing the powerful combination they offer for building dynamic and efficient web applications. As I honed my skills in React, I simultaneously explored Next.js, appreciating its ability to enhance server-side rendering and improve performance. This dual focus allowed me to create robust, scalable applications from the start. Today, I continue to stay updated with the latest features and advancements in Next.js, ensuring that my projects leverage the most current and effective tools available. This ongoing learning process not only keeps my skills sharp but also enables me to deliver cutting-edge solutions in the ever-evolving landscape of web development.</p>",
+        "image_title": "Next.js"
+      },
+      {
+        "_key": "050fa660af21",
+        "_type": "image",
+        "asset": {
+          "_ref": "/platforms/react-logo.svg",
+          "_type": "reference"
+        },
+        "image_description": "<h6>React</h6><p>When I began my journey in web development, I quickly realized the potential and versatility of React.js. Diving into its component-based architecture and leveraging ES6+ features, I built and maintained complex applications that were both efficient and scalable. Over the past two years, my expertise in React has grown significantly, allowing me to plan and execute logical, well-structured code. Now, I’m excited to expand my skill set to include React Native, bringing my web development experience into the realm of mobile app development. This transition not only broadens my capabilities but also opens up new opportunities to create seamless, cross-platform applications.</p>",
+        "image_title": "React"
+      },
+      {
+        "_key": "fa7558683e86",
+        "_type": "image",
+        "asset": {
+          "_ref": "/platforms/sanity-logo.png",
+          "_type": "reference"
+        },
+        "image_description": "<h6>Sanity.io</h6><p>From the beginning of my web development career, I was introduced to Sanity.io, and it quickly became my go-to choice for building backend servers. Its developer-friendly interface and flexible content management system made it an ideal framework for an individual web developer like myself. Sanity.io’s real-time collaboration features and customizable content schemas allowed me to efficiently manage and deliver content for my website. This positive experience reinforced my decision to use Sanity.io for my projects, and I continue to appreciate its robust capabilities and ease of use.</p>",
+        "image_title": "Sanity"
+      },
+      {
+        "_key": "4b3c53d86eb3",
+        "_type": "image",
+        "asset": {
+          "_ref": "/platforms/strapi-logo.svg",
+          "_type": "reference"
+        },
+        "image_description": "<h6>Strapi</h6><p>In my professional career, I have frequently used Strapi to build the backend for numerous websites. Strapi’s headless CMS architecture and customizable API have made it an invaluable tool for managing content and delivering robust backend solutions. Its user-friendly interface and flexibility allow me to efficiently create and manage content types, relationships, and permissions. This has enabled me to develop scalable and maintainable backend systems tailored to the specific needs of each project. My experience with Strapi has shown me its potential to streamline backend development, making it a trusted choice for many professional web projects.</p>",
+        "image_title": "Strapi"
+      },
+      {
+        "_key": "a719074c47d6",
+        "_type": "image",
+        "asset": {
+          "_ref": "/platforms/svelte-logo.svg",
+          "_type": "reference"
+        },
+        "image_description": "<h6>Svelte</h6><p>Throughout my web development career, I’ve had the opportunity to work with Svelte on various projects. Each time I delve into Svelte, I’m impressed by its simplicity and efficiency. Unlike other frameworks, Svelte compiles components at build time, resulting in highly optimized and performant applications. This unique approach, combined with its intuitive syntax, makes Svelte a powerful tool for modern web development. As I continue to explore its capabilities, I am increasingly convinced that Svelte has the potential to dominate the world of software engineering, offering a compelling alternative to traditional frameworks.</p>",
+        "image_title": "Svelte"
+      }
     ]
   },
   "references": {

@@ -6,9 +6,11 @@ import TwoColumnSlider from "@/components/TwoColumnSlider/TwoColumnSlider";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel/TestimonialsCarousel";
 import homeContent from "@/content/home.json";
 import RichTextComp from "@/components/RichTextComp/RichTextComp";
+import type { TwoColumnSliderContent } from "@/types/content";
+import GalleryCollage from "@/components/GalleryCollage/GalleryCollage";
 
 export const metadata: Metadata = {
-  title: "KruPaul | Home",
+  title: "Paul Thanataweenont | Home",
 };
 
 export default function Page() {
@@ -22,7 +24,10 @@ export default function Page() {
         <RichTextComp content={homeContent.bio_section} />
       </section>
       <section id="projects" className="pageSection">
-        <TwoColumnSlider content={homeContent.project_slider} />
+        <TwoColumnSlider content={homeContent.project_slider as TwoColumnSliderContent} />
+      </section>
+      <section id="platforms" className="pageSection">
+        <GalleryCollage content={homeContent.platforms} />
       </section>
       <section id="references" className="pageSection">
         <TestimonialsCarousel content={homeContent.references} />

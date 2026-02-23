@@ -8,7 +8,6 @@
 	import HeroBannerImg from './HeroBannerImg/HeroBannerImg';
 	import GridLinksCarousel from './GridLinksCarousel/GridLinksCarousel';
   import TestimonialsCarousel from './TestimonialsCarousel/TestimonialsCarousel';
-	import FullPageZoom from './FullPageZoom/FullPageZoom';
 	import FullPageHero from './FullPageHero/FullPageHero';
 	import CtasCarousel from './CtasCarousel/CtasCarousel';
 	import CtaTitleImg from './CtaTitleImg/CtaTitleImg';
@@ -45,7 +44,6 @@ const componentMap: { [key: string]: React.ComponentType<any> } = {
 	heroBannerImg: HeroBannerImg,
 	gridLinksCarousel: GridLinksCarousel,
   testimonialsCarousel: TestimonialsCarousel,
-	fullPageZoom: FullPageZoom,
 	fullPageHero: FullPageHero,
 	ctasCarousel: CtasCarousel,
 	ctaTitleImg: CtaTitleImg,

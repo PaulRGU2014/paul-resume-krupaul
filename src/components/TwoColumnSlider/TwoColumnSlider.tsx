@@ -19,6 +19,7 @@ interface TwoColumnSliderProps {
     };
     title: string;
     body: string;
+    image_position: "left" | "right";
     slides: {
       title: string;
       subtitle: string;
@@ -140,7 +141,7 @@ export default function SliderColors({ content }: TwoColumnSliderProps) {
           </div>
           <div className={styles.inner}>
             <div className={styles.embla} ref={emblaRef}>
-              <div className={styles.embla__container}>
+              <div className={`${styles.embla__container} ${content.image_position === "left" ? styles.left : styles.right}`}>
                 {content.slides.map(
                   (
                     slide: { title: string; subtitle: string; desc: any; image?: any },
