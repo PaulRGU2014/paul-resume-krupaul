@@ -30,7 +30,7 @@ interface FeatureTab {
   attributes: FeatureTabAttributes;
 }
 
-interface FeaturesContent {
+export interface FeaturesContent {
   isDark?: boolean;
   title: string;
   title_align?: 'left' | 'center' | 'right';
@@ -93,7 +93,6 @@ const Features: FC<FeaturesProps> = ({ content }) => {
                 justifyContent: 'center',
               }}
             >
-              <span className={styles.heading_decor}>//</span>
               <span className={styles.heading_content}>{content.title}</span>
             </div>
             {content.desc && (

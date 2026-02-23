@@ -9,7 +9,7 @@ import RichTextComp from "@/components/RichTextComp/RichTextComp";
 import type { TwoColumnSliderContent, TextAndImageContent } from "@/types/content";
 import GalleryCollage from "@/components/GalleryCollage/GalleryCollage";
 import TextAndImage from "@/components/TextAndImage/TextAndImage";
-import Features from "@/components/Features/Features";
+import Features, { type FeaturesContent } from "@/components/Features/Features";
 
 export const metadata: Metadata = {
   title: "Paul Thanataweenont | Home",
@@ -32,7 +32,7 @@ export default function Page() {
       <section id="platforms" className="pageSection">
         <GalleryCollage content={homeContent.platforms} />
       </section>      <section id="skills" className="pageSection">
-        <Features content={homeContent.technical_skills} />
+        <Features content={homeContent.technical_skills as FeaturesContent} />
       </section>      <section id="references" className="pageSection">
         <TestimonialsCarousel content={homeContent.references} />
       </section>

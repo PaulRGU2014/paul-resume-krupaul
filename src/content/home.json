@@ -320,7 +320,7 @@
               },
               {
                 "id": 26,
-                "name": "AI/ML",
+                "name": ".NET",
                 "weight": 3
               },
               {
@@ -341,6 +341,126 @@
               {
                 "id": 30,
                 "name": "Performance Optimization",
+                "weight": 3
+              },
+              {
+                "id": 31,
+                "name": "Testing",
+                "weight": 4
+              },
+              {
+                "id": 32,
+                "name": "Electron.js",
+                "weight": 3
+              },
+              {
+                "id": 33,
+                "name": "Svelte",
+                "weight": 3
+              },
+              {
+                "id": 34,
+                "name": "Storybook",
+                "weight": 3
+              },
+              {
+                "id": 35,
+                "name": "Web Accessibility",
+                "weight": 3
+              },
+              {
+                "id": 36,
+                "name": "Docker",
+                "weight": 3
+              },
+              {
+                "id": 37,
+                "name": "REST APIs",
+                "weight": 4
+              },
+              {
+                "id": 38,
+                "name": "System Architecture",
+                "weight": 3
+              },
+              {
+                "id": 39,
+                "name": "Database Design",
+                "weight": 3
+              },
+              {
+                "id": 40,
+                "name": "Authentication",
+                "weight": 4
+              },
+              {
+                "id": 41,
+                "name": "Contentful",
+                "weight": 3
+              },
+              {
+                "id": 42,
+                "name": "UX/UI Design",
+                "weight": 3
+              },
+              {
+                "id": 43,
+                "name": "Data Visualization",
+                "weight": 3
+              },
+              {
+                "id": 44,
+                "name": "Google Analytics",
+                "weight": 3
+              },
+              {
+                "id": 45,
+                "name": "Miro",
+                "weight": 2
+              },
+              {
+                "id": 46,
+                "name": "React Native",
+                "weight": 3
+              },
+              {
+                "id": 47,
+                "name": "State Management",
+                "weight": 3
+              },
+              {
+                "id": 48,
+                "name": "Code Quality Tools",
+                "weight": 3
+              },
+              {
+                "id": 49,
+                "name": "API Documentation",
+                "weight": 3
+              },
+              {
+                "id": 50,
+                "name": "WebSockets",
+                "weight": 3
+              },
+              {
+                "id": 51,
+                "name": "Microservices",
+                "weight": 3
+              },
+              {
+                "id": 52,
+                "name": "Serverless Architecture",
+                "weight": 3
+              },
+              {
+                "id": 54,
+                "name": "ASP.NET",
+                "weight": 3
+              },
+              {
+                "id": 55,
+                "name": "Ai",
                 "weight": 3
               }
             ]
