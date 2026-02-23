@@ -50,9 +50,16 @@ const Features: FC<FeaturesProps> = ({ content }) => {
 
   const [colorArray, setColorArray] = useState<string[]>([]);
   const [fontSizeArray, setFontSizeArray] = useState<number[]>([]);
+  const [showPills, setShowPills] = useState(false);
+  const [randomDelays, setRandomDelays] = useState<number[]>([]);
 
   useEffect(() => {
     if (firstTab?.attributes?.feature_tags) {
+      const delays = firstTab.attributes.feature_tags.map(
+        () => Math.random() * 500
+      );
+      setRandomDelays(delays);
+      
       setColorArray(
         firstTab.attributes.feature_tags.map(
           () => colorSet[Math.floor(Math.random() * colorSetLength)]
@@ -66,6 +73,13 @@ const Features: FC<FeaturesProps> = ({ content }) => {
     }
   }, [firstTab]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPills(true);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div
       className={content.isDark ? styles.component_isDark : styles.component}
@@ -76,53 +90,32 @@ const Features: FC<FeaturesProps> = ({ content }) => {
             <div
               className={styles.heading_title}
               style={{
-                justifyContent:
-                  content.title_align === 'left'
-                    ? 'flex-start'
-                    : content.title_align === 'center'
-                      ? 'center'
-                      : content.title_align === 'right'
-                        ? 'flex-end'
-                        : 'flex-start',
+                justifyContent: 'center',
               }}
             >
               <span className={styles.heading_decor}>//</span>
               <span className={styles.heading_content}>{content.title}</span>
             </div>
             {content.desc && (
-              <p
+              <h6
                 style={{
-                  textAlign:
-                    content.title_align === 'left'
-                      ? 'left'
-                      : content.title_align === 'center'
-                        ? 'center'
-                        : content.title_align === 'right'
-                          ? 'right'
-                          : 'left',
-                  alignSelf:
-                    content.title_align === 'left'
-                      ? 'flex-start'
-                      : content.title_align === 'center'
-                        ? 'center'
-                        : content.title_align === 'right'
-                          ? 'flex-end'
-                          : 'flex-start',
+                  textAlign: 'center',
+                  alignSelf: 'center',
                 }}
               >
                 {content.desc}
-              </p>
+              </h6>
             )}
           </section>
         </InViewAnim>
         <InViewAnim>
           <div className={styles.tabs_wrapper}>
-            <div className={`${styles.tabs_tags} ${styles.show}`}>
+            <div className={`${styles.tabs_tags} ${showPills ? styles.show : ''}`}>
               {firstTab?.attributes?.feature_tags?.map((tag, index) => {
                 return (
                   <div
                     key={tag.id}
-                    className={`${styles.tabs_tags_each} ${styles.show}`}
+                    className={`${styles.tabs_tags_each} ${showPills ? styles.show : ''}`}
                     style={{
                       backgroundColor: !!content.isTagMonotone
                         ? '#221E1F'
@@ -130,6 +123,7 @@ const Features: FC<FeaturesProps> = ({ content }) => {
                       fontSize: !!tag.weight
                         ? `${10 + Math.floor(2.8 * tag.weight)}px`
                         : `${fontSizeArray[index]}px`,
+                      transitionDelay: showPills ? `${randomDelays[index]}ms` : '0ms',
                     }}
                   >
                     {tag.name}

@@ -30,6 +30,13 @@
         }
       },
       {
+        "title": "Skills",
+        "link": {
+          "url": "#skills",
+          "is_external": false
+        }
+      },
+      {
         "title": "References",
         "link": {
           "url": "#references",
@@ -44,7 +51,7 @@
     }
   },
   "hero": {
-    "title": "Paul Thanataweenont",
+    "title": "PAUL THANATAWEENONT",
     "subtitle": "Senior Full-Stack Engineer",
     "media_source": "url",
     "media_type": "video",
@@ -60,7 +67,7 @@
       "asset": {
         "_ref": "/Paul.png"
       },
-      "title": "Paul Thanataweenont"
+      "title": "PAUL THANATAWEENONT"
     },
     "body": "<h6>I’m a Senior Full Stack Engineer with six years of experience building dynamic, user‑focused web applications. At KruPaul, I work with React, Next.js, Strapi, and Sanity to turn design concepts into fast, reliable, and accessible digital experiences. I enjoy bridging front‑end and back‑end systems to create responsive interfaces that feel intuitive and support real business goals.</h6>"
   },
@@ -199,7 +206,7 @@
               {
                 "id": 3,
                 "name": "TypeScript",
-                "weight": 4
+                "weight": 5
               },
               {
                 "id": 4,
@@ -218,17 +225,17 @@
               },
               {
                 "id": 7,
-                "name": "APIs",
+                "name": "GraphQL",
                 "weight": 4
               },
               {
                 "id": 8,
-                "name": "Sanity",
+                "name": "PostgreSQL",
                 "weight": 4
               },
               {
                 "id": 9,
-                "name": "Strapi",
+                "name": "MongoDB",
                 "weight": 4
               },
               {
@@ -238,13 +245,103 @@
               },
               {
                 "id": 11,
-                "name": "Performance",
-                "weight": 3
+                "name": "GitHub",
+                "weight": 4
               },
               {
                 "id": 12,
+                "name": "AWS",
+                "weight": 4
+              },
+              {
+                "id": 13,
+                "name": "DevOps",
+                "weight": 4
+              },
+              {
+                "id": 14,
+                "name": "CI/CD",
+                "weight": 4
+              },
+              {
+                "id": 15,
+                "name": "Sanity",
+                "weight": 4
+              },
+              {
+                "id": 16,
+                "name": "Strapi",
+                "weight": 4
+              },
+              {
+                "id": 17,
+                "name": "APIs",
+                "weight": 4
+              },
+              {
+                "id": 18,
+                "name": "Front-End Development",
+                "weight": 4
+              },
+              {
+                "id": 19,
+                "name": "Back-End Development",
+                "weight": 4
+              },
+              {
+                "id": 20,
+                "name": "Full-Stack Development",
+                "weight": 4
+              },
+              {
+                "id": 21,
+                "name": "HTML",
+                "weight": 5
+              },
+              {
+                "id": 22,
                 "name": "Responsive Design",
                 "weight": 4
+              },
+              {
+                "id": 23,
+                "name": "Cross-browser Compatibility",
+                "weight": 3
+              },
+              {
+                "id": 24,
+                "name": "Software Design",
+                "weight": 3
+              },
+              {
+                "id": 25,
+                "name": "System Deployment",
+                "weight": 3
+              },
+              {
+                "id": 26,
+                "name": "AI/ML",
+                "weight": 3
+              },
+              {
+                "id": 27,
+                "name": "CMS",
+                "weight": 4
+              },
+              {
+                "id": 28,
+                "name": "Linux",
+                "weight": 3
+              },
+              {
+                "id": 29,
+                "name": "Figma",
+                "weight": 3
+              },
+              {
+                "id": 30,
+                "name": "Performance Optimization",
+                "weight": 3
               }
             ]
           }

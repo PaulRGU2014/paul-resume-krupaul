@@ -41,7 +41,7 @@ export default function Footer({
                 <Icon icon_name="github" />
               </Link>
               <Link
-                href="https://www.linkedin.com/company/krupaul/"
+                href="https://www.linkedin.com/in/paulrgu2014/"
                 className={styles.social}
                 target="_blank"
                 aria-label="LinkedIn"
@@ -56,14 +56,14 @@ export default function Footer({
               >
                 <Icon icon_name="facebook" />
               </Link>
-              <Link
-                href="https://www.instagram.com/krupaul.store"
+              {/* <Link
+                href="https://www.instagram.com/krupaul.official"
                 className={styles.social}
                 target="_blank"
                 aria-label="Instagram"
               >
                 <Icon icon_name="instagram" />
-              </Link>
+              </Link> */}
               <Link
                 href="https://www.youtube.com/c/PaulsChemistryThailand"
                 className={styles.social}

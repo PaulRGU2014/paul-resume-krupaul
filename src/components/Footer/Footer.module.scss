@@ -122,9 +122,6 @@
   }
   @include responsive(md) {
     &_wrapper {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-self: flex-start;
       padding-top: 5px;
     }
     &:hover {
