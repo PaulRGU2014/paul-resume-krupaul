@@ -173,6 +173,85 @@
       }
     ]
   },
+  "technical_skills": {
+    "isDark": false,
+    "title": "Technical Skills",
+    "title_align": "left",
+    "desc": "A toolkit built through six years of hands-on experience delivering production applications.",
+    "isTagMonotone": false,
+    "feature_tabs": {
+      "data": [
+        {
+          "attributes": {
+            "title": "Skills",
+            "subtitle": "Core Competencies",
+            "feature_tags": [
+              {
+                "id": 1,
+                "name": "React",
+                "weight": 5
+              },
+              {
+                "id": 2,
+                "name": "Next.js",
+                "weight": 5
+              },
+              {
+                "id": 3,
+                "name": "TypeScript",
+                "weight": 4
+              },
+              {
+                "id": 4,
+                "name": "JavaScript",
+                "weight": 5
+              },
+              {
+                "id": 5,
+                "name": "CSS/SCSS",
+                "weight": 5
+              },
+              {
+                "id": 6,
+                "name": "Node.js",
+                "weight": 4
+              },
+              {
+                "id": 7,
+                "name": "APIs",
+                "weight": 4
+              },
+              {
+                "id": 8,
+                "name": "Sanity",
+                "weight": 4
+              },
+              {
+                "id": 9,
+                "name": "Strapi",
+                "weight": 4
+              },
+              {
+                "id": 10,
+                "name": "Git",
+                "weight": 4
+              },
+              {
+                "id": 11,
+                "name": "Performance",
+                "weight": 3
+              },
+              {
+                "id": 12,
+                "name": "Responsive Design",
+                "weight": 4
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
   "references": {
     "title": "My LinkedIn References",
     "testimonials": [

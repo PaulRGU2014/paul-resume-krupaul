@@ -1,0 +1,145 @@
+@use "../../scss/helpers/import" as *;
+
+.component {
+  background-color: $black;
+  &_isDark {
+    background-color: $black;
+  }
+}
+
+.wrapper {
+  @include centered($max-width);
+  padding: $standard-vertical-spacing 0;
+  @include responsive(md) {
+    padding: calc($standard-vertical-spacing / 2) 0;
+  }
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 60px;
+  @include scroll-animation($anim: fadeIn, $speed: 1000ms);
+
+  &_title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  &_decor {
+    font-family: var(--font-lato), sans-serif;
+    color: $red-100;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  &_content {
+    font-family: var(--font-lato), sans-serif;
+    color: $white;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+    word-break: break-word;
+
+    @include responsive(md) {
+      font-size: 40px;
+    }
+    @include responsive(sm) {
+      font-size: 32px;
+    }
+  }
+
+  & > p {
+    font-family: var(--font-lato), sans-serif;
+    color: $white;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+    max-width: 600px;
+    margin: 0;
+
+    @include responsive(md) {
+      font-size: 16px;
+    }
+  }
+
+  @include responsive(md) {
+    margin-bottom: 40px;
+
+    &_title {
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    &_content {
+      text-align: center;
+    }
+
+    & > p {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+}
+
+.tabs {
+  margin: 0;
+  display: flex;
+  width: 100%;
+}
+
+.tabs_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @include scroll-animation($anim: fadeIn, $speed: 1000ms, $delay: 200ms);
+}
+
+.tabs_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  
+  &_each {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-lato), sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 300ms $ease-out-quint;
+    cursor: default;
+    white-space: nowrap;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    @include responsive(md) {
+      font-size: 26px;
+      padding: 6px 12px;
+    }
+
+    @include responsive(sm) {
+      font-size: 22px;
+    }
+  }
+}
+
+.nav {
+  display: none;
+}
+
+.nav_mobile {
+  display: none;
+}
+
