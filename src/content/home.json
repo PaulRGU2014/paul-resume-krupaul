@@ -55,10 +55,14 @@
   },
   "bio_section": {
     "theme": "dark",
-    "maxWidth": 800,
-    "text_align": "center",
-    "isFullHeight": true,
-    "content": "<h6>I’m a Senior Full Stack Engineer with six years of experience building dynamic, user‑focused web applications. At KruPaul, I work with React, Next.js, Strapi, and Sanity to turn design concepts into fast, reliable, and accessible digital experiences. I enjoy bridging front‑end and back‑end systems to create responsive interfaces that feel intuitive and support real business goals.</h6>"
+    "imgPosition": "left",
+    "image": {
+      "asset": {
+        "_ref": "/Paul.png"
+      },
+      "title": "Paul Thanataweenont"
+    },
+    "body": "<h6>I’m a Senior Full Stack Engineer with six years of experience building dynamic, user‑focused web applications. At KruPaul, I work with React, Next.js, Strapi, and Sanity to turn design concepts into fast, reliable, and accessible digital experiences. I enjoy bridging front‑end and back‑end systems to create responsive interfaces that feel intuitive and support real business goals.</h6>"
   },
   "project_slider": {
     "colors": ["#D00000", "#F48C06", "#FFBA08"],

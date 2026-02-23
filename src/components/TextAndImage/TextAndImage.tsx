@@ -4,7 +4,17 @@ import RichTextUtil from '@/utils/RichText/RichText'
 import InViewAnim from '@/utils/InViewAnim/InViewAnim'
 
 interface TextAndImageProps {
-  content?: any; // Replace 'any' with the appropriate type
+  content?: {
+    theme?: 'light' | 'dark';
+    imgPosition?: 'left' | 'right';
+    image: {
+      asset: {
+        _ref: string;
+      };
+      title: string;
+    };
+    body: any; // Adjust the type based on your RichText content structure
+  }
 }
 
 export default function TextAndImage({content}: TextAndImageProps) {

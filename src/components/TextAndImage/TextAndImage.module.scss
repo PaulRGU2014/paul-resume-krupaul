@@ -1,6 +1,9 @@
 @use "../../scss/helpers/import" as *;
 
 .component {
+  height: 80vh;
+  display: flex;
+  align-items: center;
   &.dark {
     background-color: $black;
   }
@@ -38,10 +41,12 @@
 }
 
 .image {
-  width: calc(50%);
+  background-color: $white;
+  width: calc(30%);
   // height: calc(50vw + 60px);
-  max-height:360px;
-  aspect-ratio: 4/3;
+  // max-height:360px;
+  border-radius: 16px;
+  aspect-ratio: 1/1;
   position: relative;
   overflow: hidden;
   @include scroll-animation($anim: fromBottom, $sequence: 60ms, $speed: 1000ms);
@@ -52,8 +57,8 @@
 }
 
 .text {
-  width: calc(50%);
-  max-width: 420px;
+  width: calc(70%);
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   color: $white;
