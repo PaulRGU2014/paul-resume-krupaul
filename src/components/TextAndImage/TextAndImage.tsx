@@ -19,6 +19,9 @@ interface TextAndImageProps {
 
 export default function TextAndImage({content}: TextAndImageProps) {
   console.log(content);
+  if (!content) {
+    return null;
+  }
   return(
     <InViewAnim><div className={`${styles.component} ${content.theme === 'dark' ? styles.dark : ""} ${content.imgPosition === 'right' ? styles.imgRight : ""}`}>
       <div className={styles.wrapper}>
