@@ -6,7 +6,7 @@ import TwoColumnSlider from "@/components/TwoColumnSlider/TwoColumnSlider";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel/TestimonialsCarousel";
 import homeContent from "@/content/home.json";
 import RichTextComp from "@/components/RichTextComp/RichTextComp";
-import type { TwoColumnSliderContent } from "@/types/content";
+import type { TwoColumnSliderContent, TextAndImageContent } from "@/types/content";
 import GalleryCollage from "@/components/GalleryCollage/GalleryCollage";
 import TextAndImage from "@/components/TextAndImage/TextAndImage";
 
@@ -23,7 +23,7 @@ export default function Page() {
       </section>
       <section id="bio" className="pageSection">
         {/* <RichTextComp content={homeContent.bio_section} /> */}
-        <TextAndImage content={homeContent.bio_section} />
+        <TextAndImage content={homeContent.bio_section as TextAndImageContent} />
       </section>
       <section id="projects" className="pageSection">
         <TwoColumnSlider content={homeContent.project_slider as TwoColumnSliderContent} />

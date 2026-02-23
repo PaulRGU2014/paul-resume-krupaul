@@ -15,3 +15,15 @@ export type TwoColumnSliderContent = {
     };
   }[];
 };
+
+export type TextAndImageContent = {
+  theme?: 'light' | 'dark';
+  imgPosition?: 'left' | 'right';
+  image: {
+    asset: {
+      _ref: string;
+    };
+    title: string;
+  };
+  body: any; // Adjust the type based on your RichText content structure
+}
