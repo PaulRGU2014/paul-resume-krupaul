@@ -518,6 +518,12 @@
     "title": "My LinkedIn References",
     "testimonials": [
       {
+        "quote": "When Paul began his tenure with us, he was a junior developer just beginning his career as a CSS, Typescript, and React developer. Paul applied himself diligently and enthusiastically, and very quickly elevated his capabilities and became a highly skilled and productive member of our team. \nPaul has a strong drive to learn, an incredibly sharp mind, and an unflaggingly positive attitude. He is a pleasure to work with. He always has a smile and optimistic word, even under pressure. Paul works very well with a team, tackles assignments eagerly and delivers results quickly. Paul began adopting AI tools early and has demonstrated the curiosity and initiative that is so critical to becoming a skilled master of these new tools.",
+        "name": "Max D.",
+        "role": "Owner",
+        "company": "Chronos Interactive"
+      },      
+      {
         "quote": "Paul is a highly driven and detail-oriented engineer who consistently delivers thoughtful, high-quality work. His CSS expertise stands out, and he brings strong React and TypeScript skills to every project.\nWhat differentiates Paul is how effectively he leverages AI to accelerate development in a safe and practical way. He approaches problems iteratively, stays current with emerging tools, and applies them with real impact.\nHe’s collaborative, reliable, and a strong asset to any team looking for both solid fundamentals and modern thinking.",
         "name": "Mohammad  A.",
         "role": "Senior Drupaul Developer",
