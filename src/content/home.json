@@ -172,12 +172,22 @@
         "_key": "a719074c47d6",
         "_type": "image",
         "asset": {
-          "_ref": "/platforms/svelte-logo.svg",
+          "_ref": "/platforms/nodejs-logo.svg",
           "_type": "reference"
         },
-        "image_description": "<h6>Svelte</h6><p>Throughout my web development career, I’ve had the opportunity to work with Svelte on various projects. Each time I delve into Svelte, I’m impressed by its simplicity and efficiency. Unlike other frameworks, Svelte compiles components at build time, resulting in highly optimized and performant applications. This unique approach, combined with its intuitive syntax, makes Svelte a powerful tool for modern web development. As I continue to explore its capabilities, I am increasingly convinced that Svelte has the potential to dominate the world of software engineering, offering a compelling alternative to traditional frameworks.</p>",
-        "image_title": "Svelte"
-      }
+        "image_description": "<h6>Node.js</h6><p>Throughout my web development career, I’ve increasingly gravitated toward backend engineering, where I can focus on building reliable, scalable systems. Node.js has become my preferred environment because it strikes the right balance between simplicity and power. Its event‑driven architecture, strong TypeScript ecosystem, and rich package landscape make it ideal for designing APIs, orchestrating services, and handling real‑world workloads. As I deepen my backend expertise, I’m convinced that Node.js provides the flexibility and performance needed for modern cloud‑native applications, and it continues to shape the way I think about system design and engineering craftsmanship.</p>",
+        "image_title": "Node.js"
+      },
+      {
+        "_key": "a719074c47d8",
+        "_type": "image",
+        "asset": {
+          "_ref": "/platforms/python-logo.svg",
+          "_type": "reference"
+        },
+        "image_description": "<h6>Python</h6><p>I’m currently expanding my backend skill set by studying Python through the IBM Full Stack Developer program on Coursera. While my primary focus remains Node.js and TypeScript, learning Python gives me a broader foundation for backend engineering, data workflows, and cloud‑native development. This program strengthens my understanding of core programming concepts, modern backend patterns, and practical tooling, allowing me to approach system design with greater versatility and confidence.</p>",
+        "image_title": "Python"
+      }      
     ]
   },
   "technical_skills": {
