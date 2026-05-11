@@ -7,7 +7,6 @@ interface TextTwoImagesProps {
 }
 
 export default function TextTwoImages({ content }: TextTwoImagesProps) {
-  console.log("TextTwoImages content:", content);
   return (
     <InViewAnim>
       <div

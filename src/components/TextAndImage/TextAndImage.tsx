@@ -18,7 +18,6 @@ interface TextAndImageProps {
 }
 
 export default function TextAndImage({content}: TextAndImageProps) {
-  console.log(content);
   if (!content) {
     return null;
   }

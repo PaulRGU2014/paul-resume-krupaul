@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "prod": "next start",
-    "dev": "next dev",
+    "dev": "WATCHPACK_POLLING=true next dev --webpack",
+    "dev:turbo": "next dev",
     "build:local": "next build",
     "build": "next build",
     "start": "next start",
