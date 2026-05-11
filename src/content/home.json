@@ -54,7 +54,7 @@
     "menu_btn": {
       "btn_text": "Contact Me",
       "btn_url": "mailto:paul@krupaul.com",
-      "is_external": false
+      "is_external": true
     }
   },
   "hero": {

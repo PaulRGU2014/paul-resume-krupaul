@@ -26,6 +26,17 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 - For Vercel, set the same keys in the project Settings → Environment Variables or sync locally with `vercel env pull .env.local`.
 - Public keys (`NEXT_PUBLIC_*`) can stay public, but secrets (tokens, passwords) must only live in `.env.local`/Vercel.
 
+## Quick Maintenance
+
+Run these lightweight checks before pushing small updates:
+
+```bash
+npm run lint
+npm run build
+```
+
+If build time is too long, run lint first and defer build until batching multiple changes.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

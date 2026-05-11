@@ -3,12 +3,6 @@
 import styles from "./FullPageHero.module.scss";
 import InViewAnim from "./../../utils/InViewAnim/InViewAnim";
 import Image from "@/utils/ImageLoader/ImageLoader";
-import dynamic from "next/dynamic";
-
-// Dynamic import of the enhanced video player (client-side only)
-const VimeoPlayerClient = dynamic(() => import('./VimeoPlayerClient'), {
-  loading: () => null
-});
 
 interface FullPageHeroProps {
   content: any; // Replace 'any' with the appropriate type
@@ -150,9 +144,7 @@ function ServerVideoPlayer({ videoId }: { videoId: string }) {
         allowFullScreen
         title="Vimeo Video Player"
       />
-      
-      {/* Client-side enhancement (only loads on client) */}
-      <VimeoPlayerClient videoId={cleanVideoId} />
+
     </div>
   );
 }
