@@ -1,9 +1,18 @@
-import styles from './MenuMobile.module.scss';
-import Link from '@/utils/LinkWrapper/LinkWrapper';
-import Image from 'next/image';
-import { BsChevronCompactDown } from 'react-icons/bs';
+import styles from "./MenuMobile.module.scss";
+import Link from "@/utils/LinkWrapper/LinkWrapper";
+import Image from "next/image";
 
-function Hamburger({ isMenuOpen, hamburgerRef, onClick, initialLoad }: { isMenuOpen: boolean, hamburgerRef: React.RefObject<HTMLDivElement>, onClick?: () => void, initialLoad: boolean }) {
+function Hamburger({
+  isMenuOpen,
+  hamburgerRef,
+  onClick,
+  initialLoad,
+}: {
+  isMenuOpen: boolean;
+  hamburgerRef: React.RefObject<HTMLDivElement | null>;
+  onClick?: () => void;
+  initialLoad: boolean;
+}) {
   return (
     <div
       ref={hamburgerRef}
@@ -26,15 +35,15 @@ interface MenuMobileProps {
   isMenuOpen: boolean;
   setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isMenuOpening: boolean;
-  menuRef: React.RefObject<HTMLUListElement>;
-  mainMenuIndex: number;
-  setMainMenuIndex: (index: number) => void;
-  subMenuIndex: number;
-  setSubMenuIndex: React.Dispatch<React.SetStateAction<number>>;
-  handleMenuClick: (event: React.MouseEvent, mainIndex: number, subIndex: number, url: string, hasSubMenus: boolean) => void;
+  menuRef: React.RefObject<HTMLUListElement | null>;
+  handleMenuClick: (
+    event: React.MouseEvent,
+    url?: string,
+    closeMenu?: boolean
+  ) => void;
   initialLoad: boolean;
   setInitialLoad: React.Dispatch<React.SetStateAction<boolean>>;
-  hamburgerRef: React.RefObject<HTMLDivElement>;
+  hamburgerRef: React.RefObject<HTMLDivElement | null>;
   handleMenuToggle: () => void;
 }
 
@@ -44,13 +53,8 @@ function MenuContent({
   setIsMenuOpen,
   isMenuOpening,
   menuRef,
-  mainMenuIndex,
-  setMainMenuIndex,
-  subMenuIndex,
-  setSubMenuIndex,
   handleMenuClick,
 }: MenuMobileProps) {
-
   return (
     <div className={isMenuOpen ? styles.inner : styles.inner_close}>
       <ul className={styles.content} ref={menuRef}>
@@ -68,81 +72,52 @@ function MenuContent({
           <li
             className={`${styles.link} ${isMenuOpen === true ? styles.open : ""}`}
             key={index}
-            style={{ transitionDelay: isMenuOpening ? `${(index + 1) * 100}ms` : "0ms" }}
-            onMouseEnter={() => setMainMenuIndex(index)}
-            onMouseLeave={() => setMainMenuIndex(-1)}
+            style={{
+              transitionDelay: isMenuOpening ? `${(index + 1) * 100}ms` : "0ms",
+            }}
           >
             <Link
               href={item.link.url}
-              onClick={(event) => handleMenuClick(event, index, -1, item.url, !!item.sub_menus_1)}
+              onClick={(event) =>
+                handleMenuClick(
+                  event,
+                  item?.link?.url,
+                  true
+                )
+              }
             >
-              {item.title}{item.sub_menus_1 && item.sub_menus_1.length > 0 && <div className={`${styles.dropdown} ${mainMenuIndex === index ? styles.active : ''}`}><BsChevronCompactDown /></div>}
+              {item.title}
             </Link>
-            {item?.sub_menus_1 && (
-              <ul className={`${styles.subMenu_wrapper} ${mainMenuIndex === index ? styles.active : ''}`}>
-                {item?.sub_menus_1?.map((subMenus1: any, subIndex: number) => (
-                  <li 
-                    key={subIndex} 
-                    className={`${styles.subMenu}`}
-                    onMouseEnter={() => setSubMenuIndex(subIndex)}
-                    onMouseLeave={() => setSubMenuIndex(-1)}
-                    onClick={() => setSubMenuIndex(subIndex)}
-                  >
-                    <Link 
-                      href={subMenus1?.link?.url} 
-                      className={styles.subMenu_link}
-                      onClick={(event) => handleMenuClick(event, index, subIndex, subMenus1.url, !!subMenus1.sub_menus_2)}
-                    >
-                      {subMenus1.title}
-                      {subMenus1.sub_menus_2 && subMenus1.sub_menus_2.length > 0 && <div className={`${styles.dropdown} ${subMenuIndex === subIndex ? styles.active : ''}`}><BsChevronCompactDown /></div>}
-                    </Link>
-                    {subMenus1?.sub_menus_2 && (
-                      <ul className={`${styles.subMenu_wrapper} ${subMenuIndex === subIndex ? styles.active : ''}`}>
-                        {subMenus1?.sub_menus_2?.map((subMenus2: any, subIndex2: number) => (
-                          <li 
-                            key={subIndex2} 
-                            className={styles.subMenu}
-                          >
-                            <Link 
-                              href={subMenus2.link.url} 
-                              className={styles.subMenu_link}
-                            >
-                              {subMenus2.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            )}
           </li>
         ))}
         <li
           className={styles.menuButton_wrapper}
           style={{
-            transitionDelay: isMenuOpening ? `${(content.menu_list?.length + 4) * 100}ms` : "0ms",
+            transitionDelay: isMenuOpening
+              ? `${(content.menu_list?.length + 4) * 100}ms`
+              : "0ms",
             transform: isMenuOpen ? "translateY(0px)" : "translateY(20px)",
-            opacity: isMenuOpen ? 1 : 0
+            opacity: isMenuOpen ? 1 : 0,
           }}
           onClick={() => {
             setIsMenuOpen(false);
           }}
         >
-          <Link className={styles.menuButton} href={content?.menu_btn?.btn_url} target={content?.menu_btn?.is_external === true ? "_blank" : "_self"}>{content?.menu_btn?.btn_text}</Link>
+          <Link
+            className={styles.menuButton}
+            href={content?.menu_btn?.btn_url}
+            target={content?.menu_btn?.is_external === true ? "_blank" : "_self"}
+          >
+            {content?.menu_btn?.btn_text}
+          </Link>
         </li>
       </ul>
     </div>
   );
 }
 
-export default function MenuMobile({ 
-  content,  
-  mainMenuIndex, 
-  setMainMenuIndex, 
-  subMenuIndex, 
-  setSubMenuIndex, 
+export default function MenuMobile({
+  content,
   handleMenuClick,
   isMenuOpen,
   setIsMenuOpen,
@@ -151,19 +126,31 @@ export default function MenuMobile({
   setInitialLoad,
   hamburgerRef,
   menuRef,
-  handleMenuToggle
- }: MenuMobileProps) {
-
-
+  handleMenuToggle,
+}: MenuMobileProps) {
   return (
-    <div
-      className={`${styles.component} ${!isMenuOpen ? styles.component_close : ""}`}
-    >
-      <div
-        className={`${styles.wrapper} ${isMenuOpen ? styles.open : ""}`}
-      >
-        <Hamburger isMenuOpen={isMenuOpen} hamburgerRef={hamburgerRef} onClick={handleMenuToggle} initialLoad={initialLoad} />
-        <MenuContent {...{ content, isMenuOpen, setIsMenuOpen, isMenuOpening, menuRef, mainMenuIndex, setMainMenuIndex, subMenuIndex, setSubMenuIndex, handleMenuClick, initialLoad, setInitialLoad, hamburgerRef, handleMenuToggle }} />
+    <div className={`${styles.component} ${!isMenuOpen ? styles.component_close : ""}`}>
+      <div className={`${styles.wrapper} ${isMenuOpen ? styles.open : ""}`}>
+        <Hamburger
+          isMenuOpen={isMenuOpen}
+          hamburgerRef={hamburgerRef}
+          onClick={handleMenuToggle}
+          initialLoad={initialLoad}
+        />
+        <MenuContent
+          {...{
+            content,
+            isMenuOpen,
+            setIsMenuOpen,
+            isMenuOpening,
+            menuRef,
+            handleMenuClick,
+            initialLoad,
+            setInitialLoad,
+            hamburgerRef,
+            handleMenuToggle,
+          }}
+        />
       </div>
     </div>
   );

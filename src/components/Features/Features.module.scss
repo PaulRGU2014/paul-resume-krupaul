@@ -1,0 +1,146 @@
+@use "../../scss/helpers/import" as *;
+
+.component {
+  background-color: $black;
+  min-height: 80vh;
+  margin: 60px 0;
+  &_isDark {
+    background-color: $black;
+  }
+}
+
+.wrapper {
+  @include centered($max-width);
+  padding: $standard-vertical-spacing 0;
+  @include responsive(md) {
+    padding: calc($standard-vertical-spacing / 2) 0;
+  }
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 60px;
+  @include scroll-animation($anim: fromTop, $sequence: 300ms, $speed: 1000ms);
+
+  &_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  &_content {
+    font-family: var(--font-lato), sans-serif;
+    color: $white;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+    word-break: break-word;
+
+    @include responsive(md) {
+      font-size: 40px;
+    }
+    @include responsive(sm) {
+      font-size: 32px;
+    }
+  }
+
+  & > h6 {
+    // font-family: var(--font-lato), sans-serif;
+    color: $white;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+
+    @include responsive(md) {
+      font-size: 16px;
+    }
+  }
+
+  @include responsive(md) {
+    margin-bottom: 40px;
+
+    &_title {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.tabs {
+  margin: 0;
+  display: flex;
+  width: 100%;
+}
+
+.tabs_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.tabs_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+
+  &_each {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-lato), sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 500ms $ease-out-quint;
+    cursor: default;
+    white-space: nowrap;
+    opacity: 0;
+    transform: scale(0.6);
+
+    &.show {
+      opacity: 1;
+      transform: scale(1);
+      @include scroll-animation(
+        $anim: popIn,
+        $speed: 1000ms,
+        $sequence: 300ms,
+        $delay: 300ms
+      );
+    }
+
+    &:hover {
+      &.show {
+        transform: scale(0.8);
+        transition-delay: 0ms !important;
+        transition-duration: 250ms;
+      }
+    }
+
+    @include responsive(md) {
+      font-size: 26px;
+      padding: 6px 12px;
+    }
+
+    @include responsive(sm) {
+      font-size: 22px;
+    }
+  }
+}
+
+.nav {
+  display: none;
+}
+
+.nav_mobile {
+  display: none;
+}

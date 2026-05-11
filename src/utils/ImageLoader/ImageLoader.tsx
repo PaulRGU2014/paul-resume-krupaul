@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { urlForImage } from "@/sanity/image";
 import React from "react";
 
 interface ImageLoaderProps extends React.HTMLProps<HTMLDivElement> {
@@ -10,13 +9,16 @@ interface ImageLoaderProps extends React.HTMLProps<HTMLDivElement> {
   priority?: boolean;
   src: string;
   alt: string;
+  unoptimized?: boolean;
   // onLoad for consumers who want the native image load event
   onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
 }
 
 const ImageLoader = React.forwardRef<HTMLImageElement, ImageLoaderProps>(
-  ({ className, style, src, alt, objectFit = "cover", objectPosition, priority, onClick, onLoad, ...rest }, ref) => {
-    const imgSrc = urlForImage(src).url();
+  ({ className, style, src, alt, objectFit = "cover", objectPosition, priority, unoptimized = false, onClick, onLoad, ...rest }, ref) => {
+    if (!src) {
+      return null;
+    }
 
     return (
       <div
@@ -26,7 +28,7 @@ const ImageLoader = React.forwardRef<HTMLImageElement, ImageLoaderProps>(
         {...rest}
       >
         <Image
-          src={imgSrc}
+          src={src}
           alt={alt ? alt : "image"}
           fill={true}
           sizes="100%"
@@ -35,6 +37,7 @@ const ImageLoader = React.forwardRef<HTMLImageElement, ImageLoaderProps>(
             objectPosition: objectPosition as React.CSSProperties['objectPosition']
           }}
           priority={priority ? priority : false}
+          unoptimized={unoptimized}
           // forward ref to the underlying <img> element so parents can measure it
           ref={ref as any}
           // forward onLoad to the underlying image element

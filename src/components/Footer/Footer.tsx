@@ -19,7 +19,7 @@ export default function Footer({
       <footer className={styles.component} aria-label="Footer">
         <div className={styles.wrapper}>
           <div className={styles.inner}>
-            <nav aria-label="Footer Links">
+            {/* <nav aria-label="Footer Links">
               <ul className={styles.link_wrapper}>
                 {!!content &&
                   content.footer_links?.map((item: any, index: number) => (
@@ -30,7 +30,7 @@ export default function Footer({
                     </li>
                   ))}
               </ul>
-            </nav>
+            </nav> */}
             <div className={styles.social_wrapper} aria-label="Social Media Links">
               <Link
                 href="https://github.com/PaulRGU2014"
@@ -41,7 +41,7 @@ export default function Footer({
                 <Icon icon_name="github" />
               </Link>
               <Link
-                href="https://www.linkedin.com/company/krupaul/"
+                href="https://www.linkedin.com/in/paulrgu2014/"
                 className={styles.social}
                 target="_blank"
                 aria-label="LinkedIn"
@@ -56,14 +56,14 @@ export default function Footer({
               >
                 <Icon icon_name="facebook" />
               </Link>
-              <Link
-                href="https://www.instagram.com/krupaul.store"
+              {/* <Link
+                href="https://www.instagram.com/krupaul.official"
                 className={styles.social}
                 target="_blank"
                 aria-label="Instagram"
               >
                 <Icon icon_name="instagram" />
-              </Link>
+              </Link> */}
               <Link
                 href="https://www.youtube.com/c/PaulsChemistryThailand"
                 className={styles.social}

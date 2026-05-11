@@ -1,92 +1,61 @@
-import { sanityFetch } from "@/sanity/client";
-import ComponentLoader from "@/components/ComponentLoader";
-import Footer from "@/components/Footer/Footer";
-import { headers } from "next/headers";
-import Header from "@/components/Header/Header";
 import type { Metadata } from "next";
-// import DonateButton from '@/utils/DonateButton/DonateButton'
-import ErrorComponent from "@/utils/ErrorComponent/ErrorComponent";
-import { Analytics } from "@vercel/analytics/next";
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
+import FullPageHero from "@/components/FullPageHero/FullPageHero";
+import TwoColumnSlider from "@/components/TwoColumnSlider/TwoColumnSlider";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel/TestimonialsCarousel";
+import homeContent from "@/content/home.json";
+import type { TwoColumnSliderContent, TextAndImageContent } from "@/types/content";
+import GalleryCollage from "@/components/GalleryCollage/GalleryCollage";
+import TextAndImage from "@/components/TextAndImage/TextAndImage";
+import Features, { type FeaturesContent } from "@/components/Features/Features";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const headersList = await headers();
-  const pathname = headersList.get("x-pathname") || "";
-  const slugPath = pathname.startsWith("/") ? pathname : `/${pathname}`;
-  const query = `*[_type=="pages"&& page_url.current=="${pathname}"]{...,components[]->}`;
-  const data = await sanityFetch<any[]>({
-    query,
-    tags: ["pages", `pages:${slugPath}`],
-  });
+export const metadata: Metadata = {
+  title: "Paul Thanataweenont | Home",
+};
 
-  if (!data || data.length === 0) {
-    return {
-      title: "Default Title", // Fallback title
-    };
-  }
-
-  return {
-    title: `${data[0].page_title} | KruPaul.com`,
+export default function Page() {
+  const experienceStartYear = homeContent.work_experience.experience_start_year ?? 2020;
+  const yearsExperience = Math.max(0, new Date().getFullYear() - experienceStartYear);
+  const homeContentDynamicYears = {
+    ...homeContent,
+    bio_section: {
+      ...homeContent.bio_section,
+      body: homeContent.bio_section.body.replace(/six years/gi, `${yearsExperience} years`),
+    },
+    work_experience: {
+      ...homeContent.work_experience,
+      body: homeContent.work_experience.body.replace(/six years/gi, `${yearsExperience} years`),
+    },
+    technical_skills: {
+      ...homeContent.technical_skills,
+      desc: homeContent.technical_skills.desc.replace(/six years/gi, `${yearsExperience} years`),
+    },
   };
-}
-
-async function getPageData(pathname: string) {
-  const slugPath = pathname.startsWith("/") ? pathname : `/${pathname}`;
-  const query = `*[_type=="pages"&& page_url.current=="${pathname}"]{
-    ...,
-    components[],
-    footer->,
-    menu->
-  }`;
-  const data = await sanityFetch<any[]>({
-    query,
-    tags: ["pages", `pages:${slugPath}`],
-  });
-  return data;
-}
-
-async function getDefaultData() {
-  const [defaultMenuData, defaultFooterData] = await Promise.all([
-    sanityFetch<any[]>({
-      query: `*[_type=="header"]{...}`,
-      tags: ["header"],
-    }),
-    sanityFetch<any[]>({
-      query: `*[_type=="footer"]{...}`,
-      tags: ["footer"],
-    })
-  ]);
-  return { defaultMenuData, defaultFooterData };
-}
-
-export default async function Page() {
-  const headersList = await headers();
-  const pathname = headersList.get("x-pathname") || "";
-  // Retrieve the persistent language cookie.
-
-  const [data, { defaultMenuData, defaultFooterData }] = await Promise.all([
-    getPageData(pathname),
-    getDefaultData()
-  ]);
-
-  if (!data || data.length === 0) {
-    return (
-      <>
-        <Header content={(defaultMenuData as any)[0]} />
-        <ErrorComponent status={404} />
-        <Footer content={(defaultFooterData as any)[0]} />
-      </>
-    );
-  }
 
   return (
     <>
-      {/* <Header content={(data[0].menu as any)} /> */}
-      <Analytics />
-      <Header content={(defaultMenuData as any)[0]} />
-      {/* <DonateButton content={(data as any)[0]?.sideButton} /> */}
-      <ComponentLoader components={data[0].components as any[]} />
-      {/* <Footer content={(data[0].footer as any)} /> */}
-      <Footer content={(defaultFooterData as any)[0]} />
+      <Header content={homeContentDynamicYears.header} />
+      <section id="top" className="pageSection">
+        <FullPageHero content={homeContentDynamicYears.hero} />
+      </section>
+      <section id="bio" className="pageSection">
+        <TextAndImage content={homeContentDynamicYears.bio_section as TextAndImageContent} />
+      </section>
+      <section id="projects" className="pageSection">
+        <TwoColumnSlider content={homeContentDynamicYears.project_slider as TwoColumnSliderContent} />
+      </section>
+      <section id="experience" className="pageSection">
+        <TwoColumnSlider content={homeContentDynamicYears.work_experience as TwoColumnSliderContent} />
+      </section>
+      <section id="platforms" className="pageSection">
+        <GalleryCollage content={homeContentDynamicYears.platforms} />
+      </section>      <section id="skills" className="pageSection">
+        <Features content={homeContentDynamicYears.technical_skills as FeaturesContent} />
+      </section>      <section id="references" className="pageSection">
+        <TestimonialsCarousel content={homeContentDynamicYears.references} />
+      </section>
+      <Footer content={homeContentDynamicYears.footer} />
     </>
   );
 }

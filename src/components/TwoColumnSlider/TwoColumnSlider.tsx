@@ -3,11 +3,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./TwoColumnSlider.module.scss";
 import InViewAnim from "@/utils/InViewAnim/InViewAnim";
-import Slider from "react-slick";
+import { EmblaCarouselType } from "embla-carousel";
+import useEmblaCarousel from "embla-carousel-react";
 import RichTextUtil from "@/utils/RichText/RichText";
 import Image from "@/utils/ImageLoader/ImageLoader";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 interface TwoColumnSliderProps {
   content: {
@@ -20,6 +19,7 @@ interface TwoColumnSliderProps {
     };
     title: string;
     body: string;
+    image_position: "left" | "right";
     slides: {
       title: string;
       subtitle: string;
@@ -27,6 +27,7 @@ interface TwoColumnSliderProps {
       image?: {
         asset: {
           _ref: string;
+          url?: string;
         };
         alt?: string;
       };
@@ -97,130 +98,102 @@ function ArrowNext(props: {
 }
 
 export default function SliderColors({ content }: TwoColumnSliderProps) {
-  const [activeSlideIndex, setActiveSlideIndex] = useState(-1);
-  const [animSlideIndex, setAnimSlideIndex] = useState(-1);
-  const [fadeSlideIndex, setFadeSlideIndex] = useState(-1);
-  const [screenWidth, setScreenWidth] = useState<number | undefined>(undefined);
-  const sliderRef = useRef<Slider>(null);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      duration: 50,
+    },
+    []
+  );
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
   useEffect(() => {
-    setTimeout(() => {
-      setActiveSlideIndex(0);
-      setAnimSlideIndex(0);
-    }, 100);
-  }, []);
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    };
+
+    emblaApi.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      setScreenWidth(window.outerWidth);
-    }
-    const handleResize = () => setScreenWidth(window.outerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    if (!emblaApi) return;
+    setScrollSnaps(emblaApi.scrollSnapList());
+  }, [emblaApi]);
 
-  const sliderSetting = {
-    dots: true,
-    dotsClass: styles.dots,
-    className: styles.slide_wrapper,
-    arrows: false,
-    fade: (screenWidth ?? 0) >= 768 ? true : false,
-    appendDots: (dots: React.ReactNode) => (
-      <div className={styles.dots}>
-        <ul style={{ margin: "0px" }}>
-          <ArrowPrev
-            onClick={() => sliderRef.current && sliderRef.current.slickPrev()}
-          />
-          {dots}
-          <ArrowNext
-            onClick={() => sliderRef.current && sliderRef.current.slickNext()}
-          />
-        </ul>
-      </div>
-    ),
-    infinite: true,
-    speed: 600,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    beforeChange: (current: number, next: number) => {
-      setFadeSlideIndex(current);
-      setTimeout(() => {
-        setAnimSlideIndex(next);
-      }, 300);
-    },
-    afterChange: (current: number) => {
-      setActiveSlideIndex(current);
-    },
-  };
+  const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
+  const scrollNext = () => emblaApi && emblaApi.scrollNext();
 
   return (
     <InViewAnim>
       <div className={styles.component}>
         <div className={styles.wrapper}>
+          <div className={styles.content}>
+            <h3 className={styles.title}>{content.title}</h3>
+            <h6 className={styles.body}>{content.body}</h6>
+          </div>
           <div className={styles.inner}>
-            <div className={styles.primary_wrapper}>
-              <div className={styles.hiddenImg_wrapper}>
-                {content?.slides?.map((slide, index) => (
-                  <Image
+            <div className={styles.embla} ref={emblaRef}>
+              <div className={`${styles.embla__container} ${content.image_position === "left" ? styles.left : styles.right}`}>
+                {content.slides.map(
+                  (
+                    slide: { title: string; subtitle: string; desc: any; image?: any },
+                    index: number
+                  ) => (
+                    <div className={styles.embla__slide} key={index}>
+                      <div className={styles.secondary_wrapper}>
+                        <section
+                          className={`${styles.secondary} ${selectedIndex === index ? styles.isActive : ""}`}
+                        >
+                          <h6 tabIndex={0}>{slide.title}</h6>
+                          <p className={styles.subtitle} tabIndex={0}>
+                            {slide.subtitle}
+                          </p>
+                          <RichTextUtil
+                            html={slide.desc}
+                            className={styles.desc}
+                          />
+                        </section>
+                      </div>
+                      {slide.image && (
+                        <div className={styles.primary_wrapper}>
+                          <div className={styles.image}>
+                            <Image
+                              src={slide.image.asset?.url || slide.image.asset?._ref || ""}
+                              alt={slide.image.alt || slide.title}
+                              className={styles.image}
+                              unoptimized={slide.image.asset?.url?.endsWith(".svg")}
+                              objectFit="contain"
+                            />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )
+                )}
+              </div>
+            </div>
+            <div className={styles.dots}>
+              <ul style={{ margin: "0px" }}>
+                <ArrowPrev onClick={scrollPrev} />
+                {scrollSnaps.map((_, index) => (
+                  <button
                     key={index}
-                    className={styles.hiddenImg}
-                    src={slide.image?.asset._ref || ""}
-                    alt={slide.image?.alt || "default alt text"}
-                    objectFit="cover"
-                    objectPosition="center"
-                    priority={true}
-                    tabIndex={0}
+                    className={`${styles.dot} ${selectedIndex === index ? styles.dot_active : ""}`}
+                    onClick={() => emblaApi?.scrollTo(index)}
+                    aria-label={`Go to slide ${index + 1}`}
                   />
                 ))}
-              </div>
-              <section
-                className={`${styles.primary}
-                  ${fadeSlideIndex === activeSlideIndex ? styles.isFade : ""}
-                  ${animSlideIndex !== fadeSlideIndex && animSlideIndex !== activeSlideIndex ? styles.isAnim : ""}
-                  ${animSlideIndex === activeSlideIndex && animSlideIndex !== fadeSlideIndex ? styles.isActive : ""}`}
-              >
-                {!!content.slides[activeSlideIndex]?.image?.asset?._ref && (
-                  <Image
-                    className={styles.image}
-                    src={content.slides[activeSlideIndex].image?.asset._ref}
-                    alt={
-                      content.slides[activeSlideIndex].image?.alt ||
-                      "default alt text"
-                    }
-                    objectFit="cover"
-                    objectPosition="center"
-                    priority={true}
-                    tabIndex={0}
-                    area-label="Image"
-                  />
-                )}
-              </section>
+                <ArrowNext onClick={scrollNext} />
+              </ul>
             </div>
-            <Slider ref={sliderRef} {...sliderSetting}>
-              {content.slides.map(
-                (
-                  slide: { title: string; subtitle: string; desc: any },
-                  index: number
-                ) => (
-                  <div className={styles.slide} key={index}>
-                    <div className={styles.secondary_wrapper}>
-                      <section
-                        className={`${styles.secondary} ${activeSlideIndex === index ? styles.isActive : ""}`}
-                      >
-                        <h6 tabIndex={0}>{slide.title}</h6>
-                        <p className={styles.subtitle} tabIndex={0}>
-                          {slide.subtitle}
-                        </p>
-                        <RichTextUtil
-                          html={slide.desc}
-                          className={styles.desc}
-                        />
-                      </section>
-                    </div>
-                  </div>
-                )
-              )}
-            </Slider>
           </div>
         </div>
       </div>

@@ -10,6 +10,17 @@
   @include centered ($max-width);
 }
 
+.content{
+  text-align: center;
+  margin-bottom: 60px;
+    @include scroll-animation(
+    $anim: fromTop,
+    $sequence: 60ms,
+    $speed: 1000ms,
+    $delay: 0ms
+  );
+}
+
 .inner{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

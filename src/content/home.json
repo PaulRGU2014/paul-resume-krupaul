@@ -1,0 +1,624 @@
+{
+  "header": {
+    "menu_list": [
+      {
+        "title": "Home",
+        "link": {
+          "url": "#top",
+          "is_external": false
+        }
+      },
+      {
+        "title": "Bio",
+        "link": {
+          "url": "#bio",
+          "is_external": false
+        }
+      },
+      {
+        "title": "Projects",
+        "link": {
+          "url": "#projects",
+          "is_external": false
+        }
+      },
+      {
+        "title": "Experience",
+        "link": {
+          "url": "#experience",
+          "is_external": false
+        }
+      },
+      {
+        "title": "Platforms",
+        "link": {
+          "url": "#platforms",
+          "is_external": false
+        }
+      },
+      {
+        "title": "Skills",
+        "link": {
+          "url": "#skills",
+          "is_external": false
+        }
+      },
+      {
+        "title": "References",
+        "link": {
+          "url": "#references",
+          "is_external": false
+        }
+      }
+    ],
+    "menu_btn": {
+      "btn_text": "Contact Me",
+      "btn_url": "mailto:paul@krupaul.com",
+      "is_external": true
+    }
+  },
+  "hero": {
+    "title": "PAUL THANATAWEENONT",
+    "subtitle": "Senior Full-Stack Engineer",
+    "media_source": "url",
+    "media_type": "video",
+    "media_url": "https://vimeo.com/1165081692",
+    "gradient": "both",
+    "text_align": "right",
+    "is_full_height": true
+  },
+  "bio_section": {
+    "theme": "dark",
+    "imgPosition": "left",
+    "image": {
+      "asset": {
+        "_ref": "/Paul.png"
+      },
+      "title": "PAUL THANATAWEENONT"
+    },
+    "body": "<h6>I’m a Senior Full Stack Engineer with six years of experience building dynamic, user‑focused web applications. At KruPaul, I work with React, Next.js, Strapi, and Sanity to turn design concepts into fast, reliable, and accessible digital experiences. I enjoy bridging front‑end and back‑end systems to create responsive interfaces that feel intuitive and support real business goals.</h6>"
+  },
+  "project_slider": {
+    "colors": ["#D00000", "#F48C06", "#FFBA08"],
+    "title": "Solo-Developed Projects",
+    "body": "From backend architecture to polished UI — here’s what I’ve shipped.",
+    "image_position": "left",
+    "slides": [
+      {
+        "title": "Inventory Manager",
+        "subtitle": "Inventory – Smarter Business Made Simple",
+        "desc": "<p>Invento helps small businesses track inventory, monitor sales, and grow with insights—all in one app. Access it anywhere, on desktop or mobile, and keep your business organized without the hassle.</p><p><strong>Why Inventory?</strong></p><ul><li>Real-time inventory & sales tracking</li><li>Actionable analytics for growth</li><li>Simple, powerful, and built for small businesses</li><li>Try the beta now: inventory.krupaul.com</li></ul>",
+        "image": {
+          "asset": {
+            "_ref": "/clients/Inventory_logo.svg"
+          },
+          "alt": "Inventory logo"
+        }
+      },
+      {
+        "title": "Bizybees Daycare",
+        "subtitle": "A Modern, Family‑Centered Childcare Platform",
+        "desc": "<p>Bizybees is a local daycare project I’m building from the ground up, designed to give families a simple, reliable way to stay connected with their child’s daily experience. The platform includes parent dashboards, real‑time activity updates, enrollment management, and a clean, friendly interface that reflects the daycare’s warm community values. My focus is on creating a system that feels personal and trustworthy while maintaining the technical quality of a modern web application. Bizybees blends thoughtful design with practical tools, helping parents feel informed and supported as their children learn and grow.</p>",
+        "image": {
+          "asset": {
+            "_ref": "/clients/bizybees-logo.svg"
+          },
+          "alt": "Bizybees logo"
+        }
+      },
+      {
+        "title": "Denver Thai Temple",
+        "subtitle": "Website Design & Development",
+        "desc": "<p>Denver Thai Temple serves as a cultural and spiritual hub for Colorado’s Thai community, offering meditation, events, and traditional Buddhist ceremonies. I created a <strong>clean, multilingual website</strong> that makes it easy for visitors to find schedules, activities, and temple information. The design emphasizes simple navigation, strong community presence, and a calm Thai‑inspired visual identity, with future additions planned such as photo galleries, donation tools, and expanded resources.</p>",
+        "image": {
+          "asset": {
+            "_ref": "/clients/Temple_Logo_FIX2.png"
+          },
+          "alt": "Denver Thai Temple"
+        }
+      },
+      {
+        "title": "Erawan Security",
+        "subtitle": "Overseas project — Thailand",
+        "desc": "<p>Erawan Security delivers reliable, professional protection for residential communities, commercial buildings, factories, and events across Thailand. Their team is rigorously trained, disciplined, and equipped to provide 24/7 safety with modern reporting and quality control. By using Krupaul to streamline operations and coordination, Erawan Security can focus on what matters most — keeping people and property safe.​​​​‌</p>",
+        "image": {
+          "asset": {
+            "_ref": "/clients/Logo_Erawan_eng.svg"
+          },
+          "alt": "Erawan Security"
+        }
+      }
+    ]
+  },
+  "platforms": {
+    "for_component": "squareLogos",
+    "title": "Platforms & Tools",
+    "body": "I’ve built projects with a wide range of platforms and tools, but here are a few of my favorites.",
+    "images": [
+      {
+        "_key": "a9af4b775ee5",
+        "_type": "image",
+        "asset": {
+          "_ref": "/platforms/nextjs-logo.svg",
+          "_type": "reference"
+        },
+        "image_description": "<h6>Next.js</h6><p>From the very beginning of my web development career, I immersed myself in both React and Next.js, recognizing the powerful combination they offer for building dynamic and efficient web applications. As I honed my skills in React, I simultaneously explored Next.js, appreciating its ability to enhance server-side rendering and improve performance. This dual focus allowed me to create robust, scalable applications from the start. Today, I continue to stay updated with the latest features and advancements in Next.js, ensuring that my projects leverage the most current and effective tools available. This ongoing learning process not only keeps my skills sharp but also enables me to deliver cutting-edge solutions in the ever-evolving landscape of web development.</p>",
+        "image_title": "Next.js"
+      },
+      {
+        "_key": "050fa660af21",
+        "_type": "image",
+        "asset": {
+          "_ref": "/platforms/react-logo.svg",
+          "_type": "reference"
+        },
+        "image_description": "<h6>React</h6><p>When I began my journey in web development, I quickly realized the potential and versatility of React.js. Diving into its component-based architecture and leveraging ES6+ features, I built and maintained complex applications that were both efficient and scalable. Over the past two years, my expertise in React has grown significantly, allowing me to plan and execute logical, well-structured code. Now, I’m excited to expand my skill set to include React Native, bringing my web development experience into the realm of mobile app development. This transition not only broadens my capabilities but also opens up new opportunities to create seamless, cross-platform applications.</p>",
+        "image_title": "React"
+      },
+      {
+        "_key": "fa7558683e86",
+        "_type": "image",
+        "asset": {
+          "_ref": "/platforms/sanity-logo.png",
+          "_type": "reference"
+        },
+        "image_description": "<h6>Sanity.io</h6><p>From the beginning of my web development career, I was introduced to Sanity.io, and it quickly became my go-to choice for building backend servers. Its developer-friendly interface and flexible content management system made it an ideal framework for an individual web developer like myself. Sanity.io’s real-time collaboration features and customizable content schemas allowed me to efficiently manage and deliver content for my website. This positive experience reinforced my decision to use Sanity.io for my projects, and I continue to appreciate its robust capabilities and ease of use.</p>",
+        "image_title": "Sanity"
+      },
+      {
+        "_key": "4b3c53d86eb3",
+        "_type": "image",
+        "asset": {
+          "_ref": "/platforms/strapi-logo.svg",
+          "_type": "reference"
+        },
+        "image_description": "<h6>Strapi</h6><p>In my professional career, I have frequently used Strapi to build the backend for numerous websites. Strapi’s headless CMS architecture and customizable API have made it an invaluable tool for managing content and delivering robust backend solutions. Its user-friendly interface and flexibility allow me to efficiently create and manage content types, relationships, and permissions. This has enabled me to develop scalable and maintainable backend systems tailored to the specific needs of each project. My experience with Strapi has shown me its potential to streamline backend development, making it a trusted choice for many professional web projects.</p>",
+        "image_title": "Strapi"
+      },
+      {
+        "_key": "a719074c47d6",
+        "_type": "image",
+        "asset": {
+          "_ref": "/platforms/nodejs-logo.svg",
+          "_type": "reference"
+        },
+        "image_description": "<h6>Node.js</h6><p>Throughout my web development career, I’ve increasingly gravitated toward backend engineering, where I can focus on building reliable, scalable systems. Node.js has become my preferred environment because it strikes the right balance between simplicity and power. Its event‑driven architecture, strong TypeScript ecosystem, and rich package landscape make it ideal for designing APIs, orchestrating services, and handling real‑world workloads. As I deepen my backend expertise, I’m convinced that Node.js provides the flexibility and performance needed for modern cloud‑native applications, and it continues to shape the way I think about system design and engineering craftsmanship.</p>",
+        "image_title": "Node.js"
+      },
+      {
+        "_key": "a719074c47d8",
+        "_type": "image",
+        "asset": {
+          "_ref": "/platforms/python-logo.svg",
+          "_type": "reference"
+        },
+        "image_description": "<h6>Python</h6><p>I’m currently expanding my backend skill set by studying Python through the IBM Full Stack Developer program on Coursera. While my primary focus remains Node.js and TypeScript, learning Python gives me a broader foundation for backend engineering, data workflows, and cloud‑native development. This program strengthens my understanding of core programming concepts, modern backend patterns, and practical tooling, allowing me to approach system design with greater versatility and confidence.</p>",
+        "image_title": "Python"
+      }
+    ]
+  },
+  "work_experience": {
+    "experience_start_year": 2020,
+    "colors": ["#1a1a1a", "#333333", "#666666"],
+    "title": "Professional Experience",
+    "body": "Six years of delivering high-impact full-stack solutions across multiple industries.",
+    "image_position": "left",
+    "slides": [
+      {
+        "title": "Senior Full-Stack Engineer",
+        "subtitle": "KruPaul — Commerce City, CO | 2020 – Present",
+        "desc": "<ul><li>Led architecture and end-to-end development of full-stack applications using React, Next.js, Node.js, Strapi, and PostgreSQL, improving performance, scalability, and long-term maintainability.</li><li>Owned technical delivery across multiple client projects, ensuring code quality, accessibility, and production readiness.</li><li>Drove cross-functional alignment with design and project management teams, ensuring technical feasibility, UX quality, and on-time delivery.</li><li>Improved system stability by implementing proactive monitoring, resolving high-impact issues, and reducing user-reported bugs.</li><li>Designed and optimized scalable API integrations, reducing load times and improving data throughput for high-traffic applications.</li><li>Introduced reusable component patterns and frontend performance strategies that improved Lighthouse scores and user engagement.</li></ul>",
+        "image": {
+          "asset": {
+            "_ref": "/works/krupaul.svg"
+          },
+          "alt": "KruPaul"
+        }
+      },
+      {
+        "title": "Web Developer",
+        "subtitle": "Chronos Interactive — Denver, CO | Jan 2022 – Feb 2026",
+        "desc": "<ul><li>Delivered 20+ enterprise-grade web solutions for clients including Proofpoint, Pinnacle Bank, AOS, Upwing Energy, and Colorado DHS.</li><li>Improved page load performance by 30–45% through optimized React/Next.js architecture, caching strategies, and efficient API design.</li><li>Modernized legacy codebases, reducing maintenance overhead by 40% and improving long-term stability.</li><li>Built shared UI libraries and reusable components, reducing duplicated code by 60% across multiple projects.</li><li>Enhanced sprint delivery efficiency by ~25% by collaborating closely with designers and PMs to streamline workflows and clarify technical requirements.</li><li>Owned production troubleshooting, improving uptime and user experience through root-cause analysis and targeted fixes.</li></ul>",
+        "image": {
+          "asset": {
+            "_ref": "/works/chronos.svg"
+          },
+          "alt": "Chronos Interactive"
+        }
+      }
+    ]
+  },
+  "technical_skills": {
+    "isDark": false,
+    "title": "Technical Skills",
+    "title_align": "left",
+    "desc": "A toolkit built through six years of hands-on experience delivering production applications.",
+    "isTagMonotone": false,
+    "feature_tabs": {
+      "data": [
+        {
+          "attributes": {
+            "title": "Skills",
+            "subtitle": "Core Competencies",
+            "feature_tags": [
+              {
+                "id": 1,
+                "name": "React",
+                "weight": 5
+              },
+              {
+                "id": 2,
+                "name": "Next.js",
+                "weight": 5
+              },
+              {
+                "id": 3,
+                "name": "TypeScript",
+                "weight": 5
+              },
+              {
+                "id": 4,
+                "name": "JavaScript",
+                "weight": 5
+              },
+              {
+                "id": 5,
+                "name": "CSS/SCSS",
+                "weight": 5
+              },
+              {
+                "id": 6,
+                "name": "Node.js",
+                "weight": 4
+              },
+              {
+                "id": 7,
+                "name": "GraphQL",
+                "weight": 4
+              },
+              {
+                "id": 8,
+                "name": "PostgreSQL",
+                "weight": 4
+              },
+              {
+                "id": 9,
+                "name": "MongoDB",
+                "weight": 4
+              },
+              {
+                "id": 10,
+                "name": "Git",
+                "weight": 4
+              },
+              {
+                "id": 11,
+                "name": "GitHub",
+                "weight": 4
+              },
+              {
+                "id": 12,
+                "name": "AWS",
+                "weight": 4
+              },
+              {
+                "id": 13,
+                "name": "DevOps",
+                "weight": 4
+              },
+              {
+                "id": 14,
+                "name": "CI/CD",
+                "weight": 4
+              },
+              {
+                "id": 15,
+                "name": "Sanity",
+                "weight": 4
+              },
+              {
+                "id": 16,
+                "name": "Strapi",
+                "weight": 4
+              },
+              {
+                "id": 17,
+                "name": "APIs",
+                "weight": 4
+              },
+              {
+                "id": 18,
+                "name": "Front-End Development",
+                "weight": 4
+              },
+              {
+                "id": 19,
+                "name": "Back-End Development",
+                "weight": 4
+              },
+              {
+                "id": 20,
+                "name": "Full-Stack Development",
+                "weight": 4
+              },
+              {
+                "id": 21,
+                "name": "HTML",
+                "weight": 5
+              },
+              {
+                "id": 22,
+                "name": "Responsive Design",
+                "weight": 4
+              },
+              {
+                "id": 23,
+                "name": "Cross-browser Compatibility",
+                "weight": 3
+              },
+              {
+                "id": 24,
+                "name": "Software Design",
+                "weight": 3
+              },
+              {
+                "id": 25,
+                "name": "System Deployment",
+                "weight": 3
+              },
+              {
+                "id": 26,
+                "name": ".NET",
+                "weight": 3
+              },
+              {
+                "id": 27,
+                "name": "CMS",
+                "weight": 4
+              },
+              {
+                "id": 28,
+                "name": "Linux",
+                "weight": 3
+              },
+              {
+                "id": 29,
+                "name": "Figma",
+                "weight": 3
+              },
+              {
+                "id": 30,
+                "name": "Performance Optimization",
+                "weight": 3
+              },
+              {
+                "id": 31,
+                "name": "Testing",
+                "weight": 4
+              },
+              {
+                "id": 32,
+                "name": "Electron.js",
+                "weight": 3
+              },
+              {
+                "id": 33,
+                "name": "Svelte",
+                "weight": 3
+              },
+              {
+                "id": 34,
+                "name": "Storybook",
+                "weight": 3
+              },
+              {
+                "id": 35,
+                "name": "Web Accessibility",
+                "weight": 3
+              },
+              {
+                "id": 36,
+                "name": "Docker",
+                "weight": 3
+              },
+              {
+                "id": 37,
+                "name": "REST APIs",
+                "weight": 4
+              },
+              {
+                "id": 38,
+                "name": "System Architecture",
+                "weight": 3
+              },
+              {
+                "id": 39,
+                "name": "Database Design",
+                "weight": 3
+              },
+              {
+                "id": 40,
+                "name": "Authentication",
+                "weight": 4
+              },
+              {
+                "id": 41,
+                "name": "Contentful",
+                "weight": 3
+              },
+              {
+                "id": 42,
+                "name": "UX/UI Design",
+                "weight": 3
+              },
+              {
+                "id": 43,
+                "name": "Data Visualization",
+                "weight": 3
+              },
+              {
+                "id": 44,
+                "name": "Google Analytics",
+                "weight": 3
+              },
+              {
+                "id": 45,
+                "name": "Miro",
+                "weight": 2
+              },
+              {
+                "id": 46,
+                "name": "React Native",
+                "weight": 3
+              },
+              {
+                "id": 47,
+                "name": "State Management",
+                "weight": 3
+              },
+              {
+                "id": 48,
+                "name": "Code Quality Tools",
+                "weight": 3
+              },
+              {
+                "id": 49,
+                "name": "API Documentation",
+                "weight": 3
+              },
+              {
+                "id": 50,
+                "name": "WebSockets",
+                "weight": 3
+              },
+              {
+                "id": 51,
+                "name": "Microservices",
+                "weight": 3
+              },
+              {
+                "id": 52,
+                "name": "Serverless Architecture",
+                "weight": 3
+              },
+              {
+                "id": 54,
+                "name": "ASP.NET",
+                "weight": 3
+              },
+              {
+                "id": 55,
+                "name": "Ai",
+                "weight": 3
+              },
+              {
+                "id": 56,
+                "name": "Machine Learning",
+                "weight": 4
+              },
+              {
+                "id": 57,
+                "name": "Prompt Engineering",
+                "weight": 4
+              },
+              {
+                "id": 58,
+                "name": "LLMs",
+                "weight": 4
+              },
+              {
+                "id": 59,
+                "name": "Generative AI",
+                "weight": 4
+              },
+              {
+                "id": 60,
+                "name": "Natural Language Processing",
+                "weight": 3
+              },
+              {
+                "id": 61,
+                "name": "Deep Learning",
+                "weight": 3
+              },
+              {
+                "id": 62,
+                "name": "Computer Vision",
+                "weight": 3
+              },
+              {
+                "id": 63,
+                "name": "AI Integration",
+                "weight": 4
+              },
+              {
+                "id": 64,
+                "name": "Model Training",
+                "weight": 3
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "references": {
+    "title": "My LinkedIn References",
+    "testimonials": [
+      {
+        "quote": "When Paul began his tenure with us, he was a junior developer just beginning his career as a CSS, Typescript, and React developer. Paul applied himself diligently and enthusiastically, and very quickly elevated his capabilities and became a highly skilled and productive member of our team. \nPaul has a strong drive to learn, an incredibly sharp mind, and an unflaggingly positive attitude. He is a pleasure to work with. He always has a smile and optimistic word, even under pressure. Paul works very well with a team, tackles assignments eagerly and delivers results quickly. Paul began adopting AI tools early and has demonstrated the curiosity and initiative that is so critical to becoming a skilled master of these new tools.",
+        "name": "Max D.",
+        "role": "Owner",
+        "company": "Chronos Interactive"
+      },
+      {
+        "quote": "Paul is a highly driven and detail-oriented engineer who consistently delivers thoughtful, high-quality work. His CSS expertise stands out, and he brings strong React and TypeScript skills to every project.\nWhat differentiates Paul is how effectively he leverages AI to accelerate development in a safe and practical way. He approaches problems iteratively, stays current with emerging tools, and applies them with real impact.\nHe’s collaborative, reliable, and a strong asset to any team looking for both solid fundamentals and modern thinking.",
+        "name": "Mohammad  A.",
+        "role": "Senior Drupaul Developer",
+        "company": "Chronos Interactive"
+      },
+      {
+        "quote": "I've had the pleasure of working with Paul for nearly six years. He is extremely enthusiastic and always does his best to deliver high-quality work without compromise. He is a CSS master, and his React and TypeScript skills are strong.\n\nOne area where Paul truly excels is keeping up with AI and applying it safely and effectively to accelerate development. This is not a skill all developers have, and his use of iterative, effective prompting has been a significant value-add during my time working with him.",
+        "name": "Jordan  S.",
+        "role": "Software Lead",
+        "company": "Chronos Interactive"
+      },
+      {
+        "quote": "It is my sincere pleasure to write this recommendation for Paul. In the approximately 10 months we worked together at Advanced Circuits, I observed Paul take on a variety of crucial roles in the delicate business of circuit board production. Paul completed upwards of 40 chemical analyses each day in order to supervise the performance of many chemical plating baths. He was also trained how to balance and perform maintenance on a complex system of ion exchange machines which process waste water produced in the plating factory. While listing all of Paul professional responsibilities would be impractical in this short recommendation; I’ll lastly add his role in completing circuit board quality control tasks to ensure the viability of products at Advanced Circuits.\n\nPaul has a strong focus on the work in front of him. He showed interest and motivation in expanding his knowledge and expertise in circuit board production.\n\nI wish Paul good luck in his future endeavors wherever they lead.",
+        "name": "Kevin Y.",
+        "role": "Chemical Lab Supervisor",
+        "company": "TTM Technologies"
+      },
+      {
+        "quote": "I was Paul's classmate at Robert Gordon University. He is a great student and a great friend. He always tries to do his best in whatever he sets his mind to. He is always willing to help others at work and in their personal life. He thinks critically about solving problems and is able to overcome any challenges that come his way.",
+        "name": "Jakarin A.",
+        "role": "Senior Drilling Engineer",
+        "company": "PTT Exploration and Production"
+      },
+      {
+        "quote": "Paul is a good friend and a hard worker. He enjoys challenging work and always strives to produce only the best results. If he does not know something, he will learn everything there is to learn about the topic until he becomes an expert. He is happy to share his knowledge and skills with others and is always eager to learn from them as well.",
+        "name": "Suwat P.",
+        "role": "Senior Drilling Supervisor",
+        "company": "PTT Exploration and Production"
+      },
+      {
+        "quote": "Paul always brings a great attitude and enthusiasm to work every day. He is always eager to learn more about a process or discuss a new way of looking at it.",
+        "name": "Joe A.",
+        "role": "Process Engineer",
+        "company": "TTM Technologies"
+      }
+    ]
+  },
+  "footer": {
+    "footer_links": [
+      {
+        "link_title": "Email",
+        "link_url": "mailto:hello@krupaul.com"
+      },
+      {
+        "link_title": "LinkedIn",
+        "link_url": "https://www.linkedin.com/company/krupaul/"
+      }
+    ]
+  }
+}
