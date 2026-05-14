@@ -43,7 +43,7 @@ function renderTranscriptHtml({
 }) {
   const transcript = messages
     .map((message, index) => {
-      const role = message.role === "user" ? "Interviewer" : "Paul AI";
+      const role = message.role === "user" ? "Interviewer" : "Paul's AI assistance";
       return `${index + 1}. [${role}] ${message.content}`;
     })
     .join("\n\n");
