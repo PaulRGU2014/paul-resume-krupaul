@@ -130,7 +130,7 @@ const QUICK_REPLIES = [
 ] as const;
 
 const WELCOME_MESSAGE =
-  "Hi, I am Paul AI, an interview assistant version of Paul.\nAsk me anything about experience, skills, projects, or work style.\n\nIf you share your name and contact details, I can send Paul a conversation summary so he can follow up directly.";
+  "Hi, I am Paul's AI assistance, his version of Paul.\nAsk me anything about experience, skills, projects, or work style.\n\nIf you share your name and contact details, I can send Paul a conversation summary so he can follow up directly.";
 
 function createId() {
   return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
