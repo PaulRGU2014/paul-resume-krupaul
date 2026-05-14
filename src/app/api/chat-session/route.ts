@@ -50,7 +50,7 @@ function renderTranscriptHtml({
 
   return `
     <div style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; color: #111827;">
-      <h2 style="margin: 0 0 12px;">Paul AI Chat Session Summary</h2>
+      <h2 style="margin: 0 0 12px;">Paul's AI assistance Chat Session Summary</h2>
       <p style="margin: 0 0 6px;"><strong>Session ID:</strong> ${escapeHtml(sessionId)}</p>
       <p style="margin: 0 0 6px;"><strong>Started:</strong> ${escapeHtml(startedAt)}</p>
       <p style="margin: 0 0 6px;"><strong>Ended:</strong> ${escapeHtml(endedAt)}</p>
